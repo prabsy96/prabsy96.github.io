@@ -78,14 +78,14 @@ social:
 # Site Author
 author:
   name             : "Prabhu Vellaisamy"
-  avatar           : ""
+  avatar           : "prabhu.jpeg"
   bio              : "PhD Candidate at <br> <br> <a style='color: black;' href='https://www.ece.cmu.edu/'>Electrical and Computer Engineering Department</a>, CMU"
   location         : "Pittsburgh, PA"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  pubmed           : 
+  googlescholar    : "https://scholar.google.com/citations?user=ePfYSNsAAAAJ"
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Prabhu-Vellaisamy"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,17 +96,17 @@ author:
   github           : "prabsy96"
   google_plus      :
   keybase          :
-  instagram        :
+  Instagram        : "prabs_vell"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  LinkedIn         : "https://www.linkedin.com/in/pvellais/"
+  orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
@@ -118,7 +118,10 @@ author:
 include:
   - .htaccess
   - _pages
-  - files
+  - "*.pdf"
+  - "papers/*.pdf"
+  - "portfolio/papers/*.pdf"
+  - "portfolio/*.pdf"
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -126,23 +129,22 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
-  - CHANGELOG
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
   - Capfile
+  - CHANGELOG
+  - config
   - Gemfile
   - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
   - gulpfile.js
+  - LICENSE
   - log
   - node_modules
   - package.json
+  - Rakefile
+  - README
   - tmp
-  - vendor
 keep_files:
   - .git
   - .svn
@@ -175,10 +177,10 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
-  publications:
+  articles:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  expressions:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -212,22 +214,23 @@ defaults:
       type: teaching
     values:
       layout: single
+      read_time: false
       author_profile: true
-      share: true
-      comments: true
-  # _publications
+      share: false
+      comments: false
+  # _articles
   - scope:
       path: ""
-      type: publications
+      type: articles
     values:
       layout: single
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _expressions
   - scope:
       path: ""
-      type: portfolio
+      type: expressions
     values:
       layout: single
       author_profile: true
@@ -252,15 +255,16 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/New_York # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-plugins:
+gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
@@ -287,6 +291,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+article_archive:
+  type: liquid
+  path: /articles/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
