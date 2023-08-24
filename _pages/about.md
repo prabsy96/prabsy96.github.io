@@ -10,11 +10,9 @@ redirect_from:
 
 {% include base_path %}
 
-Hi! I’m Prabhu, a Ph.D. Candidate at Carnegie Mellon University, Pittsburgh, in the Electrical and Computer Engineering Department. I am co-advised by [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html), and do research with the [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups, respectively. My research interests include unary computing, neuromorphic computing, and hardware for AI. 
+Hi! I’m Prabhu, a Ph.D. Candidate at Carnegie Mellon University, Pittsburgh, in the Electrical and Computer Engineering Department. I am co-advised by [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html), and do research with the [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups, respectively. My research interests include computer architecture, unary computing, and deep learning acceleration.
 
-Born in India and raised in Japan, I love to travel and experience different cultures. So far, I have traveled to 17 countries and hope to continue visiting new ones!
-
-My hobbies include playing chess, exploring new restaurants, and reading novels. Please feel free to contact me via LinkedIn, and I am always looking forward to an insightful conversation over coffee/tea. Thanks!
+My hobbies include playing chess, exploring new restaurants, and reading novels. Having been raised in countries like Japan and Germany gets me motivated to travel more and experience different cultures. So far, I have visited 17 countries and hope to continue visiting more!
 
 My Work and Research
 ======
