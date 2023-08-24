@@ -12,7 +12,7 @@ redirect_from:
 
 Hi! I’m Prabhu, a Ph.D. Candidate at Carnegie Mellon University, Pittsburgh, in the Electrical and Computer Engineering Department. I am co-advised by [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html), and do research with the [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups, respectively. My research interests include computer architecture, unary computing, and deep learning acceleration.
 
-My hobbies include playing chess, exploring new restaurants, and reading novels. Having been raised in countries like Japan and Germany gets me motivated to travel more and experience different cultures. So far, I have visited 17 countries and hope to continue visiting more!
+My hobbies include playing chess, exploring new restaurants, and reading novels. Being raised in countries like Japan and Germany motivates me to travel more and experience different cultures. So far, I have visited 17 countries and hope to continue visiting more!
 
 My Work and Research
 ======
@@ -24,6 +24,6 @@ My research work as a Ph.D. candidate began in 2021 when I started working with 
 
 My Background and History
 ------
-My early schooling took place in India, Germany, and the U.S.A. I received my B.Tech. in Electrical and Electronics Engineering from SRM Institute of Science and Technology, followed by my M.S. in Electrical and Computer Engineering from Carnegie Mellon University. In addition, I spend a semester at Saxion University, the Netherlands, as an exchange student during my undergraduate program. 
+My early schooling took place in India, Germany, and the U.S.A. I received my B.Tech. in Electrical and Electronics Engineering from SRM Institute of Science and Technology, followed by my M.S. in Electrical and Computer Engineering from Carnegie Mellon University. In addition, I spent a semester at Saxion University, the Netherlands, as an exchange student during my undergraduate program. 
 
 
