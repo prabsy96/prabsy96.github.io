@@ -10,8 +10,8 @@ locale                   : "en-US"
 title                    : "Prabhu Vellaisamy"
 title_separator          : "-"
 name                     : &name "Prabhu Vellaisamy"
-description              : &description "Hello! I am a 3rd year PhD Candidate at the Electrical and Computer Engineering Department, Carnegie Mellon University."
-url                      : https://prabsy.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "PhD Candidate at ECE Dept., CMU"
+url                      : https://prabhuvellaisamy.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "prabsy/prabsy96.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -80,10 +80,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  name             : "Prabhu Vellaisamy"
+  avatar           : ""
+  bio              : "PhD Candidate at <br> <br> <a style='color: black;' href='https://www.ece.cmu.edu/'>Electrical and Computer Engineering Department</a>, CMU"
+  location         : "Pittsburgh, PA"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "http://yourfullgooglescholarurl.com"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "prabsy96"
   google_plus      :
   keybase          :
   instagram        :
