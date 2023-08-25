@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-Hi!  I am Prabhu, a dedicated Ph.D. Candidate enrolled at Carnegie Mellon University, situated in Pittsburgh.  I am pursuing my doctoral studies within the Electrical and Computer Engineering Department, benefiting from the tutelage of [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html). I proudly contribute to the dynamic research landscape of both [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups. I am a 2023 Qualcomm Innovation Fellowship winner, ASPLOS Young Architect, and DAC'22 Young Fellow.
+Hi!  I am Prabhu, a dedicated Ph.D. Candidate enrolled at Carnegie Mellon University, situated in Pittsburgh.  I am pursuing my doctoral studies within the Electrical and Computer Engineering Department, benefiting from the tutelage of [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html). I proudly contribute to the dynamic research landscape of both [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups. I am a 2023 Qualcomm Innovation Fellowship winner, ASPLOS'22 Young Architect, and DAC'22 Young Fellow.
 
 I am passionate about using technology to solve real-world problems. My research focuses on developing new hardware architectures and algorithms for artificial intelligence (AI) and machine learning (ML). I am particularly interested in neuromorphic computing, a new approach to AI inspired by the human brain. Another research focus is unary computing for conventional AI computing.
 
