@@ -12,13 +12,10 @@ redirect_from:
 
 Hi!  I am Prabhu, a dedicated Ph.D. Candidate enrolled at Carnegie Mellon University, situated in Pittsburgh.  I am pursuing my doctoral studies within the Electrical and Computer Engineering Department, benefiting from the tutelage of [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html). I proudly contribute to the dynamic research landscape of both [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups. I am a 2023 Qualcomm Innovation Fellowship winner, ASPLOS Young Architect, and DAC'22 Young Fellow.
 
-I am passionate about using technology to solve real-world problems. My research focuses on developing new hardware architectures and algorithms for artificial intelligence (AI) and machine learning (ML). I am particularly interested in neuromorphic computing, which is a new approach to AI that is inspired by the human brain. Another research focus is unary computing for conventional AI computing.
+I am passionate about using technology to solve real-world problems. My research focuses on developing new hardware architectures and algorithms for artificial intelligence (AI) and machine learning (ML). I am particularly interested in neuromorphic computing, a new approach to AI inspired by the human brain. Another research focus is unary computing for conventional AI computing.
 
-In my spare time, I enjoy playing chess, exploring new restaurants, and reading novels. I am also an avid traveler and have visited over 17 countries.
+I enjoy playing chess, exploring new restaurants, and reading novels in my spare time. I am also an avid traveler and have visited over 17 countries.
 
-I’m Prabhu, a Ph.D. Candidate at Carnegie Mellon University, Pittsburgh, in the Electrical and Computer Engineering Department. I am co-advised by [Prof. John Paul Shen](https://www.ece.cmu.edu/directory/bios/shen-john.html) and [Prof. Shawn Blanton](https://engineering.cmu.edu/directory/bios/blanton-shawn.html), and do research with the [CMU-NCAL](https://www.ncal.sv.cmu.edu/) and [CMU-ACTL](https://www.actl.ece.cmu.edu/) groups, respectively. My research interests include computer architecture, unary computing, and deep learning acceleration.
-
-My hobbies include playing chess, exploring new restaurants, and reading novels. Being raised in countries like Japan and Germany motivates me to travel more and experience different cultures. So far, I have visited 17 countries and hope to continue visiting more!
 
 My Work and Research
 ======
