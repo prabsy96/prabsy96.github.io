@@ -7,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Research projects, publications, talks, and awards by Prabhu Vellaisamy — CMU ECE PhD candidate."
   wide={true}
 >
-  <header class="research-hero">
+  <header class="research-hero page-header">
     <div class="research-hero-copy">
       <p class="hero-kicker">Doctoral work</p>
       <h1>Research</h1>
@@ -331,14 +331,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
   gap: var(--space-6);
   align-items: center;
-  padding: var(--space-7);
-  margin-bottom: var(--space-10);
-  border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-lg) + 4px);
-  background:
-    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 36%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  box-shadow: var(--shadow-sm);
 }
 
 .research-hero h1 {

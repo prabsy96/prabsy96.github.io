@@ -89,7 +89,7 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 ---
 
 <BaseLayout title="News" description="Latest news and updates from Prabhu Vellaisamy.">
-  <header class="news-hero">
+  <header class="news-hero page-header">
     <div class="news-hero-copy">
       <p class="hero-kicker">Updates</p>
       <h1>News</h1>
@@ -135,14 +135,6 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
   grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
   gap: var(--space-6);
   align-items: center;
-  padding: var(--space-7);
-  margin-bottom: var(--space-10);
-  border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-lg) + 4px);
-  background:
-    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 36%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  box-shadow: var(--shadow-sm);
 }
 
 .hero-kicker {
