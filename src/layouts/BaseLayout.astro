@@ -10,7 +10,7 @@ interface Props {
   wide?: boolean;
 }
 
-const { title, description = 'Personal research website of Prabhu Vellaisamy', wide = false } = Astro.props;
+const { title, description = 'Personal research website of Prabhu Vellaisamy', wide = true } = Astro.props;
 const fullTitle = title === 'Home' ? 'Prabhu Vellaisamy' : `${title} | Prabhu Vellaisamy`;
 const base = import.meta.env.BASE_URL;
 ---

@@ -6,6 +6,7 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout
   title="Home"
   description="Personal research website of Prabhu Vellaisamy — PhD candidate at CMU researching LLM inference optimization, deep learning accelerators, and unary computing."
+  wide={true}
 >
 
   <!-- ── Hero ───────────────────────────────────── -->
@@ -172,7 +173,8 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <h2 class="section-title">Selected Publications</h2>
 
-    <div class="publication">
+    <div class="publication-showcase">
+    <div class="publication card home-publication-card">
       <p class="publication-title">
         Mugi: Value Level Parallelism for Efficient LLMs
       </p>
@@ -184,7 +186,7 @@ const base = import.meta.env.BASE_URL;
       <p class="pub-summary">Generalizes value-level parallelism (VLP) for nonlinear LLM operations and small-batch GEMMs. Up to 45× throughput and 668× energy efficiency for softmax; 2.07× LLM throughput and 3.11× energy efficiency; 1.45× reduction in operational carbon.</p>
     </div>
 
-    <div class="publication">
+    <div class="publication card home-publication-card">
       <p class="publication-title">
         Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks
       </p>
@@ -195,7 +197,7 @@ const base = import.meta.env.BASE_URL;
       </p>
     </div>
 
-    <div class="publication">
+    <div class="publication card home-publication-card">
       <p class="publication-title">
         Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures
       </p>
@@ -207,13 +209,14 @@ const base = import.meta.env.BASE_URL;
       <p class="pub-summary">Characterizes prefill/decode bottlenecks on H100 vs GH200: GH200 incurs 2.8× higher prefill latency and 4× larger CPU-bounded region. Samsung-funded ($150K+).</p>
     </div>
 
-    <div class="publication">
+    <div class="publication card home-publication-card">
       <p class="publication-title">
         Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs
       </p>
       <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, H.F. Hung, J. Chen, R.D.S. Blanton, J.P. Shen</p>
       <p class="publication-venue"><em>IEEE DATE 2025</em></p>
       <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA on 7nm: 53% area reduction, 44% power savings, 5× iso-area throughput improvement.</p>
+    </div>
     </div>
 
     <p class="more-link"><a href={`${base}publications`}>View all 12 publications + 5 workshop papers →</a></p>
@@ -428,6 +431,18 @@ const base = import.meta.env.BASE_URL;
 }
 
 /* ── Publications on home ─────────────────────── */
+.publication-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.home-publication-card {
+  margin-bottom: 0;
+  height: 100%;
+  border-bottom: none;
+}
+
 .pub-summary {
   font-size: 0.875rem;
   color: var(--color-text-light);
@@ -462,5 +477,6 @@ const base = import.meta.env.BASE_URL;
 
   .hero h1 { font-size: 2rem; }
   .interests-grid { grid-template-columns: 1fr; }
+  .publication-showcase { grid-template-columns: 1fr; }
 }
 </style>
