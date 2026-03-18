@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -9,46 +10,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- ── Hero ───────────────────────────────────── -->
   <section class="hero">
-    <div class="hero-body">
-      <div class="hero-text">
-        <p class="hero-eyebrow">PhD Candidate · Carnegie Mellon University</p>
-        <h1>Prabhu Vellaisamy</h1>
-        <p class="hero-bio">
-          I am a PhD candidate in Electrical &amp; Computer Engineering at CMU, co-advised by
-          <a href="https://users.ece.cmu.edu/~jpshen/" target="_blank" rel="noopener noreferrer">Prof. John Paul Shen</a> and
-          <a href="https://www.ece.cmu.edu/directory/bios/blanton-ronald.html" target="_blank" rel="noopener noreferrer">Prof. Shawn Blanton</a>.
-          My research spans <strong>LLM inference optimization</strong> on CPU-GPU coupled architectures,
-          <strong>energy-efficient deep learning accelerators</strong>, and
-          <strong>neuromorphic computing</strong> with Temporal Neural Networks.
-          I am a <strong>2023 Qualcomm Innovation Fellowship</strong> winner (1 of 16 selected across North America)
-          and recipient of the <strong>CIT Dean's Fellowship</strong>.
-        </p>
-        <p class="hero-bio">
-          Expected graduation: <strong>December 2026</strong>. Incoming AI Research Scientist Intern at Samsung Semiconductor (Summer 2026)
-          following a Silicon Solution Engineering role at NVIDIA (Spring 2026).
-        </p>
-        <div class="hero-links">
-          <a href="PrabhuVellaisamyResume_2026.pdf" class="btn">Download CV</a>
-          <a href="research" class="btn btn-outline">Research</a>
-          <a href="publications" class="btn btn-outline">Publications</a>
-        </div>
-        <div class="hero-socials">
-          <a href="mailto:pvellais@andrew.cmu.edu" title="Email">pvellais@andrew.cmu.edu</a>
-          <span class="sep">·</span>
-          <a href="https://scholar.google.com/citations?user=ePfYSNsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-          <span class="sep">·</span>
-          <a href="https://github.com/prabsy96" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span class="sep">·</span>
-          <a href="https://linkedin.com/in/pvellais" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <div class="hero-grid">
+      <div class="hero-body">
+        <div class="hero-text">
+          <p class="hero-eyebrow">PhD Candidate · Carnegie Mellon University</p>
+          <h1>Prabhu Vellaisamy</h1>
+          <p class="hero-bio">
+            I am a PhD candidate in Electrical &amp; Computer Engineering at CMU, co-advised by
+            <a href="https://users.ece.cmu.edu/~jpshen/" target="_blank" rel="noopener noreferrer">Prof. John Paul Shen</a> and
+            <a href="https://www.ece.cmu.edu/directory/bios/blanton-ronald.html" target="_blank" rel="noopener noreferrer">Prof. Shawn Blanton</a>.
+            My research spans <strong>LLM inference optimization</strong> on CPU-GPU coupled architectures,
+            <strong>energy-efficient deep learning accelerators</strong>, and
+            <strong>neuromorphic computing</strong> with Temporal Neural Networks.
+            I am a <strong>2023 Qualcomm Innovation Fellowship</strong> winner (1 of 16 selected across North America)
+            and recipient of the <strong>CIT Dean's Fellowship</strong>.
+          </p>
+          <p class="hero-bio">
+            Expected graduation: <strong>December 2026</strong>. Incoming AI Research Scientist Intern at Samsung Semiconductor (Summer 2026)
+            following a Silicon Solution Engineering role at NVIDIA (Spring 2026).
+          </p>
+          <div class="hero-links">
+            <a href={`${base}resume.pdf`} class="btn">Download CV</a>
+            <a href={`${base}research`} class="btn btn-outline">Research</a>
+            <a href={`${base}publications`} class="btn btn-outline">Publications</a>
+          </div>
+          <div class="hero-socials">
+            <a href="mailto:pvellais@andrew.cmu.edu" title="Email">pvellais@andrew.cmu.edu</a>
+            <span class="sep">·</span>
+            <a href="https://scholar.google.com/citations?user=ePfYSNsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/prabsy96" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span class="sep">·</span>
+            <a href="https://linkedin.com/in/pvellais" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
+
+      <aside class="hero-visual" aria-label="Featured images">
+        <figure class="portrait-card">
+          <img
+            src={`${base}assets/profile-headshot.jpg`}
+            alt="Prabhu Vellaisamy headshot"
+            width="800"
+            height="800"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <figcaption>LinkedIn profile photo</figcaption>
+        </figure>
+
+        <figure class="campus-card">
+          <img
+            src={`${base}assets/cmu-campus.webp`}
+            alt="Carnegie Mellon University campus"
+            width="1600"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>Carnegie Mellon University campus</figcaption>
+        </figure>
+      </aside>
     </div>
   </section>
 
   <!-- ── Stats ─────────────────────────────────── -->
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-number">11</div>
+      <div class="stat-number">12</div>
       <div class="stat-label">Publications</div>
     </div>
     <div class="stat-item">
@@ -137,7 +165,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="news-content">Paper presented at <strong>DATE 2025</strong>, Lyon, France: "Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core."</span>
       </li>
     </ul>
-    <p class="more-link"><a href="news">View all news →</a></p>
+    <p class="more-link"><a href={`${base}news`}>View all news →</a></p>
   </section>
 
   <!-- ── Selected Publications ─────────────────── -->
@@ -188,7 +216,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA on 7nm: 53% area reduction, 44% power savings, 5× iso-area throughput improvement.</p>
     </div>
 
-    <p class="more-link"><a href="publications">View all 11 publications + 5 workshop papers →</a></p>
+    <p class="more-link"><a href={`${base}publications`}>View all 12 publications + 5 workshop papers →</a></p>
   </section>
 
   <!-- ── Education ─────────────────────────────── -->
@@ -237,6 +265,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
     linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   box-shadow: var(--shadow-sm);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero-visual {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.hero-visual figure {
+  margin: 0;
+  border-radius: calc(var(--radius-lg) + 2px);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portrait-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.campus-card img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-visual figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .hero-eyebrow {
@@ -347,6 +421,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero {
     padding: var(--space-5);
     margin-bottom: var(--space-5);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 
   .hero h1 { font-size: 2rem; }
