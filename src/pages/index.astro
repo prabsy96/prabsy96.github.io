@@ -344,6 +344,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── Responsive ──────────────────────────────── */
 @media (max-width: 600px) {
+  .hero {
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
   .hero h1 { font-size: 2rem; }
   .interests-grid { grid-template-columns: 1fr; }
 }
