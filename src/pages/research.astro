@@ -6,9 +6,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Research"
   description="Research projects, publications, talks, and awards by Prabhu Vellaisamy — CMU ECE PhD candidate."
 >
-  <header class="page-header">
-    <h1>Research</h1>
-    <p class="subtitle">LLM inference · Deep learning accelerators · Neuromorphic computing · Unary arithmetic</p>
+  <header class="research-hero">
+    <div class="research-hero-copy">
+      <p class="hero-kicker">Doctoral work</p>
+      <h1>Research</h1>
+      <p class="subtitle">
+        LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic
+        for efficient hardware systems.
+      </p>
+    </div>
+    <div class="research-hero-aside">
+      <div class="research-chip">CMU NCAL</div>
+      <div class="research-chip">CMU ACTL</div>
+      <div class="research-chip">UCF UNARY</div>
+      <div class="research-chip">11 papers</div>
+      <div class="research-chip">5 workshops</div>
+      <div class="research-chip">2 funded internships</div>
+    </div>
   </header>
 
   <!-- ── PhD Research Projects ─────────────────── -->
@@ -310,6 +324,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+.research-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-7);
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) + 4px);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.research-hero h1 {
+  margin: var(--space-1) 0 var(--space-3);
+}
+
+.research-hero .subtitle {
+  margin: 0;
+  color: var(--color-text-light);
+  max-width: 62ch;
+  font-size: 1.05rem;
+}
+
+.hero-kicker {
+  margin: 0;
+  color: var(--color-link);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.research-hero-aside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+.research-chip {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .section-intro {
   font-size: 0.95rem;
   color: var(--color-text-light);
@@ -347,5 +414,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   font-size: 0.875rem;
   color: var(--color-text-light);
   font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .research-hero {
+    grid-template-columns: 1fr;
+    padding: var(--space-5);
+  }
+
+  .research-hero-aside {
+    justify-content: flex-start;
+  }
 }
 </style>

@@ -4,16 +4,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Publications"
-  description="Full list of publications by Prabhu Vellaisamy — 11 peer-reviewed papers + 5 workshop papers on LLM inference, deep learning accelerators, unary computing, and neuromorphic systems."
+  description="Full list of publications by Prabhu Vellaisamy, with concise abstract summaries for peer-reviewed papers, workshop papers, preprints, and work under review."
 >
-  <header class="page-header">
-    <h1>Publications</h1>
-    <p class="subtitle">11 peer-reviewed conference &amp; journal papers · 5 workshop papers · 1 under review · 2 preprints</p>
+  <header class="publication-hero">
+    <div class="publication-hero-copy">
+      <p class="hero-kicker">Research portfolio</p>
+      <h1>Publications</h1>
+      <p class="hero-blurb">
+        A curated record of peer-reviewed papers, workshop papers, preprints, and work under review.
+        Each entry includes a short abstract-style summary so the page reads cleanly and stays current.
+      </p>
+    </div>
+    <div class="publication-hero-stats" aria-label="Publication counts">
+      <div class="hero-stat">
+        <div class="hero-stat-number">11</div>
+        <div class="hero-stat-label">Peer-reviewed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">5</div>
+        <div class="hero-stat-label">Workshops</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">2</div>
+        <div class="hero-stat-label">Preprints</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">1</div>
+        <div class="hero-stat-label">Under review</div>
+      </div>
+    </div>
   </header>
 
+  <div class="pub-toolbar" aria-label="Publication filters">
+    <button class="pub-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+    <button class="pub-filter" type="button" data-filter="peer-reviewed" aria-pressed="false">Peer-reviewed</button>
+    <button class="pub-filter" type="button" data-filter="workshops" aria-pressed="false">Workshops</button>
+    <button class="pub-filter" type="button" data-filter="preprints" aria-pressed="false">Preprints</button>
+    <button class="pub-filter" type="button" data-filter="under-review" aria-pressed="false">Under review</button>
+  </div>
+
   <!-- ── Under Review ───────────────────────────── -->
-  <section class="section">
-    <h2 class="section-title">Under Review</h2>
+  <details class="pub-group section" data-pub-group="under-review" open>
+    <summary class="pub-group-summary">
+      <div class="section-header">
+      <h2 class="section-title">Under Review</h2>
+      <p class="section-lead">Ongoing work that is already in a polished preprint or submission state.</p>
+      </div>
+    </summary>
+    <div class="pub-group-body">
 
     <div class="publication">
       <p class="publication-title">
@@ -25,13 +63,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE ISPASS 2026</em> [Submitted] · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
       </p>
-      <p class="pub-note">Introduces TaxBreak, a trace-driven methodology decomposing host-visible orchestration overhead into framework translation time, CUDA library translation time, and kernel launch-path time. Derives the Host-Device Balance Index (HDBI). Validated on NVIDIA H100 and H200.</p>
+      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
     </div>
-  </section>
+    </div>
+  </details>
 
   <!-- ── Preprints ──────────────────────────────── -->
-  <section class="section">
-    <h2 class="section-title">Preprints</h2>
+  <details class="pub-group section" data-pub-group="preprints" open>
+    <summary class="pub-group-summary">
+      <div class="section-header">
+      <h2 class="section-title">Preprints</h2>
+      <p class="section-lead">Recent papers in preprint form that are already pushing into the next review cycle.</p>
+      </div>
+    </summary>
+    <div class="pub-group-body">
 
     <div class="publication">
       <p class="publication-title">
@@ -43,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         Feb 2026 · <a href="https://arxiv.org/abs/2602.01546" target="_blank" rel="noopener noreferrer">arXiv:2602.01546</a>
       </p>
-      <p class="pub-note">Introduces NeuTNNs with active dendrites and hierarchical proximal/distal segments, along with NeuTNNGen (PyTorch-to-layout tool suite). Synaptic pruning reduces synapse counts and hardware costs by 30–50% while maintaining precision across diverse sensory modalities.</p>
+      <p class="pub-note">NeuTNNs define a neuromorphic processing framework built around active dendrites and hierarchical proximal/distal segments. NeuTNNGen links the model to layout generation, while synaptic pruning reduces hardware cost without sacrificing accuracy across sensory tasks.</p>
     </div>
 
     <div class="publication">
@@ -56,13 +101,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         Feb 2026 · <a href="https://arxiv.org/abs/2602.04847" target="_blank" rel="noopener noreferrer">arXiv:2602.04847</a>
       </p>
-      <p class="pub-note">Architecture-Graph (Agraph) unifies the system representation surrounding any arbitrary application, software stack, and architecture to enable automated cross-stack optimization and design space exploration.</p>
+      <p class="pub-note">A-Graph proposes a unified graph representation for applications, software stacks, and architectures so the same model can drive simulation, analysis, and cross-stack optimization. The goal is to reduce the friction between system description and design-space exploration.</p>
     </div>
-  </section>
+    </div>
+  </details>
 
   <!-- ── Peer-Reviewed Papers ───────────────────── -->
-  <section class="section">
-    <h2 class="section-title">Peer-Reviewed Conference &amp; Journal Papers</h2>
+  <details class="pub-group section" data-pub-group="peer-reviewed" open>
+    <summary class="pub-group-summary">
+      <div class="section-header">
+      <h2 class="section-title">Peer-Reviewed Conference &amp; Journal Papers</h2>
+      <p class="section-lead">The main research line, spanning LLM systems, low-power accelerators, and neuromorphic hardware.</p>
+      </div>
+    </summary>
+    <div class="pub-group-body">
 
     <div class="publication">
       <p class="publication-title">
@@ -74,6 +126,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2026</em>
       </p>
+      <p class="pub-note">Mugi uses value-level parallelism to restructure nonlinear LLM operations and small-batch GEMMs. The paper shows that the approach can raise throughput and efficiency by turning value computation into a more parallel execution pattern.</p>
     </div>
 
     <div class="publication">
@@ -85,8 +138,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <p class="publication-venue">
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2025</em>
-        &ensp;<span class="badge badge-award">🏆 Amar Mukherjee Best Paper Award</span>
+        &ensp;<span class="badge badge-award">Amar Mukherjee Best Paper Award</span>
       </p>
+      <p class="pub-note">Catwalk introduces a unary top-K mechanism for temporal neural networks, targeting the ramp-no-leak neuron design. The result is a more efficient selection path that reduces overhead in the neuromorphic pipeline.</p>
     </div>
 
     <div class="publication">
@@ -100,6 +154,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2025</em>
         &ensp;<span class="badge badge-talk">Invited Talk @ JSC</span>
       </p>
+      <p class="pub-note">This paper characterizes prefill and decode bottlenecks across coupled CPU-GPU systems and compares NVIDIA H100 and GH200 behavior. The work isolates where orchestration, memory movement, and kernel execution dominate end-to-end latency.</p>
     </div>
 
     <div class="publication">
@@ -112,6 +167,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE Design, Automation &amp; Test in Europe (DATE) 2025</em>
       </p>
+      <p class="pub-note">Tempus Core presents a temporal-unary convolution engine for low-precision edge DLA workloads. The paper focuses on reducing area and power while preserving useful throughput for compact accelerator designs.</p>
     </div>
 
     <div class="publication">
@@ -124,6 +180,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE VLSI-SoC 2024</em>
       </p>
+      <p class="pub-note">OzMAC targets sparsity-aware inference by reducing unnecessary multiply-accumulate work. The design explores how bit sparsity can translate directly into lower energy cost in deep learning accelerators.</p>
     </div>
 
     <div class="publication">
@@ -136,6 +193,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2024</em>
       </p>
+      <p class="pub-note">This work explores unary arithmetic for matrix multiplication in low-precision AI hardware. It studies how temporal unary representations change the area-power tradeoffs relative to more conventional arithmetic units.</p>
     </div>
 
     <div class="publication">
@@ -148,6 +206,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>International Conference on Neuromorphic Systems (ICONS) 2024</em>
       </p>
+      <p class="pub-note">The paper demonstrates real-time person identification from gait signals measured with IMU sensors on edge devices. It highlights how lightweight sensing and edge inference can support privacy-preserving identification tasks.</p>
     </div>
 
     <div class="publication">
@@ -159,12 +218,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <p class="publication-venue">
         <em>IEEE International Symposium on Circuits and Systems (ISCAS) 2024</em>
-        &ensp;<span class="badge badge-journal">TCAS-II 2024</span>
+        &ensp;<span class="badge badge-journal">Invited for TCAS-II</span>
       </p>
+      <p class="pub-note">TNNGen automates the design of neuromorphic sensory processing units for time-series clustering. The work links algorithmic TNN ideas to generated hardware and reports a design path that reduces synapse and implementation cost.</p>
     </div>
 
     <div class="publication">
-      <p class="publication-number-inline">[9]</p>
       <p class="publication-title">
         <span class="publication-number">[9]</span>tubGEMM: Energy-Efficient and Sparsity-Effective Temporal-Unary-Binary Based Matrix Multiply Unit
       </p>
@@ -174,6 +233,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2023</em>
       </p>
+      <p class="pub-note">tubGEMM combines temporal, unary, and binary arithmetic to build a matrix-multiply unit that is more tolerant of sparsity and low precision. The design studies how hybrid arithmetic can improve energy efficiency without giving up too much flexibility.</p>
     </div>
 
     <div class="publication">
@@ -186,6 +246,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE International Symposium on Circuits and Systems (ISCAS) 2023</em>
       </p>
+      <p class="pub-note">tuGEMM explores temporal unary GEMM as an implementation strategy for low-resolution edge AI. The paper emphasizes area and power reductions while preserving enough arithmetic throughput for practical inference workloads.</p>
     </div>
 
     <div class="publication">
@@ -198,12 +259,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2022</em>
       </p>
+      <p class="pub-note">TNN7 provides a reusable macro suite for implementing highly optimized temporal neural network designs. The paper lays groundwork for a more systematic neuromorphic design flow rather than one-off circuit implementations.</p>
     </div>
-  </section>
+    </div>
+  </details>
 
   <!-- ── Workshop Papers ───────────────────────── -->
-  <section class="section">
-    <h2 class="section-title">Workshop Papers</h2>
+  <details class="pub-group section" data-pub-group="workshops" open>
+    <summary class="pub-group-summary">
+      <div class="section-header">
+      <h2 class="section-title">Workshop Papers</h2>
+      <p class="section-lead">Shorter venue papers and posters that helped shape the larger research program.</p>
+      </div>
+    </summary>
+    <div class="pub-group-body">
 
     <div class="publication">
       <p class="publication-title">
@@ -215,6 +284,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>Workshop on Unary Computing (WUC), ASPLOS 2026</em>
       </p>
+      <p class="pub-note">This workshop version extends the Mugi idea to nonlinear LLM operations and frames value-level parallelism as a broader execution model. It helps motivate the same core insight in a more focused workshop setting.</p>
     </div>
 
     <div class="publication">
@@ -227,6 +297,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>Workshop on Unary Computing (WUC), ASPLOS 2026</em>
       </p>
+      <p class="pub-note">The workshop paper presents the A-Graph representation as a practical simulation abstraction for emerging stacks. It emphasizes broad applicability and a cleaner route from system description to experimentation.</p>
     </div>
 
     <div class="publication">
@@ -239,6 +310,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>2nd Workshop on Unary Computing (WUC), ASPLOS 2024</em>
       </p>
+      <p class="pub-note">This paper surveys unary-based GEMM design points for more conventional AI accelerators. It explores how unary arithmetic may fit into mainstream inference hardware without requiring a full architectural reset.</p>
     </div>
 
     <div class="publication">
@@ -251,6 +323,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>Young Architect Workshop (YArch), ASPLOS 2024</em>
       </p>
+      <p class="pub-note">xBrain connects brain-like computing ideas with explainable brain-computer interfaces. The workshop paper frames the work as both a systems problem and an interpretability problem.</p>
     </div>
 
     <div class="publication">
@@ -263,18 +336,229 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="publication-venue">
         <em>Young Architect Workshop (YArch), ASPLOS 2022</em>
       </p>
+      <p class="pub-note">This workshop paper lays out a design framework for TNN-based neuromorphic sensory processing units. It is an early statement of the research direction that later papers expanded into complete hardware and tooling flows.</p>
     </div>
-  </section>
-
+    </div>
+  </details>
 </BaseLayout>
 
 <style>
-.publication-number {
-  display: inline-block;
-  font-size: 0.78rem;
+.publication-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
+  gap: var(--space-6);
+  align-items: end;
+  padding: var(--space-8);
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) + 4px);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-kicker {
+  margin-bottom: var(--space-2);
+  color: var(--color-link);
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--color-text-muted);
-  margin-right: var(--space-2);
-  min-width: 2.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.publication-hero h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+.hero-blurb {
+  margin-bottom: 0;
+  max-width: 58ch;
+  color: var(--color-text-light);
+}
+
+.publication-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.hero-stat {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--color-heading);
+}
+
+.hero-stat-label {
+  margin-top: var(--space-1);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pub-toolbar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.pub-filter {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.pub-filter:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+
+.pub-filter.is-active {
+  background: var(--color-link);
+  border-color: var(--color-link);
+  color: #fff;
+}
+
+.pub-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0;
+}
+
+.pub-group + .pub-group {
+  margin-top: var(--space-5);
+}
+
+.pub-group[open] {
+  box-shadow: var(--shadow-sm);
+}
+
+.pub-group-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: var(--space-5);
+}
+
+.pub-group-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pub-group-summary:hover .section-title {
+  color: var(--color-link);
+}
+
+.pub-group-body {
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.section-header {
+  margin-bottom: var(--space-5);
+}
+
+.section-title {
+  margin-bottom: var(--space-2);
+}
+
+.section-lead {
+  margin: 0;
+  color: var(--color-text-light);
+  max-width: 64ch;
+}
+
+.publication {
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+}
+
+.publication-title {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.publication-number {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+}
+
+.publication-authors {
+  font-size: 0.92rem;
+}
+
+.publication-venue {
+  font-size: 0.88rem;
+}
+
+.pub-note {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-light);
+  color: var(--color-text);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+@media (max-width: 820px) {
+  .publication-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pub-toolbar {
+    gap: var(--space-2);
+  }
 }
 </style>
+
+<script>
+  const filters = Array.from(document.querySelectorAll('.pub-filter'));
+  const groups = Array.from(document.querySelectorAll('.pub-group'));
+
+  function applyFilter(filter) {
+    groups.forEach((group) => {
+      const matches = filter === 'all' || group.dataset.pubGroup === filter;
+      group.hidden = !matches;
+      if (matches) {
+        group.open = true;
+      }
+    });
+
+    filters.forEach((button) => {
+      const active = button.dataset.filter === filter;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => applyFilter(button.dataset.filter ?? 'all'));
+  });
+</script>

@@ -70,6 +70,12 @@ const allNews = [
     title: 'Paper presented at DATE 2025, Lyon, France',
     description: 'Presented "Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs" at IEEE DATE 2025.',
   },
+  {
+    year: '2024',
+    date: '2024',
+    title: 'TNNGen accepted at ISCAS 2024 and invited for TCAS-II publication',
+    description: '"TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering" was accepted at ISCAS 2024 and invited for publication in TCAS-II: Express Briefs.',
+  },
   // 2023
   {
     year: '2023',
@@ -83,9 +89,26 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 ---
 
 <BaseLayout title="News" description="Latest news and updates from Prabhu Vellaisamy.">
-  <header class="page-header">
-    <h1>News</h1>
-    <p class="subtitle">Updates, announcements, and milestones</p>
+  <header class="news-hero">
+    <div class="news-hero-copy">
+      <p class="hero-kicker">Updates</p>
+      <h1>News</h1>
+      <p class="subtitle">Announcements, milestones, and publication updates from the research program.</p>
+    </div>
+    <div class="news-hero-stats">
+      <div class="news-stat">
+        <div class="news-stat-number">2026</div>
+        <div class="news-stat-label">Active year</div>
+      </div>
+      <div class="news-stat">
+        <div class="news-stat-number">2</div>
+        <div class="news-stat-label">Internships</div>
+      </div>
+      <div class="news-stat">
+        <div class="news-stat-number">11</div>
+        <div class="news-stat-label">Papers</div>
+      </div>
+    </div>
   </header>
 
   {years.map(year => (
@@ -107,6 +130,70 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 </BaseLayout>
 
 <style>
+.news-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-7);
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) + 4px);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-kicker {
+  margin: 0 0 var(--space-2);
+  color: var(--color-link);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news-hero h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.news-hero .subtitle {
+  margin: 0;
+  color: var(--color-text-light);
+  max-width: 58ch;
+}
+
+.news-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.news-stat {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.86);
+  text-align: center;
+}
+
+.news-stat-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1;
+}
+
+.news-stat-label {
+  margin-top: var(--space-1);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
 .news-headline {
   font-weight: 600;
   color: var(--color-heading);
@@ -118,5 +205,22 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
   font-size: 0.875rem;
   color: var(--color-text-light);
   line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .news-hero {
+    grid-template-columns: 1fr;
+    padding: var(--space-5);
+  }
+
+  .news-hero-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .news-hero-stats {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

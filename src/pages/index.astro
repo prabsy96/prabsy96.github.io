@@ -229,9 +229,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <style>
 /* ── Hero ─────────────────────────────────────── */
 .hero {
-  padding: var(--space-10) 0 var(--space-8);
+  padding: var(--space-10);
   margin-bottom: var(--space-6);
-  border-bottom: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) + 4px);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: var(--shadow-sm);
 }
 
 .hero-eyebrow {
@@ -256,6 +261,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   color: var(--color-text);
   margin-bottom: var(--space-4);
   line-height: 1.75;
+}
+
+.hero-body {
+  max-width: 760px;
 }
 
 .hero-links {
