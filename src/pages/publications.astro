@@ -4,25 +4,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Publications"
-  description="Full list of publications by Prabhu Vellaisamy, with concise abstract summaries for peer-reviewed papers, workshop papers, preprints, and work under review."
+  description="Publications by Prabhu Vellaisamy, including 12 peer-reviewed papers, 5 workshop papers, and two preprints."
 >
   <header class="publication-hero">
     <div class="publication-hero-copy">
       <p class="hero-kicker">Research portfolio</p>
       <h1>Publications</h1>
       <p class="hero-blurb">
-        A curated record of peer-reviewed papers, workshop papers, preprints, and work under review.
+        A curated record of 12 peer-reviewed papers, 5 workshop papers, two preprints, and one newly accepted paper.
         Each entry includes a short abstract-style summary so the page reads cleanly and stays current.
       </p>
     </div>
     <div class="publication-hero-stats" aria-label="Publication counts">
       <div class="hero-stat">
         <div class="hero-stat-number">12</div>
-        <div class="hero-stat-label">Publications</div>
+        <div class="hero-stat-label">Peer-reviewed papers</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-number">5</div>
-        <div class="hero-stat-label">Workshops</div>
+        <div class="hero-stat-label">Workshop papers</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-number">2</div>
@@ -30,7 +30,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="hero-stat">
         <div class="hero-stat-number">1</div>
-        <div class="hero-stat-label">Under review</div>
+        <div class="hero-stat-label">Accepted paper</div>
       </div>
     </div>
   </header>
@@ -40,33 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <button class="pub-filter" type="button" data-filter="peer-reviewed" aria-pressed="false">Peer-reviewed</button>
     <button class="pub-filter" type="button" data-filter="workshops" aria-pressed="false">Workshops</button>
     <button class="pub-filter" type="button" data-filter="preprints" aria-pressed="false">Preprints</button>
-    <button class="pub-filter" type="button" data-filter="under-review" aria-pressed="false">Under review</button>
   </div>
-
-  <!-- ── Under Review ───────────────────────────── -->
-  <details class="pub-group section" data-pub-group="under-review" open>
-    <summary class="pub-group-summary">
-      <div class="section-header">
-      <h2 class="section-title">Under Review</h2>
-      <p class="section-lead">Ongoing work that is already in a polished preprint or submission state.</p>
-      </div>
-    </summary>
-    <div class="pub-group-body">
-
-    <div class="publication">
-      <p class="publication-title">
-        <span class="badge badge-review">Under Review</span>&ensp;TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
-      </p>
-      <p class="publication-authors">
-        <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
-      </p>
-      <p class="publication-venue">
-        <em>IEEE ISPASS 2026</em> [Submitted] · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
-      </p>
-      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
-    </div>
-    </div>
-  </details>
 
   <!-- ── Preprints ──────────────────────────────── -->
   <details class="pub-group section" data-pub-group="preprints" open>
@@ -110,7 +84,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <details class="pub-group section" data-pub-group="peer-reviewed" open>
     <summary class="pub-group-summary">
       <div class="section-header">
-      <h2 class="section-title">Peer-Reviewed Conference &amp; Journal Papers</h2>
+      <h2 class="section-title">Peer-Reviewed Papers</h2>
       <p class="section-lead">The main research line, spanning LLM systems, low-power accelerators, and neuromorphic hardware.</p>
       </div>
     </summary>
@@ -152,7 +126,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <p class="publication-venue">
         <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2025</em>
-        &ensp;<span class="badge badge-talk">Invited Talk @ JSC</span>
+        &ensp;<span class="badge badge-talk">Invited Talk at Jülich Supercomputing Center</span>
       </p>
       <p class="pub-note">This paper characterizes prefill and decode bottlenecks across coupled CPU-GPU systems and compares NVIDIA H100 and GH200 behavior. The work isolates where orchestration, memory movement, and kernel execution dominate end-to-end latency.</p>
     </div>
@@ -261,6 +235,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <p class="pub-note">TNN7 provides a reusable macro suite for implementing highly optimized temporal neural network designs. The paper lays groundwork for a more systematic neuromorphic design flow rather than one-off circuit implementations.</p>
     </div>
+
+    <div class="publication">
+      <p class="publication-title">
+        <span class="publication-number">[12]</span>TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
+      </p>
+      <p class="publication-authors">
+        <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
+      </p>
+      <p class="publication-venue">
+        <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026</em> · Accepted · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
+      </p>
+      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
+    </div>
     </div>
   </details>
 
@@ -269,7 +256,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <summary class="pub-group-summary">
       <div class="section-header">
       <h2 class="section-title">Workshop Papers</h2>
-      <p class="section-lead">Shorter venue papers and posters that helped shape the larger research program.</p>
+      <p class="section-lead">Workshop papers that helped shape the larger research program.</p>
       </div>
     </summary>
     <div class="pub-group-body">

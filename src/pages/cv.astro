@@ -48,21 +48,36 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- ── Research Interests ───────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="skill-tags" style="margin-top: var(--space-2);">
+      <span class="tag">LLM inference optimization</span>
+      <span class="tag">Deep learning accelerators</span>
+      <span class="tag">Neuromorphic computing</span>
+      <span class="tag">Unary computing</span>
+      <span class="tag">VLSI / ASIC design</span>
+      <span class="tag">Hardware-software co-design</span>
+      <span class="tag">CPU-GPU coupled architectures</span>
+      <span class="tag">Edge AI</span>
+    </div>
+  </section>
+
   <!-- ── Industry Experience ───────────────────── -->
   <section class="section">
-    <h2 class="section-title">Industry Experience</h2>
+    <h2 class="section-title">Academic and Industry Experience</h2>
     <div class="timeline">
 
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <div class="timeline-period">May 2026 – Aug 2026</div>
-        <div class="timeline-title">AI Research Scientist Intern <span class="offer-badge">Offer Accepted</span></div>
+        <div class="timeline-period">Jun 2026 – Sep 2026</div>
+        <div class="timeline-title">Artificial Intelligence (AI) Research Scientist Intern <span class="offer-badge">Offer Accepted</span></div>
         <div class="timeline-org">Samsung Semiconductor Inc. — San Jose, CA</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <div class="timeline-period">Feb 2026 – May 2026</div>
+        <div class="timeline-period">Mar 2026 – Jun 2026</div>
         <div class="timeline-title">Silicon Solution Engineering Intern <span class="offer-badge">Offer Accepted</span></div>
         <div class="timeline-org">NVIDIA Corporation — Santa Clara, CA</div>
       </div>
@@ -74,9 +89,8 @@ const base = import.meta.env.BASE_URL;
         <div class="timeline-org">Samsung Semiconductor Inc. — San Jose, CA</div>
         <div class="timeline-body">
           <ul>
-            <li>Created <strong>SKIP</strong>, a PyTorch-based profiling tool for analyzing operator-kernel dynamics in LLM inference, characterizing transformer operator-kernel mapping, KV cache efficiency, and GPU memory bandwidth utilization on H100/GH200 systems.</li>
-            <li>Characterized prefill and decode latency bottlenecks across CPU-GPU coupled architectures: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region over PCIe H100 due to Grace CPU inefficiencies. Findings adopted for next-generation accelerator design.</li>
-            <li>Spearheaded 5-person CMU–Samsung research collaboration from concept to publication; first-authored paper accepted at ISPASS 2025. Research funded by Samsung ($150K+).</li>
+            <li>Built <strong>SKIP</strong>, a PyTorch Profiler framework that uncovered critical LLM inference bottlenecks, revealing GH200 suffers 2.8× higher prefill latency and 4× larger CPU-bounded regions vs. Intel x86+H100 and AMD x86+A100.</li>
+            <li>Spearheaded a 5-person CMU-Samsung research collaboration from concept to publication; first-authored paper accepted at ISPASS 2025.</li>
           </ul>
         </div>
       </div>
@@ -88,9 +102,7 @@ const base = import.meta.env.BASE_URL;
         <div class="timeline-org">MediaTek USA Inc. — San Jose, CA (Full-time Jun–Sep; Part-time Remote Aug–Dec)</div>
         <div class="timeline-body">
           <ul>
-            <li>Devised <strong>tubGEMM</strong> (ISVLSI'23), an ultra-low-power hybrid temporal-unary-binary GEMM unit achieving 40%+ power reduction for edge AI on TSMC N5 process technology; adopted for further development.</li>
-            <li>Designed <strong>OzMAC</strong> (VLSI-SoC'24), a novel bit-serial, sparsity-exploiting multiply-accumulate unit achieving timing closure on TSMC N5; adopted for further development.</li>
-            <li>Enhanced UVM verification framework for a novel deep learning accelerator ASIC by architecting 15+ new SystemVerilog test sequences, implementing functional coverage models, and updating deprecated RTL; accelerated DLA verification timeline by 30%.</li>
+            <li>Developed <strong>TubGEMM</strong> (ISVLSI 2023) and <strong>OzMAC</strong> (VLSI-SoC 2024), novel compute units for edge AI that reduced power consumption by 40%+ while maintaining throughput on TSMC N5 process.</li>
           </ul>
         </div>
       </div>
@@ -107,20 +119,46 @@ const base = import.meta.env.BASE_URL;
         <div class="timeline-dot current"></div>
         <div class="timeline-period">2021 – Present</div>
         <div class="timeline-title">Doctoral Researcher</div>
-        <div class="timeline-org">CMU NCAL / CMU ACTL / UCF UNARY — Co-Advisors: Prof. J.P. Shen &amp; Prof. Shawn Blanton</div>
+        <div class="timeline-org">CMU NCAL / CMU ACTL — Co-Advisors: Prof. J.P. Shen &amp; Prof. Shawn Blanton</div>
         <div class="timeline-body">
           <ul>
-            <li>Collaborated with 10+ researchers across CMU-NCAL, CMU-ACTL, and UCF-UNARY on LLM inference optimization, deep learning accelerator design, and neuromorphic computing. Research group: <a href="https://www.ncal.sv.cmu.edu/" target="_blank" rel="noopener noreferrer">CMU-NCA Lab</a>.</li>
-            <li>Directed a team of 9 undergraduate and graduate research assistants in designing unary-based deep learning architectures.</li>
-            <li>Co-invented <strong>Mugi</strong> (ASPLOS 2026): generalizes value-level parallelism (VLP) for LLM nonlinear operations and small-batch GEMMs — up to 45× throughput &amp; 668× energy efficiency for softmax, 2.07× LLM throughput, 3.11× energy efficiency, and 1.45× reduction in operational carbon.</li>
-            <li>Architected <strong>Tempus Core</strong> (DATE 2025): INT8 temporal-unary convolution core for NVDLA — 53% area reduction, 44% power savings, 5× iso-area throughput on 7nm.</li>
-            <li>Developed <strong>TNNGen</strong> (ISCAS'24, TCAS-II'24): end-to-end PyTorch → DRC/LVS-clean netlist automation framework; design time reduced from weeks to under 2 hours.</li>
-            <li>Devised <strong>TNN7</strong> (ISVLSI'22): custom ASAP7 PDK extension with 9 hard macros — 14% power, 16% delay, 28% area, 45% EDP reduction; adopted by 3 research groups worldwide.</li>
+            <li>Collaborated with research teams across 4 research groups (CMUNCAL, CMU-ACTL, UCF-UNARY, NEXUS), delivering 12 peer-reviewed publications and mentoring 15+ graduate and undergraduate students.</li>
+            <li>Discovered and characterized performance bottlenecks in LLM inference on GH200 through systematic profiling of model configurations; research funded by Samsung Semiconductor ($100K+ project funding).</li>
+            <li>Architected <strong>Tempus Core</strong>, an INT8 temporal-unary convolution accelerator that achieved 53% area reduction, 44% power savings, and 5× iso-area throughput improvement over the baseline NVDLA convolution core.</li>
+            <li>Created <strong>TNNGen</strong>, an end-to-end automation framework that compiles PyTorch models to layout-ready netlists and was validated across 7 modalities.</li>
+            <li>Developed <strong>TNN7</strong>, an open-source set of 9 optimized macros for a 7nm PDK extension to ASAP7, reducing energy-delay product (EDP) by 45% against the baseline design.</li>
           </ul>
         </div>
       </div>
 
     </div>
+  </section>
+
+  <!-- ── Presentations ─────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Presentations</h2>
+    <ul>
+      <li>Invited Talk. “Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures.” Jülich Supercomputing Center, Jülich, Germany (Remote), May 20, 2025.</li>
+      <li>Conference Presentation. “Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures.” IEEE ISPASS 2025, Ghent, Belgium, May 12, 2025.</li>
+      <li>Conference Presentation. “Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs.” IEEE DATE 2025, Lyon, France, April 1, 2025.</li>
+      <li>Conference Presentation. “OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference.” IEEE VLSI-SoC 2024, Tangier, Morocco, October 7, 2024.</li>
+      <li>Conference Presentation. “Exploration of Unary Arithmetic-Based Matrix Multiply Units for Low Precision DL Accelerators.” IEEE ISVLSI 2024, Knoxville, TN, July 2, 2024.</li>
+      <li>Conference Presentation. “TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering.” IEEE ISCAS 2024, Singapore, May 21, 2024.</li>
+    </ul>
+  </section>
+
+  <!-- ── Awards ───────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Fellowships, Awards, and Honors</h2>
+    <ul>
+      <li>Amar Mukherjee Best Paper Award, ISVLSI 2025.</li>
+      <li>ISVLSI 2024 Travel Grant.</li>
+      <li>CMU GSA Conference Grant.</li>
+      <li>Qualcomm Innovation Fellowship 2023.</li>
+      <li>DAC 2022 Young Fellow.</li>
+      <li>ASPLOS Young Architect 2022.</li>
+      <li>Carnegie Institute of Technology Dean's Fellowship.</li>
+    </ul>
   </section>
 
   <!-- ── Teaching ───────────────────────────────── -->
@@ -138,22 +176,21 @@ const base = import.meta.env.BASE_URL;
       <tbody>
         <tr>
           <td>18-340/640: Hardware Arithmetic for Machine Learning</td>
-          <td>Teaching Assistant</td>
-          <td>Fall 2025, 2024, 2023, 2021 <span class="text-muted">(4 semesters · 100+ students/sem)</span></td>
+          <td>Teaching Instructor</td>
+          <td>4 semesters <span class="text-muted">(approximately 50 students per semester)</span></td>
         </tr>
         <tr>
           <td>18-743: Neuromorphic Computer Architecture &amp; Processor Design</td>
-          <td>Teaching Assistant</td>
-          <td>Spring 2025, 2024, 2023, 2022, 2021 <span class="text-muted">(5 semesters · 50+ grad students)</span></td>
+          <td>Teaching Instructor</td>
+          <td>5 semesters <span class="text-muted">(approximately 20 graduate students per semester)</span></td>
         </tr>
         <tr>
           <td>18-740: Modern Computer Architecture</td>
-          <td>Teaching Assistant</td>
-          <td>Fall 2022 <span class="text-muted">(80+ students)</span></td>
+          <td>Teaching Instructor</td>
+          <td>1 semester <span class="text-muted">(approximately 100 students)</span></td>
         </tr>
       </tbody>
     </table>
-    <p class="section-note">Responsibilities: developing lab materials, guiding graduate research projects, mentoring students in ML accelerator design and processor design fundamentals.</p>
   </section>
 
   <!-- ── Technical Skills ──────────────────────── -->
@@ -162,116 +199,42 @@ const base = import.meta.env.BASE_URL;
     <div class="skills-section">
 
       <div class="skill-group">
-        <div class="skill-group-label">Inference &amp; ML Frameworks</div>
+        <div class="skill-group-label">Tools</div>
         <div class="skill-tags">
           <span class="tag">vLLM</span>
           <span class="tag">TensorRT</span>
-          <span class="tag">Triton Inference Server</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">CUDA</span>
-          <span class="tag">cuDNN</span>
-          <span class="tag">ONNX Runtime</span>
-          <span class="tag">Hugging Face Transformers</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Profiling &amp; Optimization</div>
-        <div class="skill-tags">
           <span class="tag">NVIDIA Nsight Systems</span>
           <span class="tag">Nsight Compute</span>
           <span class="tag">nvprof</span>
-          <span class="tag">CUDA Toolkit</span>
-          <span class="tag">Memory Profiling</span>
-          <span class="tag">Latency/Throughput Analysis</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">LLM Techniques</div>
-        <div class="skill-tags">
-          <span class="tag">Transformer Architectures</span>
-          <span class="tag">KV Cache Optimization</span>
-          <span class="tag">Quantization (INT8/INT4/FP16)</span>
-          <span class="tag">Batching Strategies</span>
-          <span class="tag">Attention Mechanisms</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">RTL Design &amp; Verification</div>
-        <div class="skill-tags">
-          <span class="tag">SystemVerilog</span>
-          <span class="tag">Verilog</span>
-          <span class="tag">UVM</span>
-          <span class="tag">SVA</span>
-          <span class="tag">Functional Coverage</span>
-          <span class="tag">Constrained Random Verification</span>
-          <span class="tag">CDC</span>
-          <span class="tag">Formal Verification</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Synthesis &amp; ASIC Tools</div>
-        <div class="skill-tags">
           <span class="tag">Synopsys Design Compiler</span>
           <span class="tag">Synopsys VCS</span>
-          <span class="tag">Synopsys ICC2</span>
-          <span class="tag">Synopsys PrimeTime</span>
           <span class="tag">Cadence Genus</span>
           <span class="tag">Cadence Xcelium</span>
           <span class="tag">Cadence Innovus</span>
-          <span class="tag">Calibre</span>
-          <span class="tag">SpyGlass</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Physical Design</div>
-        <div class="skill-tags">
-          <span class="tag">Place &amp; Route</span>
-          <span class="tag">Floorplanning</span>
-          <span class="tag">Clock Tree Synthesis</span>
-          <span class="tag">Power Planning</span>
-          <span class="tag">DRC/LVS Signoff</span>
-          <span class="tag">Static Timing Analysis</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Process Technology &amp; Platforms</div>
-        <div class="skill-tags">
-          <span class="tag">TSMC N5</span>
-          <span class="tag">TSMC N7</span>
-          <span class="tag">ASAP7 PDK</span>
-          <span class="tag">NVIDIA H100</span>
-          <span class="tag">GH200 Grace Hopper</span>
-          <span class="tag">PCIe / NVLink</span>
           <span class="tag">AMD Vivado</span>
-          <span class="tag">Intel Quartus</span>
+          <span class="tag">Intel Quartus Prime</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <div class="skill-group-label">Programming Languages</div>
+        <div class="skill-group-label">Programming</div>
         <div class="skill-tags">
           <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">SystemVerilog</span>
+          <span class="tag">Verilog</span>
           <span class="tag">C++</span>
-          <span class="tag">CUDA C</span>
-          <span class="tag">SystemVerilog / Verilog</span>
           <span class="tag">Tcl</span>
-          <span class="tag">SKILL (Cadence)</span>
         </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-group-label">Languages</div>
         <div class="skill-tags">
-          <span class="tag">English (Fluent)</span>
-          <span class="tag">Hindi (Fluent)</span>
-          <span class="tag">Tamil (Fluent)</span>
-          <span class="tag">Japanese (Basic)</span>
+          <span class="tag">English</span>
+          <span class="tag">Hindi</span>
+          <span class="tag">Tamil</span>
+          <span class="tag">Japanese</span>
         </div>
       </div>
 
@@ -287,11 +250,29 @@ const base = import.meta.env.BASE_URL;
       <span class="tag">Modern Computer Architecture</span>
       <span class="tag">Introduction to Machine Learning</span>
       <span class="tag">Hardware Arithmetic for Machine Learning</span>
-      <span class="tag">Embedded Deep Learning</span>
+      <span class="tag">Introduction to Embedded Deep Learning</span>
       <span class="tag">Advanced Digital Integrated Circuit Design</span>
       <span class="tag">Applied Cryptography</span>
       <span class="tag">Fundamentals of Computational Biology</span>
     </div>
+  </section>
+
+  <!-- ── Professional Service ─────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Professional Service</h2>
+    <ul>
+      <li>IEEE Transactions on Very Large-Scale Integration (VLSI) Systems (IEEE TVLSI) reviewer.</li>
+      <li>IEEE Journal of Exploratory Solid-State Computational Devices and Circuits (IEEE JXCDC) reviewer.</li>
+    </ul>
+  </section>
+
+  <!-- ── Memberships ─────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Professional Memberships and Honor Societies</h2>
+    <ul>
+      <li>IEEE-Eta Kappa Nu (HKN).</li>
+      <li>Sigma Xi Scientific Research Honor Society.</li>
+    </ul>
   </section>
 
 </BaseLayout>
