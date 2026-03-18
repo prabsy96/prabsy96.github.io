@@ -1,33 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import NewsCard from '../components/NewsCard.astro';
 
 const allNews = [
+  // 2026
   {
-    title: 'Website Launch',
-    date: '2026-01-20',
-    description: 'Launched my new personal research website built with Astro.',
-    href: '/news/2026-01-20-site-launch'
+    year: '2026',
+    date: 'May 2026',
+    title: 'Starting AI Research Scientist Internship at Samsung Semiconductor',
+    description: 'Joining Samsung Semiconductor Inc. in San Jose, CA as an AI Research Scientist Intern for Summer 2026.',
   },
   {
-    title: 'Paper Accepted at Conference',
-    date: '2025-12-15',
-    description: 'Placeholder: Our paper on [topic] was accepted at [conference].',
-    href: '#'
+    year: '2026',
+    date: 'Feb 2026',
+    title: 'Starting Silicon Solution Engineering Internship at NVIDIA',
+    description: 'Joining NVIDIA Corporation in Santa Clara, CA as a Silicon Solution Engineering Intern.',
   },
   {
-    title: 'Research Milestone',
-    date: '2025-11-01',
-    description: 'Placeholder: Achieved significant milestone in ongoing research project.',
-    href: '#'
+    year: '2026',
+    date: 'Jan 2026',
+    title: 'Paper accepted at ASPLOS 2026',
+    description: '"Mugi: Value Level Parallelism for Efficient LLMs" accepted at ACM ASPLOS 2026. Joint work with D. Price, J.P. Shen, and D. Wu.',
   },
   {
-    title: 'Talk at University',
-    date: '2025-10-10',
-    description: 'Placeholder: Gave an invited talk at [university] on [topic].',
-    href: '#'
-  }
+    year: '2026',
+    date: 'Jan 2026',
+    title: 'Two Workshop Papers accepted at ASPLOS 2026 WUC',
+    description: '"Mugi: Value Level Parallelism For Nonlinear Operations in LLMs" and "Agraph: A Unified Graph Representation for At-Will Simulation of Emerging Stacks" accepted at Workshop on Unary Computing (WUC), ASPLOS 2026.',
+  },
+  {
+    year: '2026',
+    date: 'Feb 2026',
+    title: 'Preprint: NeuroAI Temporal Neural Networks (NeuTNNs)',
+    description: '"NeuroAI Temporal Neural Networks (NeuTNNs): Microarchitecture and Design Framework for Specialized Neuromorphic Processing Units" posted to arXiv (arXiv:2602.01546). Proposes NeuTNNs with active dendrites; NeuTNNGen achieves 30–50% synapse count reduction.',
+  },
+  {
+    year: '2026',
+    date: 'Feb 2026',
+    title: 'Preprint: A-Graph — Unified Graph Representation for Cross-Stack Simulation',
+    description: '"A-Graph: A Unified Graph Representation for At-Will Simulation across System Stacks" posted to arXiv (arXiv:2602.04847).',
+  },
+  {
+    year: '2026',
+    date: 'Mar 2026',
+    title: 'Preprint: TaxBreak — Unmasking Hidden Costs of LLM Inference',
+    description: '"TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition" posted to arXiv (arXiv:2603.12465). Submitted to ISPASS 2026.',
+  },
+  // 2025
+  {
+    year: '2025',
+    date: 'Jul 2025',
+    title: '🏆 Amar Mukherjee Best Paper Award — ISVLSI 2025',
+    description: 'Received the Amar Mukherjee Best Paper Award at IEEE ISVLSI 2025 for "Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks." Recognized among 100+ submissions.',
+  },
+  {
+    year: '2025',
+    date: 'May 2025',
+    title: 'Invited Talk at Jülich Supercomputing Center',
+    description: 'Gave an invited talk at the Jülich Supercomputing Center (JSC), Jülich, Germany (remote) on "Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures."',
+  },
+  {
+    year: '2025',
+    date: 'May 2025',
+    title: 'Paper presented at ISPASS 2025, Ghent, Belgium',
+    description: 'Presented "Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures" at IEEE ISPASS 2025.',
+  },
+  {
+    year: '2025',
+    date: 'Apr 2025',
+    title: 'Paper presented at DATE 2025, Lyon, France',
+    description: 'Presented "Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs" at IEEE DATE 2025.',
+  },
+  // 2023
+  {
+    year: '2023',
+    date: 'Oct 2023',
+    title: 'Qualcomm Innovation Fellowship — North America Winner',
+    description: 'Selected as a 2023 Qualcomm Innovation Fellowship winner (1 of 16 recipients from 200+ applicants across North America).',
+  },
 ];
+
+const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - Number(a));
 ---
 
 <BaseLayout title="News" description="Latest news and updates from Prabhu Vellaisamy.">
@@ -36,27 +88,35 @@ const allNews = [
     <p class="subtitle">Updates, announcements, and milestones</p>
   </header>
 
-  <section class="section">
-    <h2 class="section-title">2026</h2>
-    {allNews.filter(n => n.date.startsWith('2026')).map(news => (
-      <NewsCard
-        title={news.title}
-        date={news.date}
-        description={news.description}
-        href={news.href}
-      />
-    ))}
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">2025</h2>
-    {allNews.filter(n => n.date.startsWith('2025')).map(news => (
-      <NewsCard
-        title={news.title}
-        date={news.date}
-        description={news.description}
-        href={news.href}
-      />
-    ))}
-  </section>
+  {years.map(year => (
+    <section class="section">
+      <h2 class="section-title">{year}</h2>
+      <ul class="news-list">
+        {allNews.filter(n => n.year === year).map(news => (
+          <li class="news-item">
+            <span class="news-date">{news.date.replace(/^\w+ /, '')}</span>
+            <div class="news-content">
+              <div class="news-headline">{news.title}</div>
+              <div class="news-body">{news.description}</div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
 </BaseLayout>
+
+<style>
+.news-headline {
+  font-weight: 600;
+  color: var(--color-heading);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-1);
+}
+
+.news-body {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+</style>

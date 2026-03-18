@@ -2,137 +2,340 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Home" description="Personal research website of Prabhu Vellaisamy - PhD candidate at Carnegie Mellon University researching unary computing, deep learning architectures, and LLM inference optimization.">
+<BaseLayout
+  title="Home"
+  description="Personal research website of Prabhu Vellaisamy — PhD candidate at CMU researching LLM inference optimization, deep learning accelerators, and unary computing."
+>
+
+  <!-- ── Hero ───────────────────────────────────── -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Prabhu Vellaisamy</h1>
-      <p class="tagline">PhD Candidate in Electrical and Computer Engineering</p>
-      <p class="bio">
-        I am a PhD candidate at Carnegie Mellon University, advised by Prof. John Paul Shen.
-        My research focuses on unary computing for AI, deep learning architecture design,
-        and optimizing large language model inference on modern hardware. I am a 2023 Qualcomm
-        Innovation Fellowship winner.
-      </p>
-      <div class="hero-links">
-        <a href="PrabhuVellaisamyResume_2025.pdf" class="btn">Download CV</a>
-        <a href="research" class="btn btn-outline">View Research</a>
+    <div class="hero-body">
+      <div class="hero-text">
+        <p class="hero-eyebrow">PhD Candidate · Carnegie Mellon University</p>
+        <h1>Prabhu Vellaisamy</h1>
+        <p class="hero-bio">
+          I am a PhD candidate in Electrical &amp; Computer Engineering at CMU, co-advised by
+          <a href="https://users.ece.cmu.edu/~jpshen/" target="_blank" rel="noopener noreferrer">Prof. John Paul Shen</a> and
+          <a href="https://www.ece.cmu.edu/directory/bios/blanton-ronald.html" target="_blank" rel="noopener noreferrer">Prof. Shawn Blanton</a>.
+          My research spans <strong>LLM inference optimization</strong> on CPU-GPU coupled architectures,
+          <strong>energy-efficient deep learning accelerators</strong>, and
+          <strong>neuromorphic computing</strong> with Temporal Neural Networks.
+          I am a <strong>2023 Qualcomm Innovation Fellowship</strong> winner (1 of 16 selected across North America)
+          and recipient of the <strong>CIT Dean's Fellowship</strong>.
+        </p>
+        <p class="hero-bio">
+          Expected graduation: <strong>December 2026</strong>. Incoming AI Research Scientist Intern at Samsung Semiconductor (Summer 2026)
+          following a Silicon Solution Engineering role at NVIDIA (Spring 2026).
+        </p>
+        <div class="hero-links">
+          <a href="PrabhuVellaisamyResume_2026.pdf" class="btn">Download CV</a>
+          <a href="research" class="btn btn-outline">Research</a>
+          <a href="publications" class="btn btn-outline">Publications</a>
+        </div>
+        <div class="hero-socials">
+          <a href="mailto:pvellais@andrew.cmu.edu" title="Email">pvellais@andrew.cmu.edu</a>
+          <span class="sep">·</span>
+          <a href="https://scholar.google.com/citations?user=ePfYSNsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/prabsy96" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span class="sep">·</span>
+          <a href="https://linkedin.com/in/pvellais" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ── Stats ─────────────────────────────────── -->
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">11</div>
+      <div class="stat-label">Publications</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Workshop Papers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Conference Talks</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years PhD</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">9</div>
+      <div class="stat-label">TA Semesters</div>
+    </div>
+  </div>
+
+  <!-- ── Research Interests ────────────────────── -->
   <section class="section">
     <h2 class="section-title">Research Interests</h2>
-    <ul class="interests-list">
-      <li><strong>Unary Computing for AI</strong> - Energy-efficient arithmetic designs using temporal and stochastic representations for deep learning accelerators</li>
-      <li><strong>Deep Learning Architecture Design</strong> - Custom hardware accelerators, GEMM units, and convolution cores for edge AI inference</li>
-      <li><strong>LLM Inference Optimization</strong> - Profiling and optimizing large language model workloads on CPU-GPU coupled architectures</li>
-      <li><strong>Neuromorphic Computing</strong> - Temporal Neural Networks (TNNs) and automated design frameworks for sensory processing</li>
-    </ul>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-icon">⚡</div>
+        <div>
+          <h3 class="interest-title">LLM Inference Optimization</h3>
+          <p class="interest-desc">Profiling and optimizing LLM workloads on CPU-GPU coupled architectures (H100, GH200). KV cache efficiency, batching strategies, kernel-level bottleneck decomposition.</p>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🔬</div>
+        <div>
+          <h3 class="interest-title">Deep Learning Accelerator Design</h3>
+          <p class="interest-desc">Custom GEMM units, convolution cores, and MAC architectures targeting edge AI — leveraging unary/binary hybrid arithmetic for area-power-efficiency trade-offs.</p>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🧠</div>
+        <div>
+          <h3 class="interest-title">Neuromorphic Computing</h3>
+          <p class="interest-desc">Temporal Neural Networks (TNNs), automated RTL-to-GDSII design frameworks, and custom PDK development for neuromorphic sensory processing.</p>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🏗️</div>
+        <div>
+          <h3 class="interest-title">VLSI / ASIC Design</h3>
+          <p class="interest-desc">Physical design, floorplanning, clock tree synthesis, DRC/LVS signoff on TSMC N5/N7 and ASAP7 PDK. Hardware-software co-design for AI workloads.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ── Recent News ───────────────────────────── -->
   <section class="section">
     <h2 class="section-title">Recent News</h2>
     <ul class="news-list">
       <li class="news-item">
         <span class="news-date">May 2026</span>
-        <span class="news-content">Starting AI Research Scientist Internship at Samsung Semiconductor Inc.</span>
+        <span class="news-content">Starting <strong>AI Research Scientist Internship</strong> at Samsung Semiconductor Inc., San Jose, CA.</span>
       </li>
       <li class="news-item">
-        <span class="news-date">2026</span>
-        <span class="news-content">Paper "Mugi: Value Level Parallelism for Efficient LLMs" accepted at ASPLOS 2026.</span>
+        <span class="news-date">Feb 2026</span>
+        <span class="news-content">Starting <strong>Silicon Solution Engineering Internship</strong> at NVIDIA Corporation, Santa Clara, CA.</span>
       </li>
       <li class="news-item">
-        <span class="news-date">2025</span>
-        <span class="news-content">Received <strong>Amar Mukherjee Best Paper Award</strong> at ISVLSI 2025 for "Catwalk" paper.</span>
+        <span class="news-date">Jan 2026</span>
+        <span class="news-content">Paper <em>"Mugi: Value Level Parallelism for Efficient LLMs"</em> accepted at <strong>ASPLOS 2026</strong>.</span>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Jul 2025</span>
+        <span class="news-content">Received <strong>Amar Mukherjee Best Paper Award</strong> at ISVLSI 2025 for the Catwalk paper.</span>
       </li>
       <li class="news-item">
         <span class="news-date">May 2025</span>
-        <span class="news-content">Invited talk at Jülich Supercomputing Center on LLM inference optimization.</span>
+        <span class="news-content">Invited talk at <strong>Jülich Supercomputing Center</strong> (Germany) on LLM inference optimization on CPU-GPU coupled architectures.</span>
       </li>
       <li class="news-item">
-        <span class="news-date">2025</span>
-        <span class="news-content">Papers accepted at ISPASS 2025 and DATE 2025.</span>
+        <span class="news-date">May 2025</span>
+        <span class="news-content">Paper presented at <strong>ISPASS 2025</strong>, Ghent, Belgium: "Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures."</span>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Apr 2025</span>
+        <span class="news-content">Paper presented at <strong>DATE 2025</strong>, Lyon, France: "Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core."</span>
       </li>
     </ul>
-    <p><a href="news">View all news &rarr;</a></p>
+    <p class="more-link"><a href="news">View all news →</a></p>
   </section>
 
+  <!-- ── Selected Publications ─────────────────── -->
   <section class="section">
     <h2 class="section-title">Selected Publications</h2>
+
     <div class="publication">
-      <p class="publication-title">Mugi: Value Level Parallelism for Efficient LLMs</p>
-      <p class="publication-authors">D. Price, <strong>P. Vellaisamy</strong>, JP. Shen, D. Wu</p>
-      <p class="publication-venue">ASPLOS 2026</p>
+      <p class="publication-title">
+        Mugi: Value Level Parallelism for Efficient LLMs
+      </p>
+      <p class="publication-authors">D. Price, <strong>P. Vellaisamy</strong>, J.P. Shen, D. Wu</p>
+      <p class="publication-venue">
+        <em>ACM ASPLOS 2026</em>
+        <span class="badge badge-journal">Systems</span>
+      </p>
+      <p class="pub-summary">Generalizes value-level parallelism (VLP) for nonlinear LLM operations and small-batch GEMMs. Up to 45× throughput and 668× energy efficiency for softmax; 2.07× LLM throughput and 3.11× energy efficiency; 1.45× reduction in operational carbon.</p>
     </div>
+
     <div class="publication">
-      <p class="publication-title">Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks</p>
-      <p class="publication-authors">D. Lister, <strong>P. Vellaisamy</strong>, JP. Shen, D. Wu</p>
-      <p class="publication-venue">ISVLSI 2025 <span class="award">Best Paper Award</span></p>
+      <p class="publication-title">
+        Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks
+      </p>
+      <p class="publication-authors">D. Lister, <strong>P. Vellaisamy</strong>, J.P. Shen, D. Wu</p>
+      <p class="publication-venue">
+        <em>IEEE ISVLSI 2025</em>
+        <span class="badge badge-award">🏆 Best Paper Award</span>
+      </p>
     </div>
+
     <div class="publication">
-      <p class="publication-title">Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, T. Labonte, S. Chakraborty, M. Turner, S. Sury, JP. Shen</p>
-      <p class="publication-venue">ISPASS 2025</p>
+      <p class="publication-title">
+        Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures
+      </p>
+      <p class="publication-authors"><strong>P. Vellaisamy</strong>, T. Labonte, S. Chakraborty, M. Turner, S. Sury, J.P. Shen</p>
+      <p class="publication-venue">
+        <em>IEEE ISPASS 2025</em>
+        <span class="badge badge-talk">Invited Talk @ JSC</span>
+      </p>
+      <p class="pub-summary">Characterizes prefill/decode bottlenecks on H100 vs GH200: GH200 incurs 2.8× higher prefill latency and 4× larger CPU-bounded region. Samsung-funded ($150K+).</p>
     </div>
-    <p><a href="publications">View all publications &rarr;</a></p>
+
+    <div class="publication">
+      <p class="publication-title">
+        Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs
+      </p>
+      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, H.F. Hung, J. Chen, R.D.S. Blanton, J.P. Shen</p>
+      <p class="publication-venue"><em>IEEE DATE 2025</em></p>
+      <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA on 7nm: 53% area reduction, 44% power savings, 5× iso-area throughput improvement.</p>
+    </div>
+
+    <p class="more-link"><a href="publications">View all 11 publications + 5 workshop papers →</a></p>
   </section>
+
+  <!-- ── Education ─────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-period">Sep 2021 – Dec 2026 (Expected)</div>
+        <div class="timeline-title">Doctor of Philosophy, Electrical &amp; Computer Engineering</div>
+        <div class="timeline-org">Carnegie Mellon University — Pittsburgh, PA</div>
+        <div class="timeline-body">
+          Advisors: Prof. J.P. Shen &amp; Prof. Shawn Blanton · CMU NCAL, CMU ACTL, UCF UNARY Research Groups.<br>
+          CIT Dean's Fellowship recipient. 2023 Qualcomm Innovation Fellowship winner.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jan 2020 – May 2021</div>
+        <div class="timeline-title">Master of Science, Electrical &amp; Computer Engineering</div>
+        <div class="timeline-org">Carnegie Mellon University — Pittsburgh, PA</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jun 2014 – Jul 2018</div>
+        <div class="timeline-title">Bachelor of Technology, Electrical &amp; Electronics Engineering</div>
+        <div class="timeline-org">SRM Institute of Science and Technology — Chennai, India</div>
+      </div>
+
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
-  .hero {
-    margin-bottom: var(--spacing-xl);
-  }
+/* ── Hero ─────────────────────────────────────── */
+.hero {
+  padding: var(--space-10) 0 var(--space-8);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
 
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-top: 0;
-    margin-bottom: var(--spacing-xs);
-  }
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-link);
+  margin-bottom: var(--space-2);
+}
 
-  .tagline {
-    font-size: 1.2rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
-  }
+.hero h1 {
+  font-size: 2.6rem;
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
 
-  .bio {
-    font-size: 1.05rem;
-    max-width: 600px;
-    margin-bottom: var(--spacing-lg);
-  }
+.hero-bio {
+  font-size: 1rem;
+  max-width: 680px;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: 1.75;
+}
 
-  .hero-links {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-  }
+.hero-links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
 
-  .interests-list {
-    list-style: none;
-    padding: 0;
-  }
+.hero-socials {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
 
-  .interests-list li {
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
+.hero-socials a { color: var(--color-text-light); }
+.hero-socials a:hover { color: var(--color-link); }
+.sep { color: var(--color-border); }
 
-  .interests-list li:last-child {
-    border-bottom: none;
-  }
+/* ── Interests ────────────────────────────────── */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-4);
+}
 
-  .award {
-    background-color: #fef3c7;
-    color: #92400e;
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
+.interest-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: box-shadow 0.2s ease;
+}
 
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  }
+.interest-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.interest-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.interest-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-heading);
+}
+
+.interest-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Publications on home ─────────────────────── */
+.pub-summary {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: var(--space-1) 0 0 0;
+}
+
+.more-link {
+  margin-top: var(--space-4);
+  font-size: 0.9rem;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .interests-grid { grid-template-columns: 1fr; }
+}
 </style>

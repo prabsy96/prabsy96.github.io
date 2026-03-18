@@ -2,278 +2,350 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Research" description="Publications and research work by Prabhu Vellaisamy.">
+<BaseLayout
+  title="Research"
+  description="Research projects, publications, talks, and awards by Prabhu Vellaisamy — CMU ECE PhD candidate."
+>
   <header class="page-header">
     <h1>Research</h1>
-    <p class="subtitle">Publications, presentations, and ongoing work</p>
+    <p class="subtitle">LLM inference · Deep learning accelerators · Neuromorphic computing · Unary arithmetic</p>
   </header>
 
+  <!-- ── PhD Research Projects ─────────────────── -->
   <section class="section">
-    <h2 class="section-title">Publications</h2>
+    <h2 class="section-title">PhD Research Projects</h2>
+    <p class="section-intro">
+      All projects below are part of my doctoral research at <strong>CMU NCAL / CMU ACTL / UCF UNARY</strong>
+      under the supervision of Prof. J.P. Shen and Prof. Shawn Blanton, in collaboration with 10+ researchers across institutions.
+    </p>
 
-    <div class="publication">
-      <p class="publication-title">Mugi: Value Level Parallelism for Efficient LLMs</p>
-      <p class="publication-authors">D. Price, <strong>P. Vellaisamy</strong>, JP. Shen, D. Wu</p>
-      <p class="publication-venue">ASPLOS 2026</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">Mugi — Value-Level Parallelism for Efficient LLMs</h3>
+        <span class="project-card-venue">ASPLOS 2026</span>
+      </div>
+      <p class="project-card-description">
+        Co-invented Mugi, a technique that exploits value-level parallelism in transformer nonlinear
+        operations (softmax, LayerNorm, top-K) to accelerate LLM inference. Mugi reduces memory
+        footprint while improving throughput on memory-bound workloads.
+      </p>
+      <p class="project-card-results">Key results: Up to 45× throughput &amp; 668× energy efficiency for softmax; 2.07× LLM throughput and 3.11× energy efficiency end-to-end; 1.45× reduction in operational carbon and 1.48× embodied carbon. Outperforms existing nonlinear approximations in accuracy, performance, and efficiency.</p>
+      <div class="project-tags">
+        <span class="tag">LLM Inference</span>
+        <span class="tag">Value Parallelism</span>
+        <span class="tag">Transformers</span>
+        <span class="tag">ASPLOS 2026</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks</p>
-      <p class="publication-authors">D. Lister, <strong>P. Vellaisamy</strong>, JP. Shen, D. Wu</p>
-      <p class="publication-venue">ISVLSI 2025 <span class="award">Best Paper Award</span></p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">LLM Inference Profiling on CPU-GPU Coupled Architectures</h3>
+        <span class="project-card-venue">ISPASS 2025 · Samsung-Funded</span>
+      </div>
+      <p class="project-card-description">
+        Built <strong>SKIP</strong> — a PyTorch-based profiling tool for operator-kernel dynamics in
+        LLM inference, characterizing KV cache efficiency and GPU memory bandwidth utilization on
+        NVIDIA H100 and GH200 Grace Hopper systems. Spearheaded a 5-person CMU–Samsung research
+        collaboration from concept to publication.
+      </p>
+      <p class="project-card-results">
+        Key results: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region vs PCIe H100
+        due to Grace CPU inefficiencies. Findings adopted for next-generation Samsung accelerator design.
+        Project funded at $150K+.
+      </p>
+      <div class="project-tags">
+        <span class="tag">LLM Profiling</span>
+        <span class="tag">H100 / GH200</span>
+        <span class="tag">KV Cache</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">CUDA Kernels</span>
+        <span class="tag">ISPASS 2025</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, T. Labonte, S. Chakraborty, M. Turner, S. Sury, JP. Shen</p>
-      <p class="publication-venue">ISPASS 2025</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">Tempus Core — Temporal-Unary Convolution Core for Edge DLAs</h3>
+        <span class="project-card-venue">DATE 2025</span>
+      </div>
+      <p class="project-card-description">
+        Architected an INT8 temporal-unary convolution core for NVDLA, targeting low-precision edge
+        deep learning inference. Full physical design flow on 7nm process technology: floorplanning,
+        clock tree synthesis (CTS), place-and-route, DRC/LVS signoff.
+      </p>
+      <p class="project-card-results">
+        Key results: 53% area reduction, 44% power savings, 5× iso-area throughput improvement over NVDLA baseline.
+      </p>
+      <div class="project-tags">
+        <span class="tag">NVDLA</span>
+        <span class="tag">7nm</span>
+        <span class="tag">INT8</span>
+        <span class="tag">Physical Design</span>
+        <span class="tag">CTS</span>
+        <span class="tag">DATE 2025</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, HF. Hung, J. Chen, RDS. Blanton, JP. Shen</p>
-      <p class="publication-venue">DATE 2025</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">TNNGen — Automated Neuromorphic SPU Design Framework</h3>
+        <span class="project-card-venue">ISCAS 2024 · TCAS-II 2024</span>
+      </div>
+      <p class="project-card-description">
+        Developed TNNGen, an end-to-end automation framework that compiles PyTorch Temporal Neural Network
+        (TNN) models to DRC/LVS-clean post-layout netlists. Validated across 7 application modalities
+        (audio, EEG, gesture, etc.).
+      </p>
+      <p class="project-card-results">
+        Key result: Reduces TNN hardware design time from weeks to under 2 hours. Selected for journal
+        publication in IEEE TCAS-II 2024.
+      </p>
+      <div class="project-tags">
+        <span class="tag">TNN</span>
+        <span class="tag">RTL Automation</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">GDSII</span>
+        <span class="tag">ISCAS 2024</span>
+        <span class="tag">TCAS-II 2024</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference</p>
-      <p class="publication-authors">H. Nair, <strong>P. Vellaisamy</strong>, TH. Lin, P. Wang, RDS. Blanton, JP. Shen</p>
-      <p class="publication-venue">VLSI-SoC 2024</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">TNN7 — Custom 7nm PDK Extension for Neuromorphic TNNs</h3>
+        <span class="project-card-venue">ISVLSI 2022</span>
+      </div>
+      <p class="project-card-description">
+        Devised TNN7: a custom predictive 7nm open-source PDK extension (ASAP7) comprising 9 custom
+        hard macros for Temporal Neural Networks. Adopted by 3 research groups worldwide.
+      </p>
+      <p class="project-card-results">
+        Key results: 14% power, 16% delay, 28% area, 45% EDP reduction over baseline ASAP7 designs.
+      </p>
+      <div class="project-tags">
+        <span class="tag">ASAP7</span>
+        <span class="tag">Custom PDK</span>
+        <span class="tag">Hard Macros</span>
+        <span class="tag">TNN</span>
+        <span class="tag">ISVLSI 2022</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">Exploration of Unary Arithmetic-Based Matrix Multiply Units for Low Precision DL Accelerators</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, D. Wu, RDS. Blanton, JP. Shen</p>
-      <p class="publication-venue">ISVLSI 2024</p>
-    </div>
-
-    <div class="publication">
-      <p class="publication-title">Realtime Person Identification via Gait Analysis using IMU Sensors on Edge Devices</p>
-      <p class="publication-authors">S. Venkatachelam, H. Nair, <strong>P. Vellaisamy</strong>, Y. Zhou, Z. Youssfi, JP. Shen</p>
-      <p class="publication-venue">ICONS 2024</p>
-    </div>
-
-    <div class="publication">
-      <p class="publication-title">TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, D. Gupta, V. Ratnakaram, JP. Shen</p>
-      <p class="publication-venue">ISCAS 2024, TCAS-II 2024</p>
-    </div>
-
-    <div class="publication">
-      <p class="publication-title">tubGEMM: Energy-Efficient and Sparsity-Effective Temporal-Unary-Binary Based Matrix Multiply Unit</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, J. Finn, M. Trivedi, A. Chen, A. Li, TH. Lin, P. Wang, RDS. Blanton, JP. Shen</p>
-      <p class="publication-venue">ISVLSI 2023</p>
-    </div>
-
-    <div class="publication">
-      <p class="publication-title">tuGEMM: Area-Power-Efficient Temporal Unary GEMM Architecture for Low Resolution Edge AI</p>
-      <p class="publication-authors">H. Nair, <strong>P. Vellaisamy</strong>, A. Chen, J. Finn, A. Li, M. Trivedi, JP. Shen</p>
-      <p class="publication-venue">ISCAS 2023</p>
-    </div>
-
-    <div class="publication">
-      <p class="publication-title">TNN7: A Custom Macro Suite for Implementing Highly Optimized Designs of Neuromorphic TNNs</p>
-      <p class="publication-authors">H. Nair, <strong>P. Vellaisamy</strong>, S. Bhasuthkar, JP. Shen</p>
-      <p class="publication-venue">ISVLSI 2022</p>
-    </div>
   </section>
 
+  <!-- ── Industry Research ─────────────────────── -->
   <section class="section">
-    <h2 class="section-title">Workshop Papers</h2>
+    <h2 class="section-title">Industry Research Contributions</h2>
 
-    <div class="publication">
-      <p class="publication-title">Exploration of Unary Based GEMM designs for Conventional AI/DL Accelerators</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, D. Wu, JP. Shen</p>
-      <p class="publication-venue">2nd Workshop on Unary Computing (WUC), ASPLOS 2024</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">tubGEMM — Temporal-Unary-Binary GEMM Unit</h3>
+        <span class="project-card-venue">ISVLSI 2023 · MediaTek</span>
+      </div>
+      <p class="project-card-description">
+        Devised an ultra-low-power hybrid temporal-unary-binary GEMM unit for edge AI.
+        Fabricated on TSMC N5 process technology during internship at MediaTek USA.
+        Adopted for further development within MediaTek.
+      </p>
+      <p class="project-card-results">Key result: 40%+ power reduction versus conventional binary GEMM at same throughput.</p>
+      <div class="project-tags">
+        <span class="tag">GEMM</span>
+        <span class="tag">Unary Computing</span>
+        <span class="tag">TSMC N5</span>
+        <span class="tag">Edge AI</span>
+        <span class="tag">ISVLSI 2023</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">xBrain: Brain-Like Computing for Explainable Brain-Computer Interfaces</p>
-      <p class="publication-authors">Q. Xi, <strong>P. Vellaisamy</strong>, D. Wu</p>
-      <p class="publication-venue">Young Architect Workshop (YArch), ASPLOS 2024</p>
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">OzMAC — Sparsity-Exploiting MAC Unit for DL Inference</h3>
+        <span class="project-card-venue">VLSI-SoC 2024 · MediaTek</span>
+      </div>
+      <p class="project-card-description">
+        Designed OzMAC, a novel bit-serial, sparsity-exploiting multiply-accumulate unit.
+        Achieved full timing closure on TSMC N5. Adopted for further development at MediaTek.
+      </p>
+      <div class="project-tags">
+        <span class="tag">MAC</span>
+        <span class="tag">Sparsity</span>
+        <span class="tag">TSMC N5</span>
+        <span class="tag">VLSI-SoC 2024</span>
+      </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">Towards a Design Framework for TNN-Based Neuromorphic Sensory Processing Units</p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, JP. Shen</p>
-      <p class="publication-venue">Young Architect Workshop (YArch), ASPLOS 2022</p>
-    </div>
   </section>
 
+  <!-- ── Talks & Presentations ─────────────────── -->
   <section class="section">
-    <h2 class="section-title">Talks & Presentations</h2>
-    <ul class="talks-list">
-      <li>
-        <strong>"Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures"</strong><br>
-        <span class="talk-venue">Jülich Supercomputing Center (JSC), Germany (Remote) - May 20, 2025</span>
-        <span class="talk-type">Invited Talk</span>
-      </li>
-      <li>
-        <strong>"Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures"</strong><br>
-        <span class="talk-venue">ISPASS 2025, Ghent, Belgium - May 12, 2025</span>
-      </li>
-      <li>
-        <strong>"Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs"</strong><br>
-        <span class="talk-venue">DATE 2025, Lyon, France - April 1, 2025</span>
-      </li>
-      <li>
-        <strong>"OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference"</strong><br>
-        <span class="talk-venue">VLSI-SoC 2024, Tangier, Morocco - October 7, 2024</span>
-      </li>
-      <li>
-        <strong>"Exploration of Unary Arithmetic-Based Matrix Multiply Units for Low Precision DL Accelerators"</strong><br>
-        <span class="talk-venue">ISVLSI 2024, Knoxville, TN - July 2, 2024</span>
-      </li>
-      <li>
-        <strong>"TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering"</strong><br>
-        <span class="talk-venue">ISCAS 2024, Singapore - May 21, 2024</span>
-      </li>
-    </ul>
+    <h2 class="section-title">Talks &amp; Presentations</h2>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-talk">Invited Talk</span>
+        <span class="talk-date">May 20, 2025</span>
+      </div>
+      <div class="talk-title">"Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures"</div>
+      <div class="talk-venue">Jülich Supercomputing Center (JSC), Jülich, Germany (Remote)</div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-journal">Conference</span>
+        <span class="talk-date">May 12, 2025</span>
+      </div>
+      <div class="talk-title">"Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures"</div>
+      <div class="talk-venue">ISPASS 2025, Ghent, Belgium</div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-journal">Conference</span>
+        <span class="talk-date">April 1, 2025</span>
+      </div>
+      <div class="talk-title">"Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs"</div>
+      <div class="talk-venue">DATE 2025, Lyon, France</div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-journal">Conference</span>
+        <span class="talk-date">October 7, 2024</span>
+      </div>
+      <div class="talk-title">"OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference"</div>
+      <div class="talk-venue">VLSI-SoC 2024, Tangier, Morocco</div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-journal">Conference</span>
+        <span class="talk-date">July 2, 2024</span>
+      </div>
+      <div class="talk-title">"Exploration of Unary Arithmetic-Based Matrix Multiply Units for Low Precision DL Accelerators"</div>
+      <div class="talk-venue">ISVLSI 2024, Knoxville, TN</div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-type-row">
+        <span class="badge badge-journal">Conference</span>
+        <span class="talk-date">May 21, 2024</span>
+      </div>
+      <div class="talk-title">"TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering"</div>
+      <div class="talk-venue">ISCAS 2024, Singapore</div>
+    </div>
+
   </section>
 
+  <!-- ── Awards ────────────────────────────────── -->
   <section class="section">
-    <h2 class="section-title">Fellowships & Awards</h2>
+    <h2 class="section-title">Fellowships &amp; Awards</h2>
     <div class="awards-grid">
       <div class="award-card featured">
-        <div class="award-icon">*</div>
-        <div class="award-content">
-          <h3 class="award-title">Qualcomm Innovation Fellowship</h3>
-          <p class="award-detail">North America Winner, 2023</p>
-        </div>
-      </div>
-      <div class="award-card featured">
-        <div class="award-icon">*</div>
+        <div class="award-icon">🏆</div>
         <div class="award-content">
           <h3 class="award-title">Amar Mukherjee Best Paper Award</h3>
-          <p class="award-detail">ISVLSI 2025</p>
+          <p class="award-detail">ISVLSI 2025 — Top paper among 100+ submissions</p>
         </div>
       </div>
       <div class="award-card featured">
-        <div class="award-icon">*</div>
+        <div class="award-icon">🏅</div>
         <div class="award-content">
-          <h3 class="award-title">Carnegie Institute of Technology Dean's Fellowship</h3>
-          <p class="award-detail">Carnegie Mellon University</p>
+          <h3 class="award-title">Qualcomm Innovation Fellowship — Winner</h3>
+          <p class="award-detail">North America, 2023 — 1 of 16 selected from 200+ applicants</p>
+        </div>
+      </div>
+      <div class="award-card featured">
+        <div class="award-icon">🎓</div>
+        <div class="award-content">
+          <h3 class="award-title">CIT Dean's Fellowship</h3>
+          <p class="award-detail">Carnegie Mellon University — Full doctoral funding for top incoming PhD students</p>
         </div>
       </div>
       <div class="award-card">
+        <div class="award-icon">⭐</div>
         <div class="award-content">
-          <h3 class="award-title">DAC Young Fellow</h3>
-          <p class="award-detail">Design Automation Conference, 2022</p>
+          <h3 class="award-title">Exemplary Performance Award</h3>
+          <p class="award-detail">MediaTek USA Inc. — Innovative contribution during AI Architecture internship</p>
         </div>
       </div>
       <div class="award-card">
-        <div class="award-content">
-          <h3 class="award-title">Young Architect</h3>
-          <p class="award-detail">ASPLOS 2022</p>
-        </div>
-      </div>
-      <div class="award-card">
+        <div class="award-icon">✈️</div>
         <div class="award-content">
           <h3 class="award-title">ISVLSI 2024 Travel Grant</h3>
           <p class="award-detail">IEEE ISVLSI 2024</p>
         </div>
       </div>
       <div class="award-card">
+        <div class="award-icon">📋</div>
         <div class="award-content">
           <h3 class="award-title">CMU GSA Conference Grant</h3>
-          <p class="award-detail">Carnegie Mellon University</p>
+          <p class="award-detail">Carnegie Mellon University Graduate Student Assembly</p>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">⚙️</div>
+        <div class="award-content">
+          <h3 class="award-title">DAC Young Fellow</h3>
+          <p class="award-detail">Design Automation Conference, 2022 — Top early-career EDA researchers</p>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🏛️</div>
+        <div class="award-content">
+          <h3 class="award-title">Young Architect Award</h3>
+          <p class="award-detail">ASPLOS 2022 — Innovative computer architecture research</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ── Service ───────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Professional Service</h2>
+    <p><strong>Peer Reviewer:</strong> IEEE Transactions on VLSI Systems (TVLSI) · IEEE Journal of Exploratory Solid-State Computational Devices and Circuits (JXCDC)</p>
+    <p><strong>Memberships:</strong> IEEE-Eta Kappa Nu (HKN) · Sigma Xi Scientific Research Honor Society</p>
+  </section>
+
 </BaseLayout>
 
 <style>
-  .award {
-    background-color: #fef3c7;
-    color: #92400e;
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
 
-  .talks-list {
-    list-style: none;
-    padding: 0;
-  }
+.talk-item {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border-light);
+}
 
-  .talks-list li {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-border);
-  }
+.talk-item:last-child { border-bottom: none; }
 
-  .talks-list li:last-child {
-    border-bottom: none;
-  }
+.talk-type-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
 
-  .talk-venue {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    margin-top: var(--spacing-xs);
-  }
+.talk-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
 
-  .talk-type {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: #1e40af;
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-top: var(--spacing-xs);
-  }
+.talk-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: var(--space-1);
+}
 
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-  }
-
-  .award-card {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    padding: var(--spacing-md);
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-  }
-
-  .award-card.featured {
-    background-color: #fffbeb;
-    border-color: #fbbf24;
-  }
-
-  .award-icon {
-    color: #f59e0b;
-    font-size: 1.2rem;
-    font-weight: bold;
-    flex-shrink: 0;
-  }
-
-  .award-content {
-    flex: 1;
-  }
-
-  .award-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 var(--spacing-xs) 0;
-    color: var(--color-heading);
-  }
-
-  .award-detail {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    margin: 0;
-  }
-
-  @media (max-width: 600px) {
-    .awards-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+.talk-venue {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
 </style>
