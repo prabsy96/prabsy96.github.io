@@ -132,7 +132,7 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 <style>
 .news-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
   gap: var(--space-6);
   align-items: center;
   padding: var(--space-7);
@@ -161,7 +161,7 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 .news-hero .subtitle {
   margin: 0;
   color: var(--color-text-light);
-  max-width: 58ch;
+  max-width: none;
 }
 
 .news-hero-stats {
