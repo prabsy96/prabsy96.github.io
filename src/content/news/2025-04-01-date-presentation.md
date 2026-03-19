@@ -12,4 +12,4 @@ Tempus Core is an INT8 temporal-unary convolution core designed for NVDLA (NVIDI
 - 44% power reduction
 - 5x iso-area throughput improvement
 
-DATE (Design, Automation and Test in Europe) is a premier conference in electronic design automation and embedded systems.
+DATE (Design, Automation and Test in Europe) is a conference in electronic design automation and embedded systems.

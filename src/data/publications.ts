@@ -150,7 +150,7 @@ export const publications: PublicationEntry[] = [
     year: 2022,
     category: 'peer-reviewed',
     summary:
-      'TNN7 provides a reusable macro suite for implementing highly optimized temporal neural network designs. The paper lays groundwork for a more systematic neuromorphic design flow rather than one-off circuit implementations.',
+      'TNN7 provides a macro suite for temporal neural network designs. The paper describes a more systematic neuromorphic design flow rather than one-off circuit implementations.',
     keywords: ['TNN7', 'neuromorphic design', 'ISVLSI 2022'],
   },
   {
@@ -175,7 +175,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'preprint',
     summary:
-      'A-Graph proposes a unified graph representation for applications, software stacks, and architectures so the same model can drive simulation, analysis, and cross-stack optimization. The goal is to reduce the friction between system description and design-space exploration.',
+      'A-Graph proposes a unified graph representation for applications, software stacks, and architectures so the same model can support simulation, analysis, and cross-stack optimization.',
     keywords: ['A-Graph', 'systems simulation', 'arXiv'],
     externalUrl: 'https://arxiv.org/abs/2602.04847',
     externalLabel: 'arXiv:2602.04847',
@@ -203,7 +203,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'workshop',
     summary:
-      'This workshop version extends the Mugi idea to nonlinear LLM operations and frames value-level parallelism as a broader execution model. It helps motivate the same core insight in a more focused workshop setting.',
+      'This workshop version extends the Mugi idea to nonlinear LLM operations and frames value-level parallelism as a broader execution model.',
     keywords: ['Mugi', 'workshop paper', 'WUC 2026'],
   },
   {

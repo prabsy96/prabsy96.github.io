@@ -9,4 +9,4 @@ I delivered an invited talk on **"Characterizing and Optimizing LLM Inference Wo
 
 This talk presented our findings on LLM inference performance bottlenecks on NVIDIA GH200 and other CPU-GPU coupled architectures, and the SKIP profiling tool we developed during my internship at Samsung Semiconductor.
 
-The Jülich Supercomputing Center is one of Europe's leading supercomputing centers and part of the Forschungszentrum Jülich research institute.
+The Jülich Supercomputing Center is part of the Forschungszentrum Jülich research institute.

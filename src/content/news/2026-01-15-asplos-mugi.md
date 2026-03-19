@@ -7,6 +7,6 @@ description: "Our paper on Value Level Parallelism for efficient LLM inference h
 
 Our paper **"Mugi: Value Level Parallelism for Efficient LLMs"** has been accepted at ASPLOS 2026.
 
-This work, in collaboration with David Price, Prof. John Paul Shen, and Prof. Di Wu, introduces a novel architecture for efficient large language model inference through value level parallelism.
+This work, in collaboration with David Price, Prof. John Paul Shen, and Prof. Di Wu, studies large language model inference through value level parallelism.
 
-ASPLOS (Architectural Support for Programming Languages and Operating Systems) is a premier venue for computer architecture research.
+ASPLOS (Architectural Support for Programming Languages and Operating Systems) is a computer architecture venue.
