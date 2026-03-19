@@ -6,6 +6,7 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout
   title="Home"
   description="Personal research website of Prabhu Vellaisamy — PhD candidate at CMU researching LLM inference optimization, deep learning accelerators, and unary computing."
+  image="/assets/cmu-campus.webp"
   wide={true}
 >
 
@@ -40,6 +41,20 @@ const base = import.meta.env.BASE_URL;
             Expected graduation: <strong>December 2026</strong>. Incoming AI Research Scientist Intern at Samsung Semiconductor (Jun 2026 – Sep 2026)
             and Silicon Solution Engineering Intern at NVIDIA (Mar 2026 – Jun 2026), both offer accepted.
           </p>
+          <div class="hero-facts" aria-label="Research highlights">
+            <article class="hero-fact">
+              <p class="hero-fact-label">Current focus</p>
+              <p class="hero-fact-value">LLM systems, inference bottlenecks, and accelerator-aware optimization.</p>
+            </article>
+            <article class="hero-fact">
+              <p class="hero-fact-label">Research footprint</p>
+              <p class="hero-fact-value">CMU NCAL, CMU ACTL, UCF UNARY, and NEXUS collaborations across 4 research groups.</p>
+            </article>
+            <article class="hero-fact">
+              <p class="hero-fact-label">Teaching & advising</p>
+              <p class="hero-fact-value">10 teaching semesters and mentoring support for 15+ students in architecture and VLSI workflows.</p>
+            </article>
+          </div>
           <div class="hero-links">
             <a href={`${base}resume.pdf`} class="btn">Download CV</a>
             <a href={`${base}research`} class="btn btn-outline">Research</a>
@@ -99,30 +114,33 @@ const base = import.meta.env.BASE_URL;
   <!-- ── Research Interests ────────────────────── -->
   <section class="section">
     <h2 class="section-title">Research Interests</h2>
+    <p class="section-lead">
+      My work sits at the intersection of systems, architecture, and physical implementation: from LLM inference behavior on coupled CPU-GPU platforms to low-power accelerator design and neuromorphic hardware generation.
+    </p>
     <div class="interests-grid">
       <div class="interest-card">
-        <div class="interest-icon">⚡</div>
+        <div class="interest-index">01</div>
         <div>
           <h3 class="interest-title">LLM Inference Optimization</h3>
           <p class="interest-desc">Profiling and optimizing LLM workloads on CPU-GPU coupled architectures (H100, GH200). KV cache efficiency, batching strategies, kernel-level bottleneck decomposition.</p>
         </div>
       </div>
       <div class="interest-card">
-        <div class="interest-icon">🔬</div>
+        <div class="interest-index">02</div>
         <div>
           <h3 class="interest-title">Deep Learning Accelerator Design</h3>
           <p class="interest-desc">Custom GEMM units, convolution cores, and MAC architectures targeting edge AI — leveraging unary/binary hybrid arithmetic for area-power-efficiency trade-offs.</p>
         </div>
       </div>
       <div class="interest-card">
-        <div class="interest-icon">🧠</div>
+        <div class="interest-index">03</div>
         <div>
           <h3 class="interest-title">Neuromorphic Computing</h3>
           <p class="interest-desc">Temporal Neural Networks (TNNs), automated RTL-to-GDSII design frameworks, and custom PDK development for neuromorphic sensory processing.</p>
         </div>
       </div>
       <div class="interest-card">
-        <div class="interest-icon">🏗️</div>
+        <div class="interest-index">04</div>
         <div>
           <h3 class="interest-title">VLSI / ASIC Design</h3>
           <p class="interest-desc">Physical design, floorplanning, clock tree synthesis, DRC/LVS signoff on TSMC N5/N7 and ASAP7 PDK. Hardware-software co-design for AI workloads.</p>
@@ -134,6 +152,9 @@ const base = import.meta.env.BASE_URL;
   <!-- ── Recent News ───────────────────────────── -->
   <section class="section">
     <h2 class="section-title">Recent News</h2>
+    <p class="section-lead">
+      Recent paper acceptances, invited talks, awards, and upcoming industry research appointments.
+    </p>
     <ul class="news-list">
       <li class="news-item">
         <span class="news-date">May 2026</span>
@@ -170,8 +191,23 @@ const base = import.meta.env.BASE_URL;
   <!-- ── Selected Publications ─────────────────── -->
   <section class="section">
     <h2 class="section-title">Selected Publications</h2>
+    <p class="section-lead">
+      Representative papers across LLM systems, accelerator architecture, and temporal neuromorphic hardware.
+    </p>
 
     <div class="publication-showcase">
+    <div class="publication card home-publication-card featured-publication">
+      <p class="publication-title">
+        TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
+      </p>
+      <p class="publication-authors"><strong>P. Vellaisamy</strong>, Y. Deng, S. Chakraborty, M. Scherer, S. Sury, J.P. Shen</p>
+      <p class="publication-venue">
+        <em>IEEE ISPASS 2026</em>
+        <span class="badge badge-journal">Accepted</span>
+      </p>
+      <p class="pub-summary">A decomposition of LLM inference overheads that isolates non-matmul costs, exposes where end-to-end latency is lost, and helps redirect optimization effort toward the bottlenecks large-model deployments actually pay for.</p>
+    </div>
+
     <div class="publication card home-publication-card">
       <p class="publication-title">
         Mugi: Value Level Parallelism for Efficient LLMs
@@ -182,17 +218,6 @@ const base = import.meta.env.BASE_URL;
         <span class="badge badge-journal">Systems</span>
       </p>
       <p class="pub-summary">Generalizes value-level parallelism (VLP) for nonlinear LLM operations and small-batch GEMMs. Up to 45× throughput and 668× energy efficiency for softmax; 2.07× LLM throughput and 3.11× energy efficiency; 1.45× reduction in operational carbon.</p>
-    </div>
-
-    <div class="publication card home-publication-card">
-      <p class="publication-title">
-        Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks
-      </p>
-      <p class="publication-authors">D. Lister, <strong>P. Vellaisamy</strong>, J.P. Shen, D. Wu</p>
-      <p class="publication-venue">
-        <em>IEEE ISVLSI 2025</em>
-        <span class="badge badge-award">🏆 Best Paper Award</span>
-      </p>
     </div>
 
     <div class="publication card home-publication-card">
@@ -214,6 +239,18 @@ const base = import.meta.env.BASE_URL;
       <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, H.F. Hung, J. Chen, R.D.S. Blanton, J.P. Shen</p>
       <p class="publication-venue"><em>IEEE DATE 2025</em></p>
       <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA on 7nm: 53% area reduction, 44% power savings, 5× iso-area throughput improvement.</p>
+    </div>
+
+    <div class="publication card home-publication-card">
+      <p class="publication-title">
+        Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks
+      </p>
+      <p class="publication-authors">D. Lister, <strong>P. Vellaisamy</strong>, J.P. Shen, D. Wu</p>
+      <p class="publication-venue">
+        <em>IEEE ISVLSI 2025</em>
+        <span class="badge badge-award">Best Paper Award</span>
+      </p>
+      <p class="pub-summary">Introduces a unary top-k design for Temporal Neural Networks that improves ramp-no-leak neuron efficiency and earned the Amar Mukherjee Best Paper Award at ISVLSI 2025.</p>
     </div>
     </div>
 
@@ -263,8 +300,8 @@ const base = import.meta.env.BASE_URL;
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius-lg) + 4px);
   background:
-    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    radial-gradient(circle at top right, rgba(63, 93, 125, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f7f6f1 100%);
   box-shadow: var(--shadow-sm);
 }
 
@@ -285,13 +322,6 @@ const base = import.meta.env.BASE_URL;
   object-position: center center;
 }
 
-.hero-banner figcaption {
-  padding: var(--space-3) var(--space-4);
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-  background: rgba(255, 255, 255, 0.92);
-}
-
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -299,10 +329,7 @@ const base = import.meta.env.BASE_URL;
   align-items: center;
 }
 
-.hero-visual {
-  display: grid;
-  gap: var(--space-4);
-}
+.hero-visual { display: grid; }
 
 .hero-visual figure {
   margin: 0;
@@ -329,13 +356,6 @@ const base = import.meta.env.BASE_URL;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center center;
-}
-
-.hero-visual figcaption {
-  padding: var(--space-3) var(--space-4);
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-  background: rgba(255, 255, 255, 0.92);
 }
 
 .hero-eyebrow {
@@ -366,6 +386,36 @@ const base = import.meta.env.BASE_URL;
   max-width: 760px;
 }
 
+.hero-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0 0 var(--space-5);
+}
+
+.hero-fact {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.hero-fact-label {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-fact-value {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .hero-links {
   display: flex;
   gap: var(--space-3);
@@ -387,6 +437,13 @@ const base = import.meta.env.BASE_URL;
 .sep { color: var(--color-border); }
 
 /* ── Interests ────────────────────────────────── */
+.section-lead {
+  max-width: 78ch;
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -408,10 +465,15 @@ const base = import.meta.env.BASE_URL;
   box-shadow: var(--shadow-sm);
 }
 
-.interest-icon {
-  font-size: 1.4rem;
+.interest-index {
+  min-width: 2.4rem;
+  color: var(--color-link);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   flex-shrink: 0;
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
 }
 
 .interest-title {
@@ -439,6 +501,14 @@ const base = import.meta.env.BASE_URL;
   margin-bottom: 0;
   height: 100%;
   border-bottom: none;
+}
+
+.featured-publication {
+  grid-column: 1 / -1;
+  padding: var(--space-6);
+  background:
+    linear-gradient(135deg, rgba(63, 93, 125, 0.08), transparent 60%),
+    #fff;
 }
 
 .pub-summary {
@@ -473,8 +543,16 @@ const base = import.meta.env.BASE_URL;
     gap: var(--space-5);
   }
 
+  .hero-facts {
+    grid-template-columns: 1fr;
+  }
+
   .hero h1 { font-size: 2rem; }
   .interests-grid { grid-template-columns: 1fr; }
   .publication-showcase { grid-template-columns: 1fr; }
+  .featured-publication {
+    grid-column: auto;
+    padding: var(--space-5);
+  }
 }
 </style>

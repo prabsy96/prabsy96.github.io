@@ -29,12 +29,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- ── PhD Research Projects ─────────────────── -->
   <section class="section">
-    <h2 class="section-title">PhD Research Projects</h2>
+    <div class="section-heading">
+      <p class="section-kicker">Doctoral group work</p>
+      <h2 class="section-title">PhD Research Projects</h2>
+    </div>
     <p class="section-intro">
       All projects below are part of my doctoral research at <strong>CMU NCAL / CMU ACTL / UCF UNARY / NEXUS</strong>
       under the supervision of Prof. J.P. Shen and Prof. Shawn Blanton, in collaboration with four research groups and 15+ students.
     </p>
-
+    <div class="project-grid">
     <div class="project-card">
       <div class="project-card-header">
         <h3 class="project-card-title">Mugi — Value-Level Parallelism for Efficient LLMs</h3>
@@ -51,32 +54,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="tag">Value Parallelism</span>
         <span class="tag">Transformers</span>
         <span class="tag">ASPLOS 2026</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-card-header">
-        <h3 class="project-card-title">LLM Inference Profiling on CPU-GPU Coupled Architectures</h3>
-        <span class="project-card-venue">ISPASS 2025 · Samsung-Funded</span>
-      </div>
-      <p class="project-card-description">
-        Built <strong>SKIP</strong> — a PyTorch-based profiling tool for operator-kernel dynamics in
-        LLM inference, characterizing KV cache efficiency and GPU memory bandwidth utilization on
-        NVIDIA H100 and GH200 Grace Hopper systems. Spearheaded a 5-person CMU–Samsung research
-        collaboration from concept to publication.
-      </p>
-      <p class="project-card-results">
-        Key results: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region vs PCIe H100
-        due to Grace CPU inefficiencies. Findings adopted for next-generation Samsung accelerator design.
-        Project funded at $150K+.
-      </p>
-      <div class="project-tags">
-        <span class="tag">LLM Profiling</span>
-        <span class="tag">H100 / GH200</span>
-        <span class="tag">KV Cache</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">CUDA Kernels</span>
-        <span class="tag">ISPASS 2025</span>
       </div>
     </div>
 
@@ -147,12 +124,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="tag">ISVLSI 2022</span>
       </div>
     </div>
+    </div>
 
   </section>
 
   <!-- ── Industry Research ─────────────────────── -->
   <section class="section">
-    <h2 class="section-title">Industry Research Contributions</h2>
+    <div class="section-heading">
+      <p class="section-kicker">Internship research</p>
+      <h2 class="section-title">Industry Research Contributions</h2>
+    </div>
+    <p class="section-intro">
+      These projects were developed through research internships and industry collaborations, with an emphasis on deployment-facing performance characterization and manufacturable low-power accelerator designs.
+    </p>
+    <div class="project-grid">
+    <div class="project-card">
+      <div class="project-card-header">
+        <h3 class="project-card-title">LLM Inference Profiling on CPU-GPU Coupled Architectures</h3>
+        <span class="project-card-venue">ISPASS 2025 · Samsung-Funded</span>
+      </div>
+      <p class="project-card-description">
+        Built <strong>SKIP</strong> — a PyTorch-based profiling tool for operator-kernel dynamics in
+        LLM inference, characterizing KV cache efficiency and GPU memory bandwidth utilization on
+        NVIDIA H100 and GH200 Grace Hopper systems. Spearheaded a 5-person CMU–Samsung research
+        collaboration from concept to publication.
+      </p>
+      <p class="project-card-results">
+        Key results: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region vs PCIe H100
+        due to Grace CPU inefficiencies. Findings adopted for next-generation Samsung accelerator design.
+        Project funded at $150K+.
+      </p>
+      <div class="project-tags">
+        <span class="tag">LLM Profiling</span>
+        <span class="tag">H100 / GH200</span>
+        <span class="tag">KV Cache</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">CUDA Kernels</span>
+        <span class="tag">ISPASS 2025</span>
+      </div>
+    </div>
 
     <div class="project-card">
       <div class="project-card-header">
@@ -189,6 +199,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="tag">TSMC N5</span>
         <span class="tag">VLSI-SoC 2024</span>
       </div>
+    </div>
     </div>
 
   </section>
@@ -353,6 +364,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   text-transform: uppercase;
 }
 
+.section-heading {
+  margin-bottom: var(--space-5);
+}
+
+.section-kicker {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-heading .section-title {
+  margin-bottom: 0;
+}
+
 .research-hero-aside {
   display: flex;
   flex-wrap: wrap;
@@ -375,6 +403,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   font-size: 0.95rem;
   color: var(--color-text-light);
   margin-bottom: var(--space-6);
+  max-width: 78ch;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.project-grid .project-card {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.project-grid .project-card:first-child {
+  grid-column: 1 / -1;
 }
 
 .talk-item {
@@ -414,6 +458,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .research-hero {
     grid-template-columns: 1fr;
     padding: var(--space-5);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid .project-card:first-child {
+    grid-column: auto;
   }
 
   .research-hero-aside {

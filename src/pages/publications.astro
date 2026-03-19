@@ -1,17 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="Publications"
-  description="Publications by Prabhu Vellaisamy, including 12 peer-reviewed papers, 5 workshop papers, and two preprints."
+  description="Publications by Prabhu Vellaisamy, including 12 peer-reviewed papers, 5 workshop papers, and 3 preprints."
 >
   <header class="publication-hero">
     <div class="publication-hero-copy">
       <p class="hero-kicker">Research portfolio</p>
       <h1>Publications</h1>
       <p class="hero-blurb">
-        A curated record of 12 peer-reviewed papers, 5 workshop papers, two preprints, and one newly accepted paper.
+        A curated record of 12 peer-reviewed papers, 5 workshop papers, and 3 preprints.
         Each entry includes a short abstract-style summary so the page reads cleanly and stays current.
       </p>
     </div>
@@ -25,12 +26,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="hero-stat-label">Workshop papers</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-number">2</div>
+        <div class="hero-stat-number">3</div>
         <div class="hero-stat-label">Preprints</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">1</div>
-        <div class="hero-stat-label">Accepted / Presented</div>
       </div>
     </div>
   </header>
@@ -63,6 +60,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Feb 2026 · <a href="https://arxiv.org/abs/2602.01546" target="_blank" rel="noopener noreferrer">arXiv:2602.01546</a>
       </p>
       <p class="pub-note">NeuTNNs define a neuromorphic processing framework built around active dendrites and hierarchical proximal/distal segments. NeuTNNGen links the model to layout generation, while synaptic pruning reduces hardware cost without sacrificing accuracy across sensory tasks.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/neutnns-arxiv-2026`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -76,6 +76,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Feb 2026 · <a href="https://arxiv.org/abs/2602.04847" target="_blank" rel="noopener noreferrer">arXiv:2602.04847</a>
       </p>
       <p class="pub-note">A-Graph proposes a unified graph representation for applications, software stacks, and architectures so the same model can drive simulation, analysis, and cross-stack optimization. The goal is to reduce the friction between system description and design-space exploration.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/agraph-arxiv-2026`}>Details</a>
+      </div>
+    </div>
+
+    <div class="publication">
+      <p class="publication-title">
+        <span class="badge badge-review">Preprint</span>&ensp;TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
+      </p>
+      <p class="publication-authors">
+        <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
+      </p>
+      <p class="publication-venue">
+        Mar 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
+      </p>
+      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/taxbreak-arxiv-2026`}>Details</a>
+      </div>
     </div>
     </div>
   </details>
@@ -101,6 +120,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026</em> · Accepted · Scheduled for presentation on April 27, 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
       </p>
       <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/taxbreak-ispass-2026`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -114,6 +136,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2026</em>
       </p>
       <p class="pub-note">Mugi uses value-level parallelism to restructure nonlinear LLM operations and small-batch GEMMs. The paper shows that the approach can raise throughput and efficiency by turning value computation into a more parallel execution pattern.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/mugi-asplos-2026`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -128,6 +153,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         &ensp;<span class="badge badge-award">Amar Mukherjee Best Paper Award</span>
       </p>
       <p class="pub-note">Catwalk introduces a unary top-K mechanism for temporal neural networks, targeting the ramp-no-leak neuron design. The result is a more efficient selection path that reduces overhead in the neuromorphic pipeline.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/catwalk-isvlsi-2025`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -142,6 +170,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         &ensp;<span class="badge badge-talk">Invited Talk at Jülich Supercomputing Center</span>
       </p>
       <p class="pub-note">This paper characterizes prefill and decode bottlenecks across coupled CPU-GPU systems and compares NVIDIA H100 and GH200 behavior. The work isolates where orchestration, memory movement, and kernel execution dominate end-to-end latency.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/llm-inference-cpu-gpu-ispass-2025`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -155,6 +186,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE Design, Automation &amp; Test in Europe (DATE) 2025</em>
       </p>
       <p class="pub-note">Tempus Core presents a temporal-unary convolution engine for low-precision edge DLA workloads. The paper focuses on reducing area and power while preserving useful throughput for compact accelerator designs.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tempus-core-date-2025`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -168,6 +202,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE VLSI-SoC 2024</em>
       </p>
       <p class="pub-note">OzMAC targets sparsity-aware inference by reducing unnecessary multiply-accumulate work. The design explores how bit sparsity can translate directly into lower energy cost in deep learning accelerators.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/ozmac-vlsi-soc-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -181,6 +218,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2024</em>
       </p>
       <p class="pub-note">This work explores unary arithmetic for matrix multiplication in low-precision AI hardware. It studies how temporal unary representations change the area-power tradeoffs relative to more conventional arithmetic units.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/unary-matrix-multiply-isvlsi-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -194,6 +234,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>International Conference on Neuromorphic Systems (ICONS) 2024</em>
       </p>
       <p class="pub-note">The paper demonstrates real-time person identification from gait signals measured with IMU sensors on edge devices. It highlights how lightweight sensing and edge inference can support privacy-preserving identification tasks.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/gait-analysis-icons-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -208,6 +251,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         &ensp;<span class="badge badge-journal">Invited for TCAS-II</span>
       </p>
       <p class="pub-note">TNNGen automates the design of neuromorphic sensory processing units for time-series clustering. The work links algorithmic TNN ideas to generated hardware and reports a design path that reduces synapse and implementation cost.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tnngen-iscas-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -221,6 +267,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2023</em>
       </p>
       <p class="pub-note">tubGEMM combines temporal, unary, and binary arithmetic to build a matrix-multiply unit that is more tolerant of sparsity and low precision. The design studies how hybrid arithmetic can improve energy efficiency without giving up too much flexibility.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tubgemm-isvlsi-2023`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -234,6 +283,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE International Symposium on Circuits and Systems (ISCAS) 2023</em>
       </p>
       <p class="pub-note">tuGEMM explores temporal unary GEMM as an implementation strategy for low-resolution edge AI. The paper emphasizes area and power reductions while preserving enough arithmetic throughput for practical inference workloads.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tugemm-iscas-2023`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -247,6 +299,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2022</em>
       </p>
       <p class="pub-note">TNN7 provides a reusable macro suite for implementing highly optimized temporal neural network designs. The paper lays groundwork for a more systematic neuromorphic design flow rather than one-off circuit implementations.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tnn7-isvlsi-2022`}>Details</a>
+      </div>
     </div>
     </div>
   </details>
@@ -272,6 +327,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>Workshop on Unary Computing (WUC), ASPLOS 2026</em>
       </p>
       <p class="pub-note">This workshop version extends the Mugi idea to nonlinear LLM operations and frames value-level parallelism as a broader execution model. It helps motivate the same core insight in a more focused workshop setting.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/mugi-wuc-2026`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -285,6 +343,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>Workshop on Unary Computing (WUC), ASPLOS 2026</em>
       </p>
       <p class="pub-note">The workshop paper presents the A-Graph representation as a practical simulation abstraction for emerging stacks. It emphasizes broad applicability and a cleaner route from system description to experimentation.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/agraph-wuc-2026`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -298,6 +359,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>2nd Workshop on Unary Computing (WUC), ASPLOS 2024</em>
       </p>
       <p class="pub-note">This paper surveys unary-based GEMM design points for more conventional AI accelerators. It explores how unary arithmetic may fit into mainstream inference hardware without requiring a full architectural reset.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/unary-gemm-wuc-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -311,6 +375,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>Young Architect Workshop (YArch), ASPLOS 2024</em>
       </p>
       <p class="pub-note">xBrain connects brain-like computing ideas with explainable brain-computer interfaces. The workshop paper frames the work as both a systems problem and an interpretability problem.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/xbrain-yarch-2024`}>Details</a>
+      </div>
     </div>
 
     <div class="publication">
@@ -324,6 +391,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em>Young Architect Workshop (YArch), ASPLOS 2022</em>
       </p>
       <p class="pub-note">This workshop paper lays out a design framework for TNN-based neuromorphic sensory processing units. It is an early statement of the research direction that later papers expanded into complete hardware and tooling flows.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/tnn-framework-yarch-2022`}>Details</a>
+      </div>
     </div>
     </div>
   </details>
@@ -340,8 +410,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius-lg) + 4px);
   background:
-    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 38%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    radial-gradient(circle at top right, rgba(63, 93, 125, 0.08), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbf8 100%);
   box-shadow: var(--shadow-sm);
 }
 
@@ -375,7 +445,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   padding: var(--space-4);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.88);
   text-align: center;
 }
 

@@ -8,41 +8,100 @@ interface Props {
   title: string;
   description?: string;
   wide?: boolean;
+  image?: string;
+  additionalStructuredData?: Record<string, unknown> | null;
 }
 
-const { title, description = 'Personal research website of Prabhu Vellaisamy', wide = true } = Astro.props;
-const fullTitle = title === 'Home' ? 'Prabhu Vellaisamy' : `${title} | Prabhu Vellaisamy`;
+const {
+  title,
+  description = 'Personal research website of Prabhu Vellaisamy',
+  wide = true,
+  image = '/assets/profile-headshot.jpeg',
+  additionalStructuredData = null,
+} = Astro.props;
+const fullTitle =
+  title === 'Home'
+    ? 'Prabhu Vellaisamy | CMU ECE PhD Candidate in LLM Inference and Hardware Systems'
+    : `${title} | Prabhu Vellaisamy`;
 const base = import.meta.env.BASE_URL;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImageUrl = new URL(image, Astro.site);
 const pageDescription = description;
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const siteKeywords = [
+  'Prabhu Vellaisamy',
+  'Carnegie Mellon University',
+  'CMU ECE',
+  'LLM inference optimization',
+  'hardware accelerators',
+  'deep learning accelerators',
+  'neuromorphic computing',
+  'Temporal Neural Networks',
+  'unary computing',
+  'VLSI',
+  'computer architecture',
+];
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Person',
       name: 'Prabhu Vellaisamy',
+      givenName: 'Prabhu',
+      familyName: 'Vellaisamy',
       url: Astro.site?.toString(),
+      image: socialImageUrl.toString(),
       email: 'pvellais@andrew.cmu.edu',
+      jobTitle: 'PhD Candidate in Electrical and Computer Engineering',
+      description:
+        'PhD candidate at Carnegie Mellon University researching LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic.',
       affiliation: {
         '@type': 'CollegeOrUniversity',
         name: 'Carnegie Mellon University',
       },
+      alumniOf: [
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Carnegie Mellon University',
+        },
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'SRM Institute of Science and Technology',
+        },
+      ],
+      knowsAbout: [
+        'LLM inference optimization',
+        'deep learning accelerators',
+        'neuromorphic computing',
+        'Temporal Neural Networks',
+        'unary arithmetic',
+        'hardware-software co-design',
+        'computer architecture',
+        'VLSI',
+      ],
       sameAs: [
         'https://github.com/prabsy96',
         'https://scholar.google.com/citations?user=ePfYSNsAAAAJ',
         'https://linkedin.com/in/pvellais',
       ],
-      jobTitle: 'PhD Candidate in Electrical and Computer Engineering',
+      mainEntityOfPage: canonicalUrl.toString(),
     },
     {
       '@type': 'WebSite',
       name: 'Prabhu Vellaisamy',
       url: Astro.site?.toString(),
       description: pageDescription,
+      inLanguage: 'en-US',
     },
   ],
 };
+const mergedStructuredData =
+  additionalStructuredData
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [...structuredData['@graph'], additionalStructuredData],
+      }
+    : structuredData;
 ---
 
 <!DOCTYPE html>
@@ -51,18 +110,21 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={siteKeywords.join(', ')} />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prabhu Vellaisamy" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <title>{fullTitle}</title>
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(mergedStructuredData)} />
     {gaMeasurementId && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
