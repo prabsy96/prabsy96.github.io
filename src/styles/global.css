@@ -2,34 +2,34 @@
 
 :root {
   /* Color palette */
-  --color-text: #253041;
-  --color-text-light: #5f6b7a;
-  --color-text-muted: #8793a2;
-  --color-heading: #111827;
-  --color-link: #1e4d8f;
-  --color-link-hover: #12386b;
-  --color-bg: #fbfaf7;
-  --color-bg-alt: #f5f4ef;
+  --color-text: #2c2926;
+  --color-text-light: #5b5652;
+  --color-text-muted: #877e77;
+  --color-heading: #191614;
+  --color-link: #9d2235;
+  --color-link-hover: #7f1b2b;
+  --color-bg: #f7f2ea;
+  --color-bg-alt: #efe7dc;
   --color-bg-card: #ffffff;
-  --color-border: #dde2e8;
-  --color-border-light: #eceff3;
-  --color-accent: #3f5d7d;
-  --color-accent-light: #eef3f8;
+  --color-border: #d9cec0;
+  --color-border-light: #e8dfd3;
+  --color-accent: #6f1d2a;
+  --color-accent-light: #f5e7e4;
 
   /* Semantic accent colors */
-  --color-award-bg: #faf6ee;
-  --color-award-border: #d9b26d;
-  --color-award-text: #6c4a1f;
-  --color-badge-journal-bg: #e6eef8;
-  --color-badge-journal-text: #244a7d;
-  --color-badge-talk-bg: #ecf5ee;
-  --color-badge-talk-text: #2a6641;
-  --color-tag-bg: #eef2f6;
-  --color-tag-text: #4b5a6c;
+  --color-award-bg: #fbf3df;
+  --color-award-border: #caa35c;
+  --color-award-text: #704d18;
+  --color-badge-journal-bg: #f7e5e7;
+  --color-badge-journal-text: #7f1b2b;
+  --color-badge-talk-bg: #eee9e2;
+  --color-badge-talk-text: #524940;
+  --color-tag-bg: #f2ebe3;
+  --color-tag-text: #5a5149;
 
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
 
   /* Spacing scale */
@@ -84,10 +84,10 @@ body {
   line-height: 1.75;
   color: var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(30, 77, 143, 0.06), transparent 28%),
-    radial-gradient(circle at top right, rgba(63, 93, 125, 0.05), transparent 22%),
-    radial-gradient(circle at 50% 0%, rgba(63, 93, 125, 0.03), transparent 30%),
-    linear-gradient(180deg, #fdfcf8 0%, #f7f6f2 52%, #f1f2ef 100%);
+    radial-gradient(circle at top left, rgba(157, 34, 53, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(111, 29, 42, 0.05), transparent 22%),
+    radial-gradient(circle at 50% 0%, rgba(95, 53, 40, 0.04), transparent 30%),
+    linear-gradient(180deg, #faf5ee 0%, #f5ede3 52%, #efe6db 100%);
   background-attachment: fixed;
   background-color: var(--color-bg);
 }
@@ -95,13 +95,13 @@ body {
 /* ── Typography ─────────────────────────────── */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   color: var(--color-heading);
   font-weight: 700;
   line-height: 1.25;
   margin-top: var(--space-8);
   margin-bottom: var(--space-4);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
 h1 { font-size: 2.25rem; }
@@ -116,7 +116,7 @@ p {
 a {
   color: var(--color-link);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
@@ -125,8 +125,15 @@ a:hover {
   text-underline-offset: 3px;
 }
 
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid rgba(157, 34, 53, 0.45);
+  outline-offset: 3px;
+}
+
 ::selection {
-  background: rgba(30, 77, 143, 0.12);
+  background: rgba(157, 34, 53, 0.12);
   color: var(--color-heading);
 }
 
@@ -245,19 +252,19 @@ th {
 .badge-journal {
   background: var(--color-badge-journal-bg);
   color: var(--color-badge-journal-text);
-  border: 1px solid #bfdbfe;
+  border: 1px solid #e3bcc2;
 }
 
 .badge-talk {
   background: var(--color-badge-talk-bg);
   color: var(--color-badge-talk-text);
-  border: 1px solid #bbf7d0;
+  border: 1px solid #d7cdc2;
 }
 
 .badge-review {
-  background: #fdf4ff;
-  color: #6b21a8;
-  border: 1px solid #e9d5ff;
+  background: #f8edf0;
+  color: #7c2130;
+  border: 1px solid #e8c8ce;
 }
 
 .tag {

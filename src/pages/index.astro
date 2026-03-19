@@ -295,18 +295,18 @@ const base = import.meta.env.BASE_URL;
 <style>
 /* ── Hero ─────────────────────────────────────── */
 .hero {
-  padding: var(--space-10);
-  margin-bottom: var(--space-6);
+  padding: var(--space-8);
+  margin-bottom: var(--space-5);
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius-lg) + 4px);
   background:
-    radial-gradient(circle at top right, rgba(63, 93, 125, 0.12), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f7f6f1 100%);
+    radial-gradient(circle at top right, rgba(157, 34, 53, 0.12), transparent 34%),
+    linear-gradient(180deg, #fffdfa 0%, #f6eee3 100%);
   box-shadow: var(--shadow-sm);
 }
 
 .hero-banner {
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--space-5);
   border-radius: calc(var(--radius-lg) + 2px);
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -325,7 +325,7 @@ const base = import.meta.env.BASE_URL;
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: var(--space-8);
+  gap: var(--space-6);
   align-items: center;
 }
 
@@ -368,33 +368,33 @@ const base = import.meta.env.BASE_URL;
 }
 
 .hero h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2.35rem, 3.6vw, 3.1rem);
   margin-top: 0;
   margin-bottom: var(--space-4);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .hero-bio {
-  font-size: 1rem;
-  max-width: 680px;
+  font-size: 0.98rem;
+  max-width: 72ch;
   color: var(--color-text);
   margin-bottom: var(--space-4);
   line-height: 1.75;
 }
 
 .hero-body {
-  max-width: 760px;
+  max-width: 78ch;
 }
 
 .hero-facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
-  margin: 0 0 var(--space-5);
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
 }
 
 .hero-fact {
-  padding: var(--space-4);
+  padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.82);
@@ -420,7 +420,7 @@ const base = import.meta.env.BASE_URL;
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .hero-socials {
@@ -438,8 +438,8 @@ const base = import.meta.env.BASE_URL;
 
 /* ── Interests ────────────────────────────────── */
 .section-lead {
-  max-width: 78ch;
-  margin: 0 0 var(--space-5);
+  max-width: 74ch;
+  margin: 0 0 var(--space-4);
   color: var(--color-text-light);
   line-height: 1.7;
 }
@@ -447,7 +447,7 @@ const base = import.meta.env.BASE_URL;
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .interest-card {
@@ -457,7 +457,7 @@ const base = import.meta.env.BASE_URL;
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: var(--space-4);
   transition: box-shadow 0.2s ease;
 }
 
@@ -494,7 +494,7 @@ const base = import.meta.env.BASE_URL;
 .publication-showcase {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .home-publication-card {
@@ -505,9 +505,9 @@ const base = import.meta.env.BASE_URL;
 
 .featured-publication {
   grid-column: 1 / -1;
-  padding: var(--space-6);
+  padding: var(--space-5);
   background:
-    linear-gradient(135deg, rgba(63, 93, 125, 0.08), transparent 60%),
+    linear-gradient(135deg, rgba(157, 34, 53, 0.08), transparent 60%),
     #fff;
 }
 
@@ -527,11 +527,11 @@ const base = import.meta.env.BASE_URL;
 @media (max-width: 600px) {
   .hero {
     padding: var(--space-5);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
   }
 
   .hero-banner {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
   }
 
   .hero-banner img {
@@ -540,7 +540,7 @@ const base = import.meta.env.BASE_URL;
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-5);
+    gap: var(--space-4);
   }
 
   .hero-facts {

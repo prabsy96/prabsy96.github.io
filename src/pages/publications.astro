@@ -403,15 +403,15 @@ const base = import.meta.env.BASE_URL;
 .publication-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
-  gap: var(--space-6);
+  gap: var(--space-5);
   align-items: end;
-  padding: var(--space-8);
-  margin-bottom: var(--space-10);
+  padding: var(--space-7);
+  margin-bottom: var(--space-8);
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius-lg) + 4px);
   background:
-    radial-gradient(circle at top right, rgba(63, 93, 125, 0.08), transparent 38%),
-    linear-gradient(180deg, #ffffff 0%, #fbfbf8 100%);
+    radial-gradient(circle at top right, rgba(157, 34, 53, 0.08), transparent 38%),
+    linear-gradient(180deg, #fffdfa 0%, #f7f1e9 100%);
   box-shadow: var(--shadow-sm);
 }
 
@@ -426,31 +426,32 @@ const base = import.meta.env.BASE_URL;
 
 .publication-hero h1 {
   margin-top: 0;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .hero-blurb {
   margin-bottom: 0;
-  max-width: none;
+  max-width: 78ch;
   color: var(--color-text-light);
+  line-height: 1.75;
 }
 
 .publication-hero-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .hero-stat {
-  padding: var(--space-4);
+  padding: var(--space-3);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(180deg, rgba(255, 253, 250, 0.96) 0%, rgba(248, 240, 231, 0.96) 100%);
   text-align: center;
 }
 
 .hero-stat-number {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1;
   font-weight: 800;
   color: var(--color-heading);
@@ -469,17 +470,17 @@ const base = import.meta.env.BASE_URL;
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .pub-filter {
   appearance: none;
   border: 1px solid var(--color-border);
-  background: var(--color-bg-card);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--color-text);
   border-radius: 999px;
-  padding: 0.55rem 0.95rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
@@ -500,7 +501,7 @@ const base = import.meta.env.BASE_URL;
 .pub-group {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(180deg, rgba(255, 253, 250, 0.94) 0%, rgba(249, 244, 236, 0.94) 100%);
   padding: 0;
 }
 
@@ -515,7 +516,7 @@ const base = import.meta.env.BASE_URL;
 .pub-group-summary {
   list-style: none;
   cursor: pointer;
-  padding: var(--space-5);
+  padding: var(--space-4) var(--space-5);
 }
 
 .pub-group-summary::-webkit-details-marker {
@@ -527,26 +528,27 @@ const base = import.meta.env.BASE_URL;
 }
 
 .pub-group-body {
-  padding: 0 var(--space-5) var(--space-5);
+  padding: 0 var(--space-5) var(--space-4);
 }
 
 .section-header {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .section-title {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .section-lead {
   margin: 0;
   color: var(--color-text-light);
-  max-width: none;
+  max-width: 72ch;
+  line-height: 1.7;
 }
 
 .publication {
-  padding: var(--space-5);
-  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg-card);
@@ -558,6 +560,7 @@ const base = import.meta.env.BASE_URL;
   align-items: flex-start;
   gap: var(--space-2);
   margin: 0 0 var(--space-2) 0;
+  line-height: 1.45;
 }
 
 .publication-number {
@@ -567,15 +570,17 @@ const base = import.meta.env.BASE_URL;
 
 .publication-authors {
   font-size: 0.92rem;
+  color: var(--color-text-light);
 }
 
 .publication-venue {
   font-size: 0.88rem;
+  color: var(--color-text-light);
 }
 
 .pub-note {
-  margin: var(--space-3) 0 0;
-  padding: var(--space-3) var(--space-4);
+  margin: var(--space-2) 0 0;
+  padding: var(--space-2) var(--space-3);
   border-left: 3px solid var(--color-accent);
   background: var(--color-accent-light);
   color: var(--color-text);
@@ -597,6 +602,18 @@ const base = import.meta.env.BASE_URL;
 @media (max-width: 640px) {
   .pub-toolbar {
     gap: var(--space-2);
+  }
+
+  .publication-hero {
+    padding: var(--space-5);
+  }
+
+  .pub-group-summary {
+    padding: var(--space-4);
+  }
+
+  .pub-group-body {
+    padding: 0 var(--space-4) var(--space-4);
   }
 }
 </style>
