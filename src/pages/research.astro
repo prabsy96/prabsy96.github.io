@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Research"
-  description="Research projects, publications, talks, and awards by Prabhu Vellaisamy — CMU ECE PhD candidate."
+  description="Research by Prabhu Vellaisamy, an NVIDIA Silicon CoDesign Engineer and CMU ECE PhD candidate, spanning LLM inference, accelerators, and neuromorphic computing."
   wide={true}
 >
   <header class="research-hero page-header">
@@ -16,14 +16,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         for efficient hardware systems.
       </p>
     </div>
-    <div class="research-hero-aside">
-      <div class="research-chip">CMU NCAL</div>
-      <div class="research-chip">CMU ACTL</div>
-      <div class="research-chip">UCF UNARY</div>
-      <div class="research-chip">NEXUS</div>
-      <div class="research-chip">12 papers</div>
-      <div class="research-chip">5 workshops</div>
-      <div class="research-chip">Student mentoring</div>
+    <div class="research-hero-aside" aria-label="Research affiliations and portfolio">
+      <p class="research-aside-label">Research groups</p>
+      <div class="research-group-grid">
+        <div class="research-chip">CMU NCAL</div>
+        <div class="research-chip">CMU ACTL</div>
+        <div class="research-chip">UCF UNARY</div>
+        <div class="research-chip">NEXUS</div>
+      </div>
+      <div class="research-proof-grid">
+        <div class="research-proof"><strong>12</strong><span>Peer-reviewed</span></div>
+        <div class="research-proof"><strong>5</strong><span>Workshops</span></div>
+        <div class="research-proof"><strong>15+</strong><span>Students mentored</span></div>
+      </div>
     </div>
   </header>
 
@@ -37,14 +42,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       All projects below are part of my doctoral research at <strong>CMU NCAL / CMU ACTL / UCF UNARY / NEXUS</strong>
       under the supervision of Prof. J.P. Shen and Prof. Shawn Blanton, in collaboration across four research groups.
     </p>
-    <div class="project-grid">
+    <div class="project-grid phd-project-grid">
     <div class="project-card">
       <div class="project-card-header">
         <h3 class="project-card-title">Mugi — Value-Level Parallelism for Efficient LLMs</h3>
         <span class="project-card-venue">ASPLOS 2026</span>
       </div>
       <p class="project-card-description">
-        Co-invented Mugi, a technique that exploits value-level parallelism in transformer nonlinear
+        Co-developed Mugi, a technique that exploits value-level parallelism in transformer nonlinear
         operations (softmax, LayerNorm, top-K) to accelerate LLM inference. Mugi reduces memory
         footprint while improving throughput on memory-bound workloads.
       </p>
@@ -64,7 +69,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Architected an INT8 temporal-unary convolution core for NVDLA, targeting low-precision edge
-        deep learning inference. Full physical design flow on 7nm process technology: floorplanning,
+        deep learning inference. The physical-design evaluation includes floorplanning,
         clock tree synthesis (CTS), place-and-route, DRC/LVS signoff.
       </p>
       <p class="project-card-results">
@@ -72,7 +77,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <div class="project-tags">
         <span class="tag">NVDLA</span>
-        <span class="tag">7nm</span>
         <span class="tag">INT8</span>
         <span class="tag">Physical Design</span>
         <span class="tag">CTS</span>
@@ -91,8 +95,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         (audio, EEG, gesture, etc.).
       </p>
       <p class="project-card-results">
-        Key result: Reduces TNN hardware design time from weeks to under 2 hours. Selected for journal
-        publication in IEEE TCAS-II 2024.
+        Key results: 32% lower place-and-route runtime on average and nearly 47% lower full hardware-flow
+        runtime for the largest evaluated column. Selected for journal publication in IEEE TCAS-II 2024.
       </p>
       <div class="project-tags">
         <span class="tag">TNN</span>
@@ -111,7 +115,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Devised TNN7: a custom predictive 7nm open-source PDK extension (ASAP7) comprising 9 custom
-        hard macros for Temporal Neural Networks. Used by 3 research groups.
+        hard macros for Temporal Neural Networks.
       </p>
       <p class="project-card-results">
         Key results: 14% power, 16% delay, 28% area, 45% EDP reduction over baseline ASAP7 designs.
@@ -152,7 +156,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="project-card-results">
         Key results: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region vs PCIe H100
         due to Grace CPU inefficiencies. Findings were shared with Samsung accelerator design efforts.
-        Project funded at $150K+.
+        Project funded at $100K+.
       </p>
       <div class="project-tags">
         <span class="tag">LLM Profiling</span>
@@ -171,8 +175,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Devised an ultra-low-power hybrid temporal-unary-binary GEMM unit for edge AI.
-        Fabricated on TSMC N5 process technology during internship at MediaTek USA.
-        Adopted for further development within MediaTek.
+        Designed and evaluated on TSMC N5 process technology during an internship at MediaTek USA.
       </p>
       <p class="project-card-results">Key result: 40%+ power reduction versus conventional binary GEMM at same throughput.</p>
       <div class="project-tags">
@@ -190,8 +193,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="project-card-venue">VLSI-SoC 2024 · MediaTek</span>
       </div>
       <p class="project-card-description">
-        Designed OzMAC, a bit-serial, sparsity-exploiting multiply-accumulate unit.
-        Achieved full timing closure on TSMC N5. Adopted for further development at MediaTek.
+        Developed OzMAC, a bit-serial, sparsity-exploiting multiply-accumulate unit for deep learning
+        inference and evaluated the design on TSMC N5.
       </p>
       <div class="project-tags">
         <span class="tag">MAC</span>
@@ -269,56 +272,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2 class="section-title">Fellowships &amp; Awards</h2>
     <div class="awards-grid">
       <div class="award-card featured">
-        <div class="award-icon">🏆</div>
         <div class="award-content">
           <h3 class="award-title">Amar Mukherjee Best Paper Award</h3>
           <p class="award-detail">ISVLSI 2025</p>
         </div>
       </div>
       <div class="award-card featured">
-        <div class="award-icon">🏅</div>
         <div class="award-content">
-          <h3 class="award-title">Qualcomm Innovation Fellowship — Winner</h3>
+          <h3 class="award-title">Qualcomm Innovation Fellowship</h3>
           <p class="award-detail">North America, 2023</p>
         </div>
       </div>
       <div class="award-card featured">
-        <div class="award-icon">🎓</div>
         <div class="award-content">
           <h3 class="award-title">CIT Dean's Fellowship</h3>
           <p class="award-detail">Carnegie Mellon University doctoral fellowship</p>
         </div>
       </div>
       <div class="award-card">
-        <div class="award-icon">⭐</div>
-        <div class="award-content">
-          <h3 class="award-title">Exemplary Performance Award</h3>
-          <p class="award-detail">MediaTek USA Inc. — Innovative contribution during AI Architecture internship</p>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon">✈️</div>
         <div class="award-content">
           <h3 class="award-title">ISVLSI 2024 Travel Grant</h3>
           <p class="award-detail">IEEE ISVLSI 2024</p>
         </div>
       </div>
       <div class="award-card">
-        <div class="award-icon">📋</div>
         <div class="award-content">
           <h3 class="award-title">CMU GSA Conference Grant</h3>
           <p class="award-detail">Carnegie Mellon University Graduate Student Assembly</p>
         </div>
       </div>
       <div class="award-card">
-        <div class="award-icon">⚙️</div>
         <div class="award-content">
           <h3 class="award-title">DAC Young Fellow</h3>
-          <p class="award-detail">Design Automation Conference, 2022 — Top early-career EDA researchers</p>
+          <p class="award-detail">Design Automation Conference, 2022</p>
         </div>
       </div>
       <div class="award-card">
-        <div class="award-icon">🏛️</div>
         <div class="award-content">
           <h3 class="award-title">ASPLOS Young Architect</h3>
           <p class="award-detail">ASPLOS 2022</p>
@@ -342,6 +331,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
   gap: var(--space-5);
   align-items: center;
+}
+
+.research-hero-copy,
+.research-hero-aside {
+  min-width: 0;
 }
 
 .research-hero h1 {
@@ -383,34 +377,90 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .research-hero-aside {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.research-aside-label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.research-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-2);
-  justify-content: flex-end;
 }
 
 .research-chip {
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.9);
+  border-left: 2px solid rgba(157, 34, 53, 0.58);
+  background: rgba(255, 253, 249, 0.9);
   color: var(--color-text);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  white-space: nowrap;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.research-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.research-proof {
+  min-width: 0;
+  padding: var(--space-2);
+  border-top: 2px solid rgba(157, 34, 53, 0.58);
+  background: rgba(247, 242, 234, 0.72);
+  text-align: center;
+}
+
+.research-proof strong,
+.research-proof span {
+  display: block;
+}
+
+.research-proof strong {
+  color: var(--color-heading);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.research-proof span {
+  margin-top: var(--space-1);
+  color: var(--color-text-light);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .section-intro {
   font-size: 0.95rem;
   color: var(--color-text-light);
-  margin-bottom: var(--space-4);
-  max-width: 78ch;
+  line-height: 1.75;
+  margin-bottom: var(--space-5);
+  max-width: none;
+  width: 100%;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
+}
+
+.phd-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .project-grid .project-card {
@@ -455,6 +505,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   font-style: italic;
 }
 
+@media (min-width: 761px) and (max-width: 1100px) {
+  .phd-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .phd-project-grid .project-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 760px) {
   .research-hero {
     grid-template-columns: 1fr;
@@ -469,8 +529,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     grid-column: auto;
   }
 
-  .research-hero-aside {
-    justify-content: flex-start;
+  .project-card-header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .project-card-title {
+    flex-basis: auto;
+  }
+
+  .project-card-venue {
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .research-proof span {
+    font-size: 0.6rem;
   }
 }
 </style>

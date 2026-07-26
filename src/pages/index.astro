@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout
   title="Home"
-  description="Personal research website of Prabhu Vellaisamy — PhD candidate at CMU researching LLM inference optimization, deep learning accelerators, and unary computing."
+  description="Prabhu Vellaisamy is a Silicon CoDesign Engineer at NVIDIA and a CMU ECE PhD candidate researching LLM inference optimization, deep learning accelerators, and unary computing."
   image="/assets/cmu-campus.webp"
   wide={true}
 >
@@ -26,10 +26,11 @@ const base = import.meta.env.BASE_URL;
     <div class="hero-grid">
       <div class="hero-body">
         <div class="hero-text">
-          <p class="hero-eyebrow">PhD Candidate · Carnegie Mellon University</p>
+          <p class="hero-eyebrow">Silicon CoDesign Engineer · NVIDIA &nbsp;|&nbsp; PhD Candidate · Carnegie Mellon University</p>
           <h1>Prabhu Vellaisamy</h1>
           <p class="hero-bio">
-            I am a PhD candidate in Electrical &amp; Computer Engineering at CMU, co-advised by
+            I am a <strong>Silicon CoDesign Engineer at NVIDIA</strong> and a PhD candidate in
+            Electrical &amp; Computer Engineering at CMU, co-advised by
             <a href="https://users.ece.cmu.edu/~jpshen/" target="_blank" rel="noopener noreferrer">Prof. John Paul Shen</a> and
             <a href="https://www.ece.cmu.edu/directory/bios/blanton-ronald.html" target="_blank" rel="noopener noreferrer">Prof. Shawn Blanton</a>.
             My research spans <strong>LLM inference optimization</strong> on CPU-GPU coupled architectures,
@@ -38,8 +39,8 @@ const base = import.meta.env.BASE_URL;
             I received the <strong>2023 Qualcomm Innovation Fellowship</strong> and the <strong>CIT Dean's Fellowship</strong>.
           </p>
           <p class="hero-bio">
-            Expected graduation: <strong>December 2026</strong>. Incoming AI Research Scientist Intern at Samsung Semiconductor (Jun 2026 – Sep 2026)
-            and Silicon Solution Engineering Intern at NVIDIA (Mar 2026 – Jun 2026), both offer accepted.
+            I joined NVIDIA full-time in <strong>July 2026</strong> after completing a Silicon Solution Engineering Internship
+            at NVIDIA from March to June 2026. Expected PhD completion: <strong>January 2027</strong>.
           </p>
           <div class="hero-facts" aria-label="Research highlights">
             <article class="hero-fact">
@@ -52,7 +53,7 @@ const base = import.meta.env.BASE_URL;
             </article>
             <article class="hero-fact">
               <p class="hero-fact-label">Teaching & advising</p>
-              <p class="hero-fact-value">10 teaching semesters and mentoring support in architecture and VLSI workflows.</p>
+              <p class="hero-fact-value">10 teaching semesters and mentorship of 15+ graduate and undergraduate students.</p>
             </article>
           </div>
           <div class="hero-links">
@@ -91,7 +92,7 @@ const base = import.meta.env.BASE_URL;
   <div class="stats-grid">
     <div class="stat-item">
       <div class="stat-number">12</div>
-      <div class="stat-label">Publications</div>
+      <div class="stat-label">Peer-Reviewed Papers</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">5</div>
@@ -139,7 +140,7 @@ const base = import.meta.env.BASE_URL;
         <div class="interest-index">04</div>
         <div>
           <h3 class="interest-title">VLSI / ASIC Design</h3>
-          <p class="interest-desc">Physical design, floorplanning, clock tree synthesis, DRC/LVS signoff on TSMC N5/N7 and ASAP7 PDK. Hardware-software co-design for AI workloads.</p>
+      <p class="interest-desc">Physical design, floorplanning, clock tree synthesis, and DRC/LVS signoff using TSMC N5 and predictive ASAP7 process technologies. Hardware-software co-design for AI workloads.</p>
         </div>
       </div>
     </div>
@@ -149,16 +150,16 @@ const base = import.meta.env.BASE_URL;
   <section class="section">
     <h2 class="section-title">Recent News</h2>
     <p class="section-lead">
-      Recent paper acceptances, invited talks, awards, and upcoming industry research appointments.
+      Recent paper acceptances, invited talks, awards, and industry research appointments.
     </p>
     <ul class="news-list">
       <li class="news-item">
-        <span class="news-date">May 2026</span>
-        <span class="news-content">Offer accepted for <strong>AI Research Scientist Internship</strong> at Samsung Semiconductor Inc., San Jose, CA.</span>
+        <span class="news-date">Jul 2026</span>
+        <span class="news-content">Joined <strong>NVIDIA</strong> full-time as a <strong>Silicon CoDesign Engineer</strong> in Santa Clara, CA.</span>
       </li>
       <li class="news-item">
-        <span class="news-date">Feb 2026</span>
-        <span class="news-content">Offer accepted for <strong>Silicon Solution Engineering Internship</strong> at NVIDIA Corporation, Santa Clara, CA.</span>
+        <span class="news-date">Mar 2026</span>
+        <span class="news-content">Started <strong>Silicon Solution Engineering Internship</strong> at NVIDIA Corporation, Santa Clara, CA.</span>
       </li>
       <li class="news-item">
         <span class="news-date">Jan 2026</span>
@@ -196,7 +197,7 @@ const base = import.meta.env.BASE_URL;
       <p class="publication-title">
         TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
       </p>
-      <p class="publication-authors"><strong>P. Vellaisamy</strong>, Y. Deng, S. Chakraborty, M. Scherer, S. Sury, J.P. Shen</p>
+      <p class="publication-authors"><strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen</p>
       <p class="publication-venue">
         <em>IEEE ISPASS 2026</em>
         <span class="badge badge-journal">Accepted</span>
@@ -225,7 +226,7 @@ const base = import.meta.env.BASE_URL;
         <em>IEEE ISPASS 2025</em>
         <span class="badge badge-talk">Invited Talk at Jülich Supercomputing Center</span>
       </p>
-      <p class="pub-summary">Characterizes prefill/decode bottlenecks on H100 vs GH200: GH200 incurs 2.8× higher prefill latency and 4× larger CPU-bounded region. Samsung-funded ($150K+).</p>
+      <p class="pub-summary">Characterizes prefill/decode bottlenecks on H100 vs GH200: GH200 incurs 2.8× higher prefill latency and 4× larger CPU-bounded region. Samsung-funded ($100K+).</p>
     </div>
 
     <div class="publication card home-publication-card">
@@ -234,7 +235,7 @@ const base = import.meta.env.BASE_URL;
       </p>
       <p class="publication-authors"><strong>P. Vellaisamy</strong>, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, H.F. Hung, J. Chen, R.D.S. Blanton, J.P. Shen</p>
       <p class="publication-venue"><em>IEEE DATE 2025</em></p>
-      <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA on 7nm: 53% area reduction, 44% power savings, 5× iso-area throughput improvement.</p>
+      <p class="pub-summary">INT8 temporal-unary convolution core for NVDLA: 53% area reduction, 44% power savings, and 5× iso-area throughput improvement.</p>
     </div>
 
     <div class="publication card home-publication-card">
@@ -250,7 +251,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     </div>
 
-    <p class="more-link"><a href={`${base}publications`}>View all 12 publications + 5 workshop papers →</a></p>
+    <p class="more-link"><a href={`${base}publications`}>View all 12 peer-reviewed papers + 5 workshop papers →</a></p>
   </section>
 
   <!-- ── Education ─────────────────────────────── -->
@@ -260,7 +261,7 @@ const base = import.meta.env.BASE_URL;
 
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <div class="timeline-period">Sep 2021 – Dec 2026 (Expected)</div>
+        <div class="timeline-period">Sep 2021 – Jan 2027 (Expected)</div>
         <div class="timeline-title">Doctor of Philosophy, Electrical &amp; Computer Engineering</div>
         <div class="timeline-org">Carnegie Mellon University — Pittsburgh, PA</div>
         <div class="timeline-body">
@@ -294,20 +295,21 @@ const base = import.meta.env.BASE_URL;
   padding: var(--space-8);
   margin-bottom: var(--space-5);
   border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-lg) + 4px);
+  border-top: 3px solid var(--color-accent);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at top right, rgba(157, 34, 53, 0.12), transparent 34%),
-    linear-gradient(180deg, #fffdfa 0%, #f6eee3 100%);
-  box-shadow: var(--shadow-sm);
+    radial-gradient(circle at top right, rgba(157, 34, 53, 0.065), transparent 30rem),
+    rgba(255, 253, 249, 0.9);
+  box-shadow: var(--shadow-xs);
 }
 
 .hero-banner {
   margin: 0 0 var(--space-5);
-  border-radius: calc(var(--radius-lg) + 2px);
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border);
   background: #fff;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .hero-banner img {
@@ -329,11 +331,11 @@ const base = import.meta.env.BASE_URL;
 
 .hero-visual figure {
   margin: 0;
-  border-radius: calc(var(--radius-lg) + 2px);
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border);
   background: #fff;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .hero-visual img {
@@ -392,7 +394,7 @@ const base = import.meta.env.BASE_URL;
 .hero-fact {
   padding: var(--space-3);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.82);
 }
 
@@ -452,7 +454,7 @@ const base = import.meta.env.BASE_URL;
   gap: var(--space-3);
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: var(--space-4);
   transition: box-shadow 0.2s ease;
 }
@@ -503,8 +505,8 @@ const base = import.meta.env.BASE_URL;
   grid-column: 1 / -1;
   padding: var(--space-5);
   background:
-    linear-gradient(135deg, rgba(157, 34, 53, 0.08), transparent 60%),
-    #fff;
+    linear-gradient(90deg, rgba(157, 34, 53, 0.065), transparent 52%),
+    var(--color-bg-card);
 }
 
 .pub-summary {

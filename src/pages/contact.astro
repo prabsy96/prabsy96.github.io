@@ -3,8 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Contact" description="Contact information for Prabhu Vellaisamy — CMU ECE PhD candidate.">
+<BaseLayout title="Contact" description="Contact Prabhu Vellaisamy, an NVIDIA Silicon CoDesign Engineer and CMU ECE PhD candidate, for research inquiries and collaboration.">
   <header class="page-header">
+    <p class="hero-kicker">Correspondence</p>
     <h1>Contact</h1>
     <p class="subtitle">Research inquiries, collaborations, and student mentorship</p>
   </header>
@@ -26,8 +27,11 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <div class="contact-item">
-        <h3>Affiliation</h3>
+        <h3>Current Roles</h3>
         <p>
+          Silicon CoDesign Engineer<br>
+          NVIDIA Corporation — Santa Clara, CA<br><br>
+          PhD Candidate<br>
           Carnegie Mellon University<br>
           Department of Electrical and Computer Engineering<br>
           Pittsburgh, PA 15213
@@ -48,7 +52,7 @@ const base = import.meta.env.BASE_URL;
         <p>
           <a href={`${base}resume.pdf`}>Download CV (PDF)</a>
         </p>
-        <p class="contact-note">Updated March 2026.</p>
+        <p class="contact-note">Updated July 2026.</p>
       </div>
     </div>
   </section>
@@ -88,6 +92,15 @@ const base = import.meta.env.BASE_URL;
     margin-top: 0;
     margin-bottom: var(--spacing-sm);
     font-size: 1.1rem;
+  }
+
+  .contact-item {
+    min-width: 0;
+    padding: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid rgba(157, 34, 53, 0.52);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
   }
 
   .contact-item p {

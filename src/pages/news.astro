@@ -5,27 +5,21 @@ const allNews = [
   // 2026
   {
     year: '2026',
-    date: 'May 2026',
-    title: 'Starting AI Research Scientist Internship at Samsung Semiconductor',
-    description: 'Offer accepted for an AI Research Scientist Intern role at Samsung Semiconductor Inc. in San Jose, CA for Jun 2026 to Sep 2026.',
+    date: 'Jul 2026',
+    title: 'Joined NVIDIA full-time as a Silicon CoDesign Engineer',
+    description: 'Accepted and started a full-time Silicon CoDesign Engineer role at NVIDIA Corporation in Santa Clara, CA in July 2026, while continuing the PhD program at Carnegie Mellon University.',
   },
   {
     year: '2026',
-    date: 'Feb 2026',
-    title: 'Starting Silicon Solution Engineering Internship at NVIDIA',
-    description: 'Offer accepted for a Silicon Solution Engineering Intern role at NVIDIA Corporation in Santa Clara, CA for Mar 2026 to Jun 2026.',
+    date: 'Mar 2026',
+    title: 'TaxBreak accepted at ISPASS 2026',
+    description: '"TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition" accepted at IEEE ISPASS 2026 after peer review. The paper is also available on arXiv (arXiv:2603.12465).',
   },
   {
     year: '2026',
-    date: 'Jan 2026',
-    title: 'Paper accepted at ASPLOS 2026',
-    description: '"Mugi: Value Level Parallelism for Efficient LLMs" accepted at ACM ASPLOS 2026. Joint work with D. Price, J.P. Shen, and D. Wu.',
-  },
-  {
-    year: '2026',
-    date: 'Jan 2026',
-    title: 'Two Workshop Papers accepted at ASPLOS 2026 WUC',
-    description: '"Mugi: Value Level Parallelism For Nonlinear Operations in LLMs" and "Agraph: A Unified Graph Representation for At-Will Simulation of Emerging Stacks" accepted at Workshop on Unary Computing (WUC), ASPLOS 2026.',
+    date: 'Mar 2026',
+    title: 'Started Silicon Solution Engineering Internship at NVIDIA',
+    description: 'Started the Silicon Solution Engineering Intern role at NVIDIA Corporation in Santa Clara, CA for Mar 2026 to Jun 2026.',
   },
   {
     year: '2026',
@@ -41,15 +35,21 @@ const allNews = [
   },
   {
     year: '2026',
-    date: 'Mar 2026',
-    title: 'TaxBreak accepted at ISPASS 2026',
-    description: '"TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition" accepted at IEEE ISPASS 2026 after peer review. The paper is also available on arXiv (arXiv:2603.12465).',
+    date: 'Jan 2026',
+    title: 'Paper accepted at ASPLOS 2026',
+    description: '"Mugi: Value Level Parallelism for Efficient LLMs" accepted at ACM ASPLOS 2026. Joint work with D. Price, J.P. Shen, and D. Wu.',
+  },
+  {
+    year: '2026',
+    date: 'Jan 2026',
+    title: 'Two Workshop Papers accepted at ASPLOS 2026 WUC',
+    description: '"Mugi: Value Level Parallelism For Nonlinear Operations in LLMs" and "Agraph: A Unified Graph Representation for At-Will Simulation of Emerging Stacks" accepted at Workshop on Unary Computing (WUC), ASPLOS 2026.',
   },
   // 2025
   {
     year: '2025',
     date: 'Jul 2025',
-    title: '🏆 Amar Mukherjee Best Paper Award — ISVLSI 2025',
+    title: 'Amar Mukherjee Best Paper Award — ISVLSI 2025',
     description: 'Received the Amar Mukherjee Best Paper Award at IEEE ISVLSI 2025 for "Catwalk: Unary Top-K for Efficient Ramp-No-Leak Neuron Design for Temporal Neural Networks."',
   },
   {
@@ -80,7 +80,7 @@ const allNews = [
   {
     year: '2023',
     date: 'Oct 2023',
-    title: 'Qualcomm Innovation Fellowship — North America Winner',
+    title: 'Qualcomm Innovation Fellowship — North America',
     description: 'Received the 2023 Qualcomm Innovation Fellowship - North America.',
   },
 ];
@@ -97,16 +97,16 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
     </div>
     <div class="news-hero-stats">
       <div class="news-stat">
-        <div class="news-stat-number">2026</div>
-        <div class="news-stat-label">Active year</div>
-      </div>
-      <div class="news-stat">
-        <div class="news-stat-number">2</div>
-        <div class="news-stat-label">Internships</div>
-      </div>
-      <div class="news-stat">
         <div class="news-stat-number">12</div>
-        <div class="news-stat-label">Papers</div>
+        <div class="news-stat-label">Peer-reviewed</div>
+      </div>
+      <div class="news-stat">
+        <div class="news-stat-number">5</div>
+        <div class="news-stat-label">Workshop papers</div>
+      </div>
+      <div class="news-stat">
+        <div class="news-stat-number">3</div>
+        <div class="news-stat-label">Preprints</div>
       </div>
     </div>
   </header>
@@ -117,7 +117,7 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
       <ul class="news-list">
         {allNews.filter(n => n.year === year).map(news => (
           <li class="news-item">
-            <span class="news-date">{news.date.replace(/^\w+ /, '')}</span>
+            <span class="news-date">{news.date}</span>
             <div class="news-content">
               <div class="news-headline">{news.title}</div>
               <div class="news-body">{news.description}</div>
@@ -166,8 +166,9 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 .news-stat {
   padding: var(--space-3);
   border: 1px solid var(--color-border);
+  border-top: 2px solid rgba(157, 34, 53, 0.58);
   border-radius: var(--radius-md);
-  background: linear-gradient(180deg, rgba(255, 253, 250, 0.96) 0%, rgba(248, 240, 231, 0.96) 100%);
+  background: var(--color-bg-card);
   text-align: center;
 }
 

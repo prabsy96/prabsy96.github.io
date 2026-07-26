@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
       <h1>Publications</h1>
       <p class="hero-blurb">
         A record of 12 peer-reviewed papers, 5 workshop papers, and 3 preprints.
-        Each entry includes a short abstract-style summary so the page reads cleanly and stays current.
+        Each entry includes a concise summary and links to available publication records.
       </p>
     </div>
     <div class="publication-hero-stats" aria-label="Publication counts">
@@ -44,7 +44,7 @@ const base = import.meta.env.BASE_URL;
     <summary class="pub-group-summary">
       <div class="section-header">
       <h2 class="section-title">Preprints</h2>
-      <p class="section-lead">Recent papers in preprint form that are already pushing into the next review cycle.</p>
+      <p class="section-lead">Manuscripts currently available in preprint form.</p>
       </div>
     </summary>
     <div class="pub-group-body">
@@ -117,7 +117,7 @@ const base = import.meta.env.BASE_URL;
         <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
       </p>
       <p class="publication-venue">
-        <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026</em> · Accepted · Scheduled for presentation on April 27, 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
+        <em>IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026</em> · Accepted · Presentation date: April 27, 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
       </p>
       <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
       <div class="publication-links">
@@ -311,7 +311,7 @@ const base = import.meta.env.BASE_URL;
     <summary class="pub-group-summary">
       <div class="section-header">
       <h2 class="section-title">Workshop Papers</h2>
-      <p class="section-lead">Workshop papers that helped shape the larger research program.</p>
+      <p class="section-lead">Workshop papers on unary computing, emerging architectures, and neuromorphic systems.</p>
       </div>
     </summary>
     <div class="pub-group-body">
@@ -443,7 +443,8 @@ const base = import.meta.env.BASE_URL;
   padding: var(--space-3);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  background: linear-gradient(180deg, rgba(255, 253, 250, 0.96) 0%, rgba(248, 240, 231, 0.96) 100%);
+  border-top: 2px solid rgba(157, 34, 53, 0.58);
+  background: var(--color-bg-card);
   text-align: center;
 }
 
@@ -475,16 +476,15 @@ const base = import.meta.env.BASE_URL;
   border: 1px solid var(--color-border);
   background: rgba(255, 255, 255, 0.72);
   color: var(--color-text);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 0.45rem 0.85rem;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .pub-filter:hover {
-  transform: translateY(-1px);
   border-color: var(--color-link);
   color: var(--color-link);
 }
@@ -497,8 +497,8 @@ const base = import.meta.env.BASE_URL;
 
 .pub-group {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(255, 253, 250, 0.94) 0%, rgba(249, 244, 236, 0.94) 100%);
+  border-radius: var(--radius-md);
+  background: rgba(255, 253, 249, 0.74);
   padding: 0;
 }
 
@@ -507,7 +507,7 @@ const base = import.meta.env.BASE_URL;
 }
 
 .pub-group[open] {
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .pub-group-summary {
@@ -547,7 +547,7 @@ const base = import.meta.env.BASE_URL;
   padding: var(--space-4);
   margin-bottom: var(--space-3);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background: var(--color-bg-card);
   box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
 }

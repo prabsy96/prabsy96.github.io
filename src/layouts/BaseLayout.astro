@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   wide?: boolean;
   image?: string;
+  ogType?: 'website' | 'article';
   additionalStructuredData?: Record<string, unknown> | null;
 }
 
@@ -17,15 +18,18 @@ const {
   description = 'Personal research website of Prabhu Vellaisamy',
   wide = true,
   image = '/assets/profile-headshot.jpeg',
+  ogType = 'website',
   additionalStructuredData = null,
 } = Astro.props;
 const fullTitle =
   title === 'Home'
-    ? 'Prabhu Vellaisamy | CMU ECE PhD Candidate in LLM Inference and Hardware Systems'
+    ? 'Prabhu Vellaisamy | NVIDIA Silicon CoDesign Engineer & CMU PhD'
     : `${title} | Prabhu Vellaisamy`;
 const base = import.meta.env.BASE_URL;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const socialImageUrl = new URL(image, Astro.site);
+const personImageUrl = new URL('/assets/profile-headshot.jpeg', Astro.site);
+const personId = new URL('/#person', Astro.site);
 const pageDescription = description;
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const siteKeywords = [
@@ -46,15 +50,24 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'Person',
+      '@id': personId.toString(),
       name: 'Prabhu Vellaisamy',
       givenName: 'Prabhu',
       familyName: 'Vellaisamy',
       url: Astro.site?.toString(),
-      image: socialImageUrl.toString(),
+      image: personImageUrl.toString(),
       email: 'pvellais@andrew.cmu.edu',
-      jobTitle: 'PhD Candidate in Electrical and Computer Engineering',
+      jobTitle: [
+        'Silicon CoDesign Engineer',
+        'PhD Candidate in Electrical and Computer Engineering',
+      ],
       description:
-        'PhD candidate at Carnegie Mellon University researching LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic.',
+        'Silicon CoDesign Engineer at NVIDIA and PhD candidate at Carnegie Mellon University researching LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic.',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'NVIDIA',
+        url: 'https://www.nvidia.com/',
+      },
       affiliation: {
         '@type': 'CollegeOrUniversity',
         name: 'Carnegie Mellon University',
@@ -84,7 +97,7 @@ const structuredData = {
         'https://scholar.google.com/citations?user=ePfYSNsAAAAJ',
         'https://linkedin.com/in/pvellais',
       ],
-      mainEntityOfPage: canonicalUrl.toString(),
+      mainEntityOfPage: Astro.site?.toString(),
     },
     {
       '@type': 'WebSite',
@@ -112,7 +125,7 @@ const mergedStructuredData =
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content={siteKeywords.join(', ')} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Prabhu Vellaisamy" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={pageDescription} />
@@ -140,8 +153,9 @@ const mergedStructuredData =
     )}
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <Navbar />
-    <main class:list={['container', { 'container-wide': wide }]}>
+    <main id="main-content" class={wide ? 'container-wide' : 'container'}>
       <slot />
     </main>
     <Footer />
@@ -149,6 +163,24 @@ const mergedStructuredData =
 </html>
 
 <style>
+  .skip-link {
+    position: fixed;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 1000;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    color: var(--color-heading);
+    font-weight: 700;
+    transform: translateY(-160%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
   main {
     min-height: calc(100vh - 200px);
     padding-top: var(--spacing-xl);

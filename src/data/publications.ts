@@ -19,7 +19,7 @@ export const publications: PublicationEntry[] = [
     slug: 'taxbreak-ispass-2026',
     title: 'TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition',
     authors: 'P. Vellaisamy, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen',
-    venue: 'IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026 · Accepted · Scheduled for presentation on April 27, 2026',
+    venue: 'IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026 · Accepted · Presentation date: April 27, 2026',
     year: 2026,
     category: 'peer-reviewed',
     summary:

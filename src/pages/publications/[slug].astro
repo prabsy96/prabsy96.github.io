@@ -19,18 +19,25 @@ const relatedPublications = publications
         entry.keywords.some((keyword) => publication.keywords.includes(keyword)))
   )
   .slice(0, 3);
+const personId = new URL('/#person', Astro.site).toString();
 
 const articleSchema = {
-  '@context': 'https://schema.org',
   '@type': 'ScholarlyArticle',
   headline: publication.title,
   name: publication.title,
   description: publication.summary,
-  author: publication.authors.split(',').map((name: string) => ({
-    '@type': 'Person',
-    name: name.trim(),
-  })),
-  datePublished: `${publication.year}-01-01`,
+  author: publication.authors.split(',').map((name: string) =>
+    name.trim() === 'P. Vellaisamy'
+      ? {
+          '@type': 'Person',
+          '@id': personId,
+          name: 'Prabhu Vellaisamy',
+        }
+      : {
+          '@type': 'Person',
+          name: name.trim(),
+        }
+  ),
   isPartOf: publication.venue,
   url: new URL(Astro.url.pathname, Astro.site).toString(),
   about: publication.keywords,
@@ -40,6 +47,7 @@ const articleSchema = {
 <BaseLayout
   title={publication.title}
   description={`${publication.title} by Prabhu Vellaisamy and collaborators. ${publication.summary}`}
+  ogType="article"
   additionalStructuredData={articleSchema}
 >
   <article class="paper-page">
@@ -145,9 +153,9 @@ const articleSchema = {
   .related-card {
     padding: var(--space-5);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     background: var(--color-bg-card);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
   }
 
   .paper-card p {
@@ -165,12 +173,12 @@ const articleSchema = {
   .related-card {
     color: inherit;
     text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
   }
 
   .related-card:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    border-color: #c9b9aa;
+    background: #fffaf5;
     text-decoration: none;
   }
 

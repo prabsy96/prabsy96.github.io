@@ -1,4 +1,4 @@
-/* Global Styles - Modern Academic Design */
+/* Global Styles - Editorial Academic Design */
 
 :root {
   /* Color palette */
@@ -9,8 +9,8 @@
   --color-link: #9d2235;
   --color-link-hover: #7f1b2b;
   --color-bg: #f7f2ea;
-  --color-bg-alt: #efe7dc;
-  --color-bg-card: #ffffff;
+  --color-bg-alt: #eee6db;
+  --color-bg-card: #fffdf9;
   --color-border: #d9cec0;
   --color-border-light: #e8dfd3;
   --color-accent: #6f1d2a;
@@ -54,15 +54,15 @@
   /* Layout */
   --max-width: 860px;
   --max-width-wide: 1400px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
 
   /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm: 0 1px 3px rgba(17,24,39,0.07), 0 1px 2px rgba(17,24,39,0.04);
-  --shadow-md: 0 4px 8px -2px rgba(17,24,39,0.08), 0 2px 4px -1px rgba(17,24,39,0.04);
-  --shadow-lg: 0 10px 18px -4px rgba(17,24,39,0.08), 0 4px 8px -2px rgba(17,24,39,0.04);
+  --shadow-xs: 0 1px 2px rgba(44, 32, 24, 0.035);
+  --shadow-sm: 0 2px 6px rgba(44, 32, 24, 0.055);
+  --shadow-md: 0 5px 14px rgba(44, 32, 24, 0.07);
+  --shadow-lg: 0 10px 24px rgba(44, 32, 24, 0.08);
 }
 
 *, *::before, *::after {
@@ -84,11 +84,8 @@ body {
   line-height: 1.75;
   color: var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(157, 34, 53, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(111, 29, 42, 0.05), transparent 22%),
-    radial-gradient(circle at 50% 0%, rgba(95, 53, 40, 0.04), transparent 30%),
-    linear-gradient(180deg, #faf5ee 0%, #f5ede3 52%, #efe6db 100%);
-  background-attachment: fixed;
+    radial-gradient(circle at 12% 0%, rgba(157, 34, 53, 0.055), transparent 24rem),
+    linear-gradient(180deg, #fbf7f0 0%, #f7f1e8 48%, #f2eadf 100%);
   background-color: var(--color-bg);
 }
 
@@ -238,7 +235,7 @@ th {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.2em 0.55em;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -274,21 +271,22 @@ th {
   padding: 0.2em 0.6em;
   background-color: var(--color-tag-bg);
   color: var(--color-tag-text);
-  border-radius: var(--radius-sm);
+  border-radius: 2px;
   border: 1px solid var(--color-border);
 }
 
 /* Section divider styling */
 .section-title {
-  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
+  letter-spacing: -0.012em;
+  text-transform: none;
+  color: var(--color-heading);
   margin-top: 0;
   margin-bottom: var(--space-6);
   padding-bottom: var(--space-2);
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ── Responsive typography ──────────────────── */
@@ -297,4 +295,18 @@ th {
   html { font-size: 15px; }
   h1 { font-size: 1.85rem; }
   h2 { font-size: 1.35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

@@ -8,6 +8,7 @@ const base = import.meta.env.BASE_URL;
   description="Curriculum Vitae of Prabhu Vellaisamy — education, experience, teaching, and technical skills."
 >
   <header class="page-header">
+    <p class="hero-kicker">Academic record</p>
     <h1>Curriculum Vitae</h1>
     <p class="subtitle">
       Prabhu Vellaisamy · pvellais@andrew.cmu.edu ·
@@ -22,12 +23,12 @@ const base = import.meta.env.BASE_URL;
 
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <div class="timeline-period">Sep 2021 – Dec 2026 (Expected)</div>
+        <div class="timeline-period">Sep 2021 – Jan 2027 (Expected)</div>
         <div class="timeline-title">Doctor of Philosophy, Electrical &amp; Computer Engineering</div>
         <div class="timeline-org">Carnegie Mellon University — Pittsburgh, PA</div>
         <div class="timeline-body">
           Co-Advisors: Prof. J.P. Shen &amp; Prof. Shawn Blanton · CMU NCAL, CMU ACTL, UCF UNARY Research Groups<br>
-          CIT Dean's Fellowship · 2023 Qualcomm Innovation Fellowship Winner
+          CIT Dean's Fellowship · 2023 Qualcomm Innovation Fellowship
         </div>
       </div>
 
@@ -70,15 +71,18 @@ const base = import.meta.env.BASE_URL;
 
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <div class="timeline-period">Jun 2026 – Sep 2026</div>
-        <div class="timeline-title">Artificial Intelligence (AI) Research Scientist Intern <span class="offer-badge">Offer Accepted</span></div>
-        <div class="timeline-org">Samsung Semiconductor Inc. — San Jose, CA</div>
+        <div class="timeline-period">Jul 2026 – Present</div>
+        <div class="timeline-title">Silicon CoDesign Engineer</div>
+        <div class="timeline-org">NVIDIA Corporation — Santa Clara, CA</div>
+        <div class="timeline-body">
+          Characterizing LLM inference and agentic AI workloads on NVIDIA platforms and contributing to an internal end-to-end application simulator.
+        </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-dot current"></div>
+        <div class="timeline-dot"></div>
         <div class="timeline-period">Mar 2026 – Jun 2026</div>
-        <div class="timeline-title">Silicon Solution Engineering Intern <span class="offer-badge">Offer Accepted</span></div>
+        <div class="timeline-title">Silicon Solution Engineering Intern</div>
         <div class="timeline-org">NVIDIA Corporation — Santa Clara, CA</div>
       </div>
 
@@ -98,7 +102,7 @@ const base = import.meta.env.BASE_URL;
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-period">Jun 2022 – Dec 2022</div>
-        <div class="timeline-title">AI Architecture &amp; Algorithm Intern <span class="offer-badge">Exemplary Performance Award</span></div>
+        <div class="timeline-title">AI Architecture &amp; Algorithm Intern</div>
         <div class="timeline-org">MediaTek USA Inc. — San Jose, CA (Full-time Jun–Sep; Part-time Remote Aug–Dec)</div>
         <div class="timeline-body">
           <ul>
@@ -298,21 +302,6 @@ const base = import.meta.env.BASE_URL;
 .teaching-table td, .teaching-table th {
   vertical-align: top;
   padding: var(--space-3) var(--space-4);
-}
-
-.offer-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.15em 0.5em;
-  background: #dcfce7;
-  color: #14532d;
-  border: 1px solid #bbf7d0;
-  border-radius: 999px;
-  margin-left: var(--space-2);
-  vertical-align: middle;
 }
 
 @media (max-width: 600px) {
