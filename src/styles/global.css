@@ -2,17 +2,18 @@
 
 :root {
   /* Color palette */
-  --color-text: #2c2926;
-  --color-text-light: #5b5652;
-  --color-text-muted: #877e77;
-  --color-heading: #191614;
-  --color-link: #9d2235;
-  --color-link-hover: #7f1b2b;
-  --color-bg: #f8f5ef;
-  --color-bg-alt: #f1ece4;
-  --color-bg-card: #fffdf9;
-  --color-border: #d9cec0;
-  --color-border-light: #e8dfd3;
+  --color-text: #26211e;
+  --color-text-light: #48413c;
+  --color-text-muted: #68605a;
+  --color-heading: #151210;
+  --color-link: #941f31;
+  --color-link-hover: #711625;
+  --color-bg: #faf7f1;
+  --color-bg-alt: #f2ece3;
+  --color-bg-card: #fffdfa;
+  --color-border: #d5c8b9;
+  --color-border-light: #e5dcd1;
+  --color-border-strong: #b9a99a;
   --color-accent: #6f1d2a;
   --color-accent-light: #f5e7e4;
 
@@ -52,8 +53,8 @@
   --spacing-xl: var(--space-16);
 
   /* Layout */
-  --max-width: 860px;
-  --max-width-wide: 1400px;
+  --max-width: 880px;
+  --max-width-wide: 1240px;
   --radius-sm: 3px;
   --radius-md: 5px;
   --radius-lg: 8px;
@@ -81,9 +82,9 @@ body {
   padding: 0;
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.68;
   color: var(--color-text);
-  background: linear-gradient(180deg, #fbf9f5 0%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, #fdfbf7 0%, var(--color-bg) 100%);
   background-color: var(--color-bg);
 }
 
