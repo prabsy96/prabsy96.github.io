@@ -8,28 +8,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   wide={true}
 >
   <header class="research-hero page-header">
-    <div class="research-hero-copy">
-      <p class="hero-kicker">Doctoral work</p>
-      <h1>Research</h1>
-      <p class="subtitle">
-        LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic
-        for efficient hardware systems.
-      </p>
-    </div>
-    <div class="research-hero-aside" aria-label="Research affiliations and portfolio">
-      <p class="research-aside-label">Research groups</p>
-      <div class="research-group-grid">
-        <div class="research-chip">CMU NCAL</div>
-        <div class="research-chip">CMU ACTL</div>
-        <div class="research-chip">UCF UNARY</div>
-        <div class="research-chip">NEXUS</div>
-      </div>
-      <div class="research-proof-grid">
-        <div class="research-proof"><strong>12</strong><span>Peer-reviewed</span></div>
-        <div class="research-proof"><strong>5</strong><span>Workshops</span></div>
-        <div class="research-proof"><strong>15+</strong><span>Students mentored</span></div>
-      </div>
-    </div>
+    <p class="hero-kicker">Doctoral work</p>
+    <h1>Research</h1>
+    <p class="subtitle">
+      LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic
+      for efficient hardware systems.
+    </p>
+    <p class="research-affiliations">CMU NCAL · CMU ACTL · UCF UNARY · NEXUS</p>
   </header>
 
   <!-- ── PhD Research Projects ─────────────────── -->
@@ -327,15 +312,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
 .research-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
-  gap: var(--space-5);
-  align-items: center;
-}
-
-.research-hero-copy,
-.research-hero-aside {
-  min-width: 0;
+  display: block;
 }
 
 .research-hero h1 {
@@ -354,9 +331,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   margin: 0;
   color: var(--color-link);
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .section-heading {
@@ -367,81 +343,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   margin: 0 0 var(--space-2);
   color: var(--color-text-muted);
   font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .section-heading .section-title {
   margin-bottom: 0;
 }
 
-.research-hero-aside {
-  display: grid;
-  gap: var(--space-3);
-}
-
-.research-aside-label {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.research-group-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-2);
-}
-
-.research-chip {
-  padding: 0.5rem 0.7rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  border-left: 2px solid rgba(157, 34, 53, 0.58);
-  background: rgba(255, 253, 249, 0.9);
-  color: var(--color-text);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
-.research-proof-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-2);
-}
-
-.research-proof {
-  min-width: 0;
-  padding: var(--space-2);
-  border-top: 2px solid rgba(157, 34, 53, 0.58);
-  background: rgba(247, 242, 234, 0.72);
-  text-align: center;
-}
-
-.research-proof strong,
-.research-proof span {
-  display: block;
-}
-
-.research-proof strong {
-  color: var(--color-heading);
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  line-height: 1.1;
-}
-
-.research-proof span {
-  margin-top: var(--space-1);
+.research-affiliations {
+  margin: var(--space-3) 0 0;
   color: var(--color-text-light);
-  font-size: 0.65rem;
-  font-weight: 700;
-  line-height: 1.25;
-  text-transform: uppercase;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
 }
 
 .section-intro {
@@ -494,7 +408,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 .talk-title {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-heading);
   margin-bottom: var(--space-1);
 }
@@ -516,11 +430,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 @media (max-width: 760px) {
-  .research-hero {
-    grid-template-columns: 1fr;
-    padding: var(--space-5);
-  }
-
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -543,9 +452,4 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 }
 
-@media (max-width: 420px) {
-  .research-proof span {
-    font-size: 0.6rem;
-  }
-}
 </style>

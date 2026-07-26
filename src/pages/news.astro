@@ -90,25 +90,9 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 
 <BaseLayout title="News" description="Latest news and updates from Prabhu Vellaisamy.">
   <header class="news-hero page-header">
-    <div class="news-hero-copy">
-      <p class="hero-kicker">Updates</p>
-      <h1>News</h1>
-      <p class="subtitle">Announcements, milestones, and publication updates from the research program.</p>
-    </div>
-    <div class="news-hero-stats">
-      <div class="news-stat">
-        <div class="news-stat-number">12</div>
-        <div class="news-stat-label">Peer-reviewed</div>
-      </div>
-      <div class="news-stat">
-        <div class="news-stat-number">5</div>
-        <div class="news-stat-label">Workshop papers</div>
-      </div>
-      <div class="news-stat">
-        <div class="news-stat-number">3</div>
-        <div class="news-stat-label">Preprints</div>
-      </div>
-    </div>
+    <p class="hero-kicker">Updates</p>
+    <h1>News</h1>
+    <p class="subtitle">Announcements, milestones, and publication updates from the research program.</p>
   </header>
 
   {years.map(year => (
@@ -131,19 +115,15 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
 
 <style>
 .news-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
-  gap: var(--space-5);
-  align-items: center;
+  display: block;
 }
 
 .hero-kicker {
   margin: 0 0 var(--space-2);
   color: var(--color-link);
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .news-hero h1 {
@@ -157,39 +137,8 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
   line-height: 1.75;
 }
 
-.news-hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-2);
-}
-
-.news-stat {
-  padding: var(--space-3);
-  border: 1px solid var(--color-border);
-  border-top: 2px solid rgba(157, 34, 53, 0.58);
-  border-radius: var(--radius-md);
-  background: var(--color-bg-card);
-  text-align: center;
-}
-
-.news-stat-number {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--color-heading);
-  line-height: 1;
-}
-
-.news-stat-label {
-  margin-top: var(--space-1);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-}
-
 .news-headline {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-heading);
   font-size: 0.93rem;
   margin-bottom: var(--space-1);
@@ -201,20 +150,4 @@ const years = [...new Set(allNews.map(n => n.year))].sort((a, b) => Number(b) - 
   line-height: 1.6;
 }
 
-@media (max-width: 760px) {
-  .news-hero {
-    grid-template-columns: 1fr;
-    padding: var(--space-5);
-  }
-
-  .news-hero-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 560px) {
-  .news-hero-stats {
-    grid-template-columns: 1fr;
-  }
-}
 </style>

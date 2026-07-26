@@ -16,20 +16,20 @@
 
 .page-header {
   margin-bottom: var(--space-10);
-  padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-accent);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 253, 249, 0.9);
-  box-shadow: var(--shadow-xs);
+  padding: var(--space-4) 0 var(--space-6);
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   width: 100%;
 }
 
 .page-header h1 {
   margin-top: 0;
   margin-bottom: var(--space-3);
-  font-size: clamp(2rem, 3vw, 2.7rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  letter-spacing: -0.02em;
 }
 
 .page-header .subtitle {
@@ -44,9 +44,8 @@
   margin: 0 0 var(--space-2);
   color: var(--color-link);
   font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 /* ── Section ─────────────────────────────────── */
@@ -63,18 +62,19 @@
 .section-title::after {
   content: '';
   display: block;
-  width: 56px;
-  height: 2px;
-  margin-top: var(--space-3);
-  background: linear-gradient(90deg, var(--color-link) 0%, rgba(157, 34, 53, 0.18) 100%);
+  width: 36px;
+  height: 1px;
+  margin-top: var(--space-2);
+  background: var(--color-link);
 }
 
 /* ── Cards ───────────────────────────────────── */
 
 .card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
   padding: var(--space-5);
   margin-bottom: var(--space-4);
   width: 100%;
@@ -83,13 +83,13 @@
 }
 
 .card:hover {
-  border-color: #c9b9aa;
-  box-shadow: var(--shadow-xs);
+  border-color: var(--color-border);
+  box-shadow: none;
 }
 
 .card-title {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 var(--space-2) 0;
   color: var(--color-heading);
 }
@@ -123,7 +123,7 @@
 .publication-number {
   display: inline-block;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-text-muted);
   margin-right: var(--space-2);
   min-width: 1.5rem;
@@ -131,7 +131,7 @@
 
 .publication-title {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 var(--space-1) 0;
   color: var(--color-heading);
   line-height: 1.4;
@@ -163,7 +163,7 @@
 
 .publication-links a {
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-link);
   padding: 0.15em 0.55em;
   border: 1px solid var(--color-link);
@@ -182,7 +182,7 @@
 .project-card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   padding: var(--space-5);
   margin-bottom: var(--space-5);
   width: 100%;
@@ -191,8 +191,8 @@
 }
 
 .project-card:hover {
-  border-color: #c9b9aa;
-  box-shadow: var(--shadow-xs);
+  border-color: var(--color-border);
+  box-shadow: none;
 }
 
 .project-card-header {
@@ -208,7 +208,7 @@
   flex: 1 1 26rem;
   min-width: 0;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
   color: var(--color-heading);
   overflow-wrap: anywhere;
@@ -216,7 +216,7 @@
 
 .project-card-venue {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-link);
   white-space: normal;
   text-align: right;
@@ -291,7 +291,7 @@
 
 .timeline-period {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-muted);
   letter-spacing: 0.03em;
   margin-bottom: var(--space-1);
@@ -299,7 +299,7 @@
 
 .timeline-title {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-heading);
   margin: 0 0 var(--space-1) 0;
 }
@@ -307,7 +307,7 @@
 .timeline-org {
   font-size: 0.9rem;
   color: var(--color-link);
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: var(--space-2);
 }
 
@@ -337,12 +337,12 @@
 .news-item {
   display: flex;
   gap: var(--space-3);
-  margin-bottom: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid rgba(157, 34, 53, 0.52);
-  border-radius: var(--radius-md);
-  background: var(--color-bg-card);
+  margin-bottom: 0;
+  padding: var(--space-3) 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-border-light);
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -354,7 +354,7 @@
   flex-shrink: 0;
   width: 82px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-muted);
   padding-top: 0.15rem;
   letter-spacing: 0.02em;
@@ -370,23 +370,30 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: var(--space-4);
+  gap: 0;
   margin: var(--space-8) 0 var(--space-10);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .stat-item {
   text-align: center;
   padding: var(--space-4);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-top: 2px solid rgba(157, 34, 53, 0.62);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--color-border);
+  border-radius: 0;
   box-shadow: none;
 }
 
+.stat-item:last-child {
+  border-right: 0;
+}
+
 .stat-number {
-  font-size: 2rem;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 400;
   color: var(--color-accent);
   line-height: 1;
   margin-bottom: var(--space-1);
@@ -394,9 +401,8 @@
 
 .stat-label {
   font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   color: var(--color-text-light);
 }
 
@@ -409,10 +415,11 @@
 }
 
 .award-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: var(--space-4);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: var(--space-3) 0;
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
@@ -421,19 +428,19 @@
 }
 
 .award-card:hover {
-  border-color: #c9b9aa;
+  border-color: var(--color-border);
 }
 
 .award-card.featured {
-  background: var(--color-award-bg);
-  border-color: var(--color-award-border);
+  background: transparent;
+  border-color: var(--color-border);
 }
 
 .award-content { flex: 1; }
 
 .award-title {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 var(--space-1) 0;
   color: var(--color-heading);
 }
@@ -459,7 +466,7 @@
 
 .skill-group-label {
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
@@ -483,7 +490,7 @@
   color: white;
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   transition: background 0.15s ease, border-color 0.15s ease;
   box-shadow: none;
@@ -567,6 +574,10 @@
   .awards-grid { grid-template-columns: 1fr; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .stat-item:nth-child(2) { border-right: 0; }
+
+  .stat-item:nth-child(-n + 2) { border-bottom: 1px solid var(--color-border); }
 
   .timeline { padding-left: var(--space-6); }
 

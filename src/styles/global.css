@@ -8,8 +8,8 @@
   --color-heading: #191614;
   --color-link: #9d2235;
   --color-link-hover: #7f1b2b;
-  --color-bg: #f7f2ea;
-  --color-bg-alt: #eee6db;
+  --color-bg: #f8f5ef;
+  --color-bg-alt: #f1ece4;
   --color-bg-card: #fffdf9;
   --color-border: #d9cec0;
   --color-border-light: #e8dfd3;
@@ -83,9 +83,7 @@ body {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--color-text);
-  background:
-    radial-gradient(circle at 12% 0%, rgba(157, 34, 53, 0.055), transparent 24rem),
-    linear-gradient(180deg, #fbf7f0 0%, #f7f1e8 48%, #f2eadf 100%);
+  background: linear-gradient(180deg, #fbf9f5 0%, var(--color-bg) 100%);
   background-color: var(--color-bg);
 }
 
@@ -94,7 +92,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   color: var(--color-heading);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.25;
   margin-top: var(--space-8);
   margin-bottom: var(--space-4);
@@ -103,8 +101,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: 2.25rem; }
 h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; font-weight: 600; }
-h4 { font-size: 1.05rem; font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 400; }
+h4 { font-size: 1.05rem; font-weight: 400; }
+
+strong,
+b {
+  font-weight: inherit;
+}
 
 p {
   margin: 0 0 var(--space-4) 0;
@@ -204,7 +207,7 @@ th, td {
 }
 
 th {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-heading);
   background: var(--color-bg-alt);
 }
@@ -231,7 +234,7 @@ th {
 .badge {
   display: inline-block;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.2em 0.55em;
@@ -267,7 +270,7 @@ th {
 .tag {
   display: inline-block;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0.2em 0.6em;
   background-color: var(--color-tag-bg);
   color: var(--color-tag-text);
@@ -279,7 +282,7 @@ th {
 .section-title {
   font-family: var(--font-serif);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.012em;
   text-transform: none;
   color: var(--color-heading);
