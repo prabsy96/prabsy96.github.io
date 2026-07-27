@@ -52,10 +52,10 @@ const articleSchema = {
 >
   <article class="paper-page">
     <header class="paper-hero page-header">
-      <p class="paper-kicker">{publication.category === 'peer-reviewed' ? 'Peer-reviewed paper' : publication.category === 'workshop' ? 'Workshop paper' : 'Preprint'}</p>
       <h1>{publication.title}</h1>
       <p class="subtitle">{publication.summary}</p>
       <div class="paper-meta">
+        <p><strong>Category:</strong> {publication.category === 'peer-reviewed' ? 'Peer-reviewed paper' : publication.category === 'workshop' ? 'Workshop paper' : 'Preprint'}</p>
         <p><strong>Authors:</strong> {publication.authors}</p>
         <p><strong>Venue:</strong> {publication.venue}</p>
         {publication.badge && <p><strong>Note:</strong> {publication.badge}</p>}
@@ -117,19 +117,13 @@ const articleSchema = {
     gap: var(--space-4);
   }
 
-  .paper-kicker {
-    margin: 0;
-    color: var(--color-link);
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
   .paper-meta {
     display: grid;
     gap: var(--space-2);
     color: var(--color-text-light);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    font-size: 14px;
   }
 
   .paper-meta p {
@@ -145,16 +139,18 @@ const articleSchema = {
   .paper-grid,
   .related-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-5);
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .paper-card,
   .related-card {
-    padding: var(--space-5);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-card);
+    padding: var(--space-5) 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-border-light);
+    border-radius: 0;
+    background: transparent;
     box-shadow: none;
   }
 
@@ -177,27 +173,20 @@ const articleSchema = {
   }
 
   .related-card:hover {
-    border-color: #c9b9aa;
-    background: #fffaf5;
+    border-color: var(--color-border-strong);
+    background: transparent;
     text-decoration: none;
   }
 
   .related-title {
     margin: 0 0 var(--space-2);
     color: var(--color-heading);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .related-meta {
     margin: 0;
     color: var(--color-text-light);
-    font-size: 0.92rem;
-  }
-
-  @media (max-width: 760px) {
-    .paper-grid,
-    .related-grid {
-      grid-template-columns: 1fr;
-    }
+    font-size: 14px;
   }
 </style>

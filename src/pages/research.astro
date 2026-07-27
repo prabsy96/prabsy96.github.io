@@ -8,7 +8,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   wide={true}
 >
   <header class="research-hero page-header">
-    <p class="hero-kicker">Doctoral work</p>
     <h1>Research</h1>
     <p class="subtitle">
       LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic
@@ -20,7 +19,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ── PhD Research Projects ─────────────────── -->
   <section class="section">
     <div class="section-heading">
-      <p class="section-kicker">Doctoral group work</p>
       <h2 class="section-title">PhD Research Projects</h2>
     </div>
     <p class="section-intro">
@@ -120,7 +118,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ── Industry Research ─────────────────────── -->
   <section class="section">
     <div class="section-heading">
-      <p class="section-kicker">Internship research</p>
       <h2 class="section-title">Industry Research Contributions</h2>
     </div>
     <p class="section-intro">
@@ -327,24 +324,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   line-height: 1.75;
 }
 
-.hero-kicker {
-  margin: 0;
-  color: var(--color-link);
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
 .section-heading {
   margin-bottom: var(--space-5);
-}
-
-.section-kicker {
-  margin: 0 0 var(--space-2);
-  color: var(--color-text-muted);
-  font-size: 0.74rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
 }
 
 .section-heading .section-title {
@@ -354,12 +335,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .research-affiliations {
   margin: var(--space-3) 0 0;
   color: var(--color-text-light);
-  font-size: 0.86rem;
+  font-size: 14px;
   letter-spacing: 0.02em;
 }
 
 .section-intro {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-text-light);
   line-height: 1.75;
   margin-bottom: var(--space-5);
@@ -369,21 +350,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
 }
 
 .phd-project-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .project-grid .project-card {
   margin-bottom: 0;
   height: 100%;
-}
-
-.project-grid .project-card:first-child {
-  grid-column: 1 / -1;
 }
 
 .talk-item {
@@ -402,7 +380,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .talk-date {
-  font-size: 0.8rem;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -419,25 +397,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   font-style: italic;
 }
 
-@media (min-width: 761px) and (max-width: 1100px) {
-  .phd-project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .phd-project-grid .project-card:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
 @media (max-width: 760px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-grid .project-card:first-child {
-    grid-column: auto;
-  }
-
   .project-card-header {
     flex-direction: column;
     gap: var(--space-2);

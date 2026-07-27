@@ -21,7 +21,6 @@ const base = import.meta.env.BASE_URL;
   </figure>
 
   <section class="home-section home-intro">
-    <p class="home-kicker">Silicon CoDesign Engineer at NVIDIA · PhD Candidate at Carnegie Mellon University</p>
     <h1>About</h1>
     <p>
       I am a Silicon CoDesign Engineer at NVIDIA and a PhD candidate in Electrical &amp; Computer
@@ -29,24 +28,15 @@ const base = import.meta.env.BASE_URL;
       <a href="https://users.ece.cmu.edu/~jpshen/" target="_blank" rel="noopener noreferrer">Prof. John Paul Shen</a>
       and
       <a href="https://www.ece.cmu.edu/directory/bios/blanton-ronald.html" target="_blank" rel="noopener noreferrer">Prof. Shawn Blanton</a>.
+      I joined NVIDIA full-time in July 2026 after completing a Silicon Solution Engineering
+      Internship there from March to June 2026. I remain a PhD candidate at CMU, with expected
+      completion in January 2027.
     </p>
     <p>
       My research spans LLM inference optimization on CPU-GPU coupled architectures,
       energy-efficient deep learning accelerators, and neuromorphic computing with Temporal
       Neural Networks. I received the 2023 Qualcomm Innovation Fellowship and the CIT Dean's
       Fellowship.
-    </p>
-    <p>
-      I joined NVIDIA full-time in July 2026 after completing a Silicon Solution Engineering
-      Internship at NVIDIA from March to June 2026. I remain a PhD candidate at CMU, with expected
-      completion in January 2027.
-    </p>
-    <p class="inline-links">
-      <a href={`${base}research`}>Research</a>
-      <span aria-hidden="true">·</span>
-      <a href={`${base}publications`}>Publications</a>
-      <span aria-hidden="true">·</span>
-      <a href={`${base}resume.pdf`}>Curriculum Vitae</a>
     </p>
   </section>
 
@@ -84,10 +74,6 @@ const base = import.meta.env.BASE_URL;
       <li>
         <time datetime="2025-07">2025/07</time>
         <span>Received the Amar Mukherjee Best Paper Award at IEEE ISVLSI 2025 for the Catwalk paper.</span>
-      </li>
-      <li>
-        <time datetime="2025-05">2025/05</time>
-        <span>Gave an invited talk at the Jülich Supercomputing Center on LLM inference optimization for CPU-GPU coupled architectures.</span>
       </li>
     </ul>
   </section>
@@ -150,7 +136,8 @@ const base = import.meta.env.BASE_URL;
   .campus-banner img {
     display: block;
     width: 100%;
-    aspect-ratio: 4.8 / 1;
+    aspect-ratio: 6 / 1;
+    max-height: 132px;
     object-fit: cover;
     object-position: center 48%;
     border-radius: 0;
@@ -180,27 +167,8 @@ const base = import.meta.env.BASE_URL;
     color: var(--color-text);
   }
 
-  .home-kicker {
-    margin-bottom: var(--space-2) !important;
-    color: var(--color-link) !important;
-    font-size: 0.78rem;
-    letter-spacing: 0.035em;
-  }
-
   .home-intro {
-    font-size: 1.01rem;
-  }
-
-  .inline-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-top: var(--space-5) !important;
-    font-size: 0.92rem;
-  }
-
-  .inline-links span {
-    color: var(--color-text-muted);
+    font-size: 1rem;
   }
 
   .research-focus {
@@ -212,7 +180,7 @@ const base = import.meta.env.BASE_URL;
     margin: 0;
     padding-left: var(--space-4);
     border-left: 2px solid var(--color-border-strong);
-    font-size: 0.94rem;
+    font-size: 1rem;
   }
 
   .research-focus span {
@@ -255,7 +223,7 @@ const base = import.meta.env.BASE_URL;
     padding: var(--space-2) 0;
     margin: 0;
     border-bottom: 1px solid var(--color-border-light);
-    font-size: 0.9rem;
+    font-size: 15px;
     line-height: 1.55;
   }
 
@@ -287,13 +255,14 @@ const base = import.meta.env.BASE_URL;
     left: 0;
     top: var(--space-3);
     color: var(--color-text-muted);
-    font-size: 0.78rem;
+    font-size: 14px;
   }
 
   .paper-title {
     color: var(--color-heading);
     font-family: var(--font-serif);
-    font-size: 0.98rem;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1.4;
   }
 
@@ -304,7 +273,7 @@ const base = import.meta.env.BASE_URL;
   .paper-authors,
   .paper-venue {
     color: var(--color-text-light);
-    font-size: 0.82rem;
+    font-size: 14px;
     line-height: 1.5;
   }
 

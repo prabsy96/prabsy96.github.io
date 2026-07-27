@@ -9,7 +9,6 @@ const base = import.meta.env.BASE_URL;
 >
   <header class="publication-hero page-header">
     <div class="publication-hero-copy">
-      <p class="hero-kicker">Research portfolio</p>
       <h1>Publications</h1>
       <p class="hero-blurb">
         A record of 12 peer-reviewed papers, 5 workshop papers, and 3 preprints.
@@ -34,6 +33,22 @@ const base = import.meta.env.BASE_URL;
       </div>
     </summary>
     <div class="pub-group-body">
+
+    <div class="publication">
+      <p class="publication-title">
+        <span class="badge badge-review">Preprint</span>&ensp;TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
+      </p>
+      <p class="publication-authors">
+        <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
+      </p>
+      <p class="publication-venue">
+        Mar 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
+      </p>
+      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
+      <div class="publication-links">
+        <a href={`${base}publications/taxbreak-arxiv-2026`}>Details</a>
+      </div>
+    </div>
 
     <div class="publication">
       <p class="publication-title">
@@ -67,21 +82,6 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
 
-    <div class="publication">
-      <p class="publication-title">
-        <span class="badge badge-review">Preprint</span>&ensp;TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition
-      </p>
-      <p class="publication-authors">
-        <strong>P. Vellaisamy</strong>, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen
-      </p>
-      <p class="publication-venue">
-        Mar 2026 · <a href="https://arxiv.org/abs/2603.12465" target="_blank" rel="noopener noreferrer">arXiv:2603.12465</a>
-      </p>
-      <p class="pub-note">TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.</p>
-      <div class="publication-links">
-        <a href={`${base}publications/taxbreak-arxiv-2026`}>Details</a>
-      </div>
-    </div>
     </div>
   </details>
 
@@ -390,14 +390,6 @@ const base = import.meta.env.BASE_URL;
   display: block;
 }
 
-.hero-kicker {
-  margin-bottom: var(--space-2);
-  color: var(--color-link);
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
 .publication-hero h1 {
   margin-top: 0;
   margin-bottom: var(--space-2);
@@ -416,33 +408,35 @@ const base = import.meta.env.BASE_URL;
 
 .pub-toolbar {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-5);
   flex-wrap: wrap;
   margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .pub-filter {
   appearance: none;
-  border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.72);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
   color: var(--color-text);
-  border-radius: var(--radius-sm);
-  padding: 0.45rem 0.85rem;
-  font-size: 0.82rem;
-  font-weight: 400;
+  border-radius: 0;
+  padding: 0 0 var(--space-2);
+  margin-bottom: -1px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 425;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .pub-filter:hover {
-  border-color: var(--color-link);
   color: var(--color-link);
 }
 
 .pub-filter.is-active {
-  background: var(--color-link);
   border-color: var(--color-link);
-  color: #fff;
+  color: var(--color-link);
 }
 
 .pub-group {
@@ -477,6 +471,7 @@ const base = import.meta.env.BASE_URL;
 
 .pub-group-body {
   padding: 0 0 var(--space-4);
+  counter-reset: publication;
 }
 
 .section-header {
@@ -495,13 +490,25 @@ const base = import.meta.env.BASE_URL;
 }
 
 .publication {
-  padding: var(--space-4) 0;
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) var(--space-8);
   margin-bottom: 0;
   border: 0;
   border-bottom: 1px solid var(--color-border-light);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  counter-increment: publication;
+}
+
+.publication::before {
+  content: '[' counter(publication) ']';
+  position: absolute;
+  top: calc(var(--space-4) + 0.1rem);
+  left: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
 }
 
 .publication-title {
@@ -513,17 +520,16 @@ const base = import.meta.env.BASE_URL;
 }
 
 .publication-number {
-  flex: 0 0 auto;
-  margin-top: 0.1rem;
+  display: none;
 }
 
 .publication-authors {
-  font-size: 0.92rem;
+  font-size: 15px;
   color: var(--color-text-light);
 }
 
 .publication-venue {
-  font-size: 0.88rem;
+  font-size: 14px;
   color: var(--color-text-light);
 }
 
@@ -538,7 +544,7 @@ const base = import.meta.env.BASE_URL;
 
 @media (max-width: 640px) {
   .pub-toolbar {
-    gap: var(--space-2);
+    gap: var(--space-4);
   }
 
   .pub-group-summary {
@@ -547,6 +553,10 @@ const base = import.meta.env.BASE_URL;
 
   .pub-group-body {
     padding: 0 0 var(--space-4);
+  }
+
+  .publication {
+    padding-left: var(--space-6);
   }
 }
 </style>

@@ -1,21 +1,45 @@
 /* Global Styles - Editorial Academic Design */
 
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/source-sans-3-roman-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/source-sans-3-italic-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-roman-latin.woff2') format('woff2');
+}
+
 :root {
   /* Color palette */
-  --color-text: #26211e;
-  --color-text-light: #48413c;
-  --color-text-muted: #68605a;
-  --color-heading: #151210;
-  --color-link: #941f31;
-  --color-link-hover: #711625;
-  --color-bg: #faf7f1;
-  --color-bg-alt: #f2ece3;
-  --color-bg-card: #fffdfa;
-  --color-border: #d5c8b9;
-  --color-border-light: #e5dcd1;
-  --color-border-strong: #b9a99a;
-  --color-accent: #6f1d2a;
-  --color-accent-light: #f5e7e4;
+  --color-text: #1f1d1a;
+  --color-text-light: #3f3a35;
+  --color-text-muted: #625b54;
+  --color-heading: #11100f;
+  --color-link: #8c1d2c;
+  --color-link-hover: #681520;
+  --color-bg: #fdfcf9;
+  --color-bg-alt: #f5f2ec;
+  --color-bg-card: #fdfcf9;
+  --color-border: #d4cec5;
+  --color-border-light: #e4dfd7;
+  --color-border-strong: #b9b0a5;
+  --color-accent: #8c1d2c;
+  --color-accent-light: #f5e9e9;
 
   /* Semantic accent colors */
   --color-award-bg: #fbf3df;
@@ -29,8 +53,8 @@
   --color-tag-text: #5a5149;
 
   /* Typography */
-  --font-sans: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
 
   /* Spacing scale */
@@ -53,8 +77,8 @@
   --spacing-xl: var(--space-16);
 
   /* Layout */
-  --max-width: 880px;
-  --max-width-wide: 1240px;
+  --max-width: 760px;
+  --max-width-wide: 1160px;
   --radius-sm: 3px;
   --radius-md: 5px;
   --radius-lg: 8px;
@@ -81,11 +105,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.68;
+  font-size: 17px;
+  font-weight: 425;
+  line-height: 1.65;
   color: var(--color-text);
-  background: linear-gradient(180deg, #fdfbf7 0%, var(--color-bg) 100%);
-  background-color: var(--color-bg);
+  background: var(--color-bg);
 }
 
 /* ── Typography ─────────────────────────────── */
@@ -93,7 +117,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   color: var(--color-heading);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25;
   margin-top: var(--space-8);
   margin-bottom: var(--space-4);
@@ -102,12 +126,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: 2.25rem; }
 h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; font-weight: 400; }
-h4 { font-size: 1.05rem; font-weight: 400; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
 
 strong,
 b {
-  font-weight: inherit;
+  color: var(--color-heading);
+  font-weight: 500;
 }
 
 p {
@@ -229,16 +254,15 @@ th {
 
 .text-muted { color: var(--color-text-muted); }
 .text-light { color: var(--color-text-light); }
-.text-small { font-size: 0.875rem; }
+.text-small { font-size: 14px; }
 
 /* Badge / pill components */
 .badge {
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.2em 0.55em;
+  font-size: 13px;
+  font-weight: 425;
+  letter-spacing: 0.01em;
+  padding: 0.1em 0.4em;
   border-radius: var(--radius-sm);
   vertical-align: middle;
   white-space: nowrap;
@@ -270,13 +294,19 @@ th {
 
 .tag {
   display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 400;
-  padding: 0.2em 0.6em;
+  font-size: 13px;
+  font-weight: 425;
+  padding: 0.1em 0.45em;
   background-color: var(--color-tag-bg);
   color: var(--color-tag-text);
   border-radius: 2px;
-  border: 1px solid var(--color-border);
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 /* Section divider styling */

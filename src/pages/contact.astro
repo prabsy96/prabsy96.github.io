@@ -5,7 +5,6 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="Contact" description="Contact Prabhu Vellaisamy, an NVIDIA Silicon CoDesign Engineer and CMU ECE PhD candidate, for research inquiries and collaboration.">
   <header class="page-header">
-    <p class="hero-kicker">Correspondence</p>
     <h1>Contact</h1>
     <p class="subtitle">Research inquiries, collaborations, and student mentorship</p>
   </header>
@@ -24,18 +23,6 @@ const base = import.meta.env.BASE_URL;
           <a href="mailto:pvellais@andrew.cmu.edu">pvellais@andrew.cmu.edu</a>
         </p>
         <p class="contact-note">Preferred channel for research inquiries and collaborations.</p>
-      </div>
-
-      <div class="contact-item">
-        <h3>Current Roles</h3>
-        <p>
-          Silicon CoDesign Engineer<br>
-          NVIDIA Corporation — Santa Clara, CA<br><br>
-          PhD Candidate<br>
-          Carnegie Mellon University<br>
-          Department of Electrical and Computer Engineering<br>
-          Pittsburgh, PA 15213
-        </p>
       </div>
 
       <div class="contact-item">
@@ -84,7 +71,7 @@ const base = import.meta.env.BASE_URL;
 <style>
   .contact-info {
     display: grid;
-    gap: var(--spacing-lg);
+    gap: 0;
     margin-top: var(--spacing-lg);
   }
 
@@ -96,7 +83,7 @@ const base = import.meta.env.BASE_URL;
 
   .contact-item {
     min-width: 0;
-    padding: var(--space-4) 0;
+    padding: var(--space-5) 0;
     border: 0;
     border-top: 1px solid var(--color-border);
     border-radius: 0;
@@ -125,9 +112,4 @@ const base = import.meta.env.BASE_URL;
     margin: 0;
   }
 
-  @media (min-width: 600px) {
-    .contact-info {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
 </style>
