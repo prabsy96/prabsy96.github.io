@@ -79,7 +79,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Developed TNNGen, an automation framework that compiles PyTorch Temporal Neural Network
-        (TNN) models through PyTorch-to-RTL and RTL-to-layout stages, producing post-layout netlists.
+        (TNN) models through PyTorch-to-RTL and RTL-to-layout stages.
         The paper evaluates seven time-series clustering designs across different sensory modalities.
       </p>
       <p class="project-card-results">
@@ -327,19 +327,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .research-hero h1 {
-  margin: var(--space-1) 0 var(--space-3);
+  margin: 0 0 var(--space-3);
 }
 
 .research-hero .subtitle {
   margin: 0;
   color: var(--color-text-light);
-  max-width: 74ch;
+  max-width: 64ch;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .section-heading {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .section-heading .section-title {
@@ -348,7 +348,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 .research-affiliations {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, max-content));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-2) var(--space-6);
   margin: var(--space-4) 0 0;
   padding-top: var(--space-3);
@@ -367,10 +367,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .section-intro {
-  font-size: 1rem;
+  font-size: 15.5px;
   color: var(--color-text-light);
-  line-height: 1.75;
-  margin-bottom: var(--space-5);
+  line-height: 1.65;
+  margin-bottom: var(--space-4);
   max-width: none;
   width: 100%;
 }
@@ -392,8 +392,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .talk-item {
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-5);
+  margin-bottom: 0;
+  padding: var(--space-4) 0;
   border-bottom: 1px solid var(--color-border-light);
 }
 
@@ -403,7 +403,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.talk-type-row .badge {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-link);
 }
 
 .talk-date {
@@ -412,14 +419,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .talk-title {
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 400;
   color: var(--color-heading);
   margin-bottom: var(--space-1);
 }
 
 .talk-venue {
-  font-size: 0.875rem;
+  font-size: 14px;
   color: var(--color-text-light);
   font-style: italic;
 }

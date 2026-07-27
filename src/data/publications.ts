@@ -19,7 +19,7 @@ export const publications: PublicationEntry[] = [
     slug: 'taxbreak-ispass-2026',
     title: 'TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition',
     authors: 'P. Vellaisamy, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen',
-    venue: 'IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026 · Accepted · Presentation date: April 27, 2026',
+    venue: 'IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) 2026',
     year: 2026,
     category: 'peer-reviewed',
     summary:
@@ -27,7 +27,6 @@ export const publications: PublicationEntry[] = [
     keywords: ['LLM inference', 'performance analysis', 'overhead decomposition', 'ISPASS 2026'],
     externalUrl: 'https://arxiv.org/abs/2603.12465',
     externalLabel: 'arXiv:2603.12465',
-    badge: 'Accepted paper',
   },
   {
     slug: 'mugi-asplos-2026',
@@ -200,20 +199,6 @@ export const publications: PublicationEntry[] = [
     keywords: ['A-Graph', 'systems simulation', 'arXiv'],
     externalUrl: 'https://arxiv.org/abs/2602.04847',
     externalLabel: 'arXiv:2602.04847',
-    badge: 'Preprint',
-  },
-  {
-    slug: 'taxbreak-arxiv-2026',
-    title: 'TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition',
-    authors: 'P. Vellaisamy, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen',
-    venue: 'arXiv preprint, March 2026',
-    year: 2026,
-    category: 'preprint',
-    summary:
-      'TaxBreak decomposes host-visible LLM inference overhead into framework translation, CUDA-library translation, and kernel launch-path time. Evaluated on H100 and H200 systems, it introduces the Host-Device Balance Index to distinguish host-side orchestration bottlenecks from device-side work.',
-    keywords: ['TaxBreak', 'LLM inference', 'arXiv'],
-    externalUrl: 'https://arxiv.org/abs/2603.12465',
-    externalLabel: 'arXiv:2603.12465',
     badge: 'Preprint',
   },
   {

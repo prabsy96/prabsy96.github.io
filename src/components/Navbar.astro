@@ -52,14 +52,17 @@ function isActive(href: string, current: string): boolean {
   }
 
   .navbar-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 180px minmax(0, 760px);
+    gap: 56px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: var(--space-3);
     padding-bottom: var(--space-3);
   }
 
   .navbar-brand {
+    justify-self: center;
     font-family: var(--font-serif);
     font-size: 1.18rem;
     font-weight: 500;
@@ -109,6 +112,7 @@ function isActive(href: string, current: string): boolean {
 
   .navbar-links {
     display: flex;
+    justify-self: end;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -135,6 +139,17 @@ function isActive(href: string, current: string): boolean {
     color: var(--color-link);
     border-bottom-color: var(--color-link);
     background: transparent;
+  }
+
+  @media (max-width: 900px) {
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      justify-self: auto;
+    }
   }
 
   @media (max-width: 600px) {

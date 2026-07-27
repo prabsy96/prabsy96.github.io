@@ -128,7 +128,7 @@ const base = import.meta.env.BASE_URL;
             <li>Collaborated with research teams across 4 research groups (CMUNCAL, CMU-ACTL, UCF-UNARY, NEXUS), delivering 12 peer-reviewed publications and mentoring graduate and undergraduate students.</li>
             <li>Characterized performance bottlenecks in LLM inference on GH200 through systematic profiling of model configurations; research funded by Samsung Semiconductor.</li>
             <li>Created <strong>Tempus Core</strong>, a temporal-unary convolution engine for NVDLA. The paper reports 53% lower area and 44% lower power for the post-place-and-route INT4 16×4 comparison, and 5× higher iso-area throughput for the post-synthesis INT8 16×16 comparison.</li>
-            <li>Created <strong>TNNGen</strong>, an automation framework that compiles PyTorch models to layout-ready netlists and was evaluated using seven time-series clustering designs across diverse sensory modalities.</li>
+            <li>Created <strong>TNNGen</strong>, an automation framework that compiles PyTorch models through PyTorch-to-RTL and RTL-to-layout stages and was evaluated using seven time-series clustering designs across diverse sensory modalities.</li>
             <li>Developed <strong>TNN7</strong>, a set of 9 macros for a 7nm PDK extension to ASAP7, reducing energy-delay product (EDP) by 45% against the baseline design.</li>
           </ul>
         </div>
@@ -304,7 +304,7 @@ const base = import.meta.env.BASE_URL;
 }
 
 @media (max-width: 600px) {
-  .teaching-table { font-size: 0.8rem; }
+  .teaching-table { font-size: 13px; }
   .teaching-table td, .teaching-table th { padding: var(--space-2); }
 }
 </style>

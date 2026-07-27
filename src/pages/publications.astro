@@ -2,8 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { publicationCounts, publications } from '../data/publications';
 
-const base = import.meta.env.BASE_URL;
-const preprintOrder = ['taxbreak-arxiv-2026', 'neutnns-arxiv-2026', 'agraph-arxiv-2026'];
+const preprintOrder = ['neutnns-arxiv-2026', 'agraph-arxiv-2026'];
 const preprints = publications
   .filter((entry) => entry.category === 'preprint')
   .sort((a, b) => preprintOrder.indexOf(a.slug) - preprintOrder.indexOf(b.slug));
@@ -11,16 +10,16 @@ const peerReviewed = publications.filter((entry) => entry.category === 'peer-rev
 const workshops = publications.filter((entry) => entry.category === 'workshop');
 const groups = [
   {
-    id: 'preprints',
-    title: 'Preprints',
-    lead: 'Manuscripts currently available in preprint form.',
-    entries: preprints,
-  },
-  {
     id: 'peer-reviewed',
     title: 'Peer-Reviewed Papers',
     lead: 'Papers spanning LLM systems, low-power accelerators, and neuromorphic hardware.',
     entries: peerReviewed,
+  },
+  {
+    id: 'preprints',
+    title: 'Preprints',
+    lead: 'Manuscripts currently available in preprint form.',
+    entries: preprints,
   },
   {
     id: 'workshops',
@@ -41,7 +40,7 @@ const groups = [
       <p class="hero-blurb">
         A record of {publicationCounts.peerReviewed} peer-reviewed papers,
         {publicationCounts.workshops} workshop papers, and {publicationCounts.preprints} preprints.
-        Each entry includes a paper-grounded summary and links to available publication records.
+        Links point to available publication records.
       </p>
     </div>
   </header>
@@ -88,10 +87,6 @@ const groups = [
                 </>
               )}
             </p>
-            <p class="pub-note">{publication.summary}</p>
-            <div class="publication-links">
-              <a href={`${base}publications/${publication.slug}`}>Details</a>
-            </div>
           </article>
         ))}
       </div>
@@ -109,9 +104,8 @@ const groups = [
     margin-bottom: var(--space-2);
   }
 
-  .publication-hero-copy,
   .hero-blurb {
-    max-width: 68ch;
+    max-width: 64ch;
   }
 
   .hero-blurb {
@@ -168,7 +162,7 @@ const groups = [
   .pub-group-summary {
     list-style: none;
     cursor: pointer;
-    padding: var(--space-4) 0;
+    padding: var(--space-3) 0;
   }
 
   .pub-group-summary::-webkit-details-marker {
@@ -180,7 +174,7 @@ const groups = [
   }
 
   .section-header {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
 
   .section-title {
@@ -201,7 +195,7 @@ const groups = [
 
   .publication {
     position: relative;
-    padding: var(--space-4) 0 var(--space-4) var(--space-8);
+    padding: var(--space-4) 0 var(--space-5) var(--space-8);
     margin: 0;
     border: 0;
     border-bottom: 1px solid var(--color-border-light);
@@ -225,7 +219,7 @@ const groups = [
     gap: var(--space-2);
     margin: 0 0 var(--space-2);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.45;
     letter-spacing: 0;
   }
@@ -238,21 +232,15 @@ const groups = [
   .publication-authors {
     margin-bottom: var(--space-1);
     color: var(--color-text-light);
-    font-size: 15px;
+    font-size: 14.5px;
+    line-height: 1.5;
   }
 
   .publication-venue {
     gap: var(--space-2);
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
     color: var(--color-text-light);
     font-size: 14px;
-  }
-
-  .pub-note {
-    margin: var(--space-2) 0 0;
-    padding-left: var(--space-3);
-    border-left: 1px solid var(--color-accent);
-    color: var(--color-text-light);
   }
 
   @media (max-width: 640px) {
