@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
     <p class="profile-role">PhD Candidate, Carnegie Mellon University</p>
 
     <div class="profile-details">
-      <p>Santa Clara, CA · Pittsburgh, PA</p>
+      <p>Santa Clara, CA</p>
       <p><a href="mailto:pvellais@andrew.cmu.edu">pvellais@andrew.cmu.edu</a></p>
     </div>
 
@@ -36,6 +36,7 @@ const base = import.meta.env.BASE_URL;
     position: sticky;
     top: 6.5rem;
     align-self: start;
+    text-align: center;
   }
 
   .profile-sidebar-photo {
@@ -44,7 +45,7 @@ const base = import.meta.env.BASE_URL;
     aspect-ratio: 1;
     object-fit: cover;
     object-position: center top;
-    margin-bottom: var(--space-5);
+    margin: 0 auto var(--space-5);
     border: 1px solid var(--color-border-strong);
     border-radius: 50%;
     background: var(--color-bg-card);
@@ -80,6 +81,7 @@ const base = import.meta.env.BASE_URL;
   .profile-sidebar-links {
     display: grid;
     grid-template-columns: repeat(2, max-content);
+    justify-content: center;
     gap: var(--space-1) var(--space-4);
     font-size: 14px;
   }
@@ -92,6 +94,7 @@ const base = import.meta.env.BASE_URL;
       gap: var(--space-5);
       padding-bottom: var(--space-6);
       border-bottom: 1px solid var(--color-border);
+      text-align: left;
     }
 
     .profile-sidebar-photo {
@@ -105,6 +108,7 @@ const base = import.meta.env.BASE_URL;
 
     .profile-sidebar-links {
       display: flex;
+      justify-content: flex-start;
       flex-wrap: wrap;
       gap: var(--space-2) var(--space-4);
     }

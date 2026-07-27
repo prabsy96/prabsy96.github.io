@@ -23,7 +23,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'peer-reviewed',
     summary:
-      'TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.',
+      'TaxBreak decomposes host-visible LLM inference overhead into framework translation, CUDA-library translation, and kernel launch-path time. Evaluated on H100 and H200 systems, it introduces the Host-Device Balance Index to distinguish host-side orchestration bottlenecks from device-side work.',
     keywords: ['LLM inference', 'performance analysis', 'overhead decomposition', 'ISPASS 2026'],
     externalUrl: 'https://arxiv.org/abs/2603.12465',
     externalLabel: 'arXiv:2603.12465',
@@ -31,14 +31,16 @@ export const publications: PublicationEntry[] = [
   },
   {
     slug: 'mugi-asplos-2026',
-    title: 'Mugi: Value Level Parallelism for Efficient LLMs',
+    title: 'Mugi: Value Level Parallelism For Efficient LLMs',
     authors: 'D. Price, P. Vellaisamy, J.P. Shen, D. Wu',
     venue: 'ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2026',
     year: 2026,
     category: 'peer-reviewed',
     summary:
-      'Mugi uses value-level parallelism to restructure nonlinear LLM operations and small-batch GEMMs. The paper shows that the approach can raise throughput and efficiency by turning value computation into a more parallel execution pattern.',
+      'Mugi extends value-level parallelism to nonlinear functions and asymmetric small-batch GEMMs used in quantized LLMs, reusing one architecture for both. The paper reports up to 2.07× higher end-to-end LLM throughput and 3.11× higher energy efficiency.',
     keywords: ['LLMs', 'computer architecture', 'ASPLOS 2026', 'value-level parallelism'],
+    externalUrl: 'https://arxiv.org/abs/2601.10823',
+    externalLabel: 'arXiv:2601.10823',
   },
   {
     slug: 'catwalk-isvlsi-2025',
@@ -48,9 +50,11 @@ export const publications: PublicationEntry[] = [
     year: 2025,
     category: 'peer-reviewed',
     summary:
-      'Catwalk introduces a unary top-K mechanism for temporal neural networks, targeting the ramp-no-leak neuron design. The result is a more efficient selection path that reduces overhead in the neuromorphic pipeline.',
+      'Catwalk uses unary top-K to cluster active spikes before parallel-counter accumulation in ramp-no-leak Temporal Neural Network neurons. Place-and-route results report 1.39× better area and 1.86× better power than the evaluated SRM0-RNL baseline.',
     keywords: ['Temporal Neural Networks', 'neuromorphic computing', 'ISVLSI 2025'],
     badge: 'Amar Mukherjee Best Paper Award',
+    externalUrl: 'https://arxiv.org/abs/2508.21267',
+    externalLabel: 'arXiv:2508.21267',
   },
   {
     slug: 'llm-inference-cpu-gpu-ispass-2025',
@@ -60,31 +64,37 @@ export const publications: PublicationEntry[] = [
     year: 2025,
     category: 'peer-reviewed',
     summary:
-      'This paper characterizes prefill and decode bottlenecks across coupled CPU-GPU systems and compares NVIDIA H100 and GH200 behavior. The work isolates where orchestration, memory movement, and kernel execution dominate end-to-end latency.',
+      'This paper uses SKIP operator-to-kernel traces and Total Kernel Launch and Queuing Time to compare LLM inference on PCIe A100/H100 and GH200 systems. GH200 improves large-batch prefill latency but remains CPU-bound through batch sizes up to four times larger than the loosely coupled systems.',
     keywords: ['LLM inference', 'GH200', 'H100', 'performance analysis'],
     badge: 'Invited talk at Jülich Supercomputing Center',
+    externalUrl: 'https://arxiv.org/abs/2504.11750',
+    externalLabel: 'arXiv:2504.11750',
   },
   {
     slug: 'tempus-core-date-2025',
     title: 'Tempus Core: Area-Power Efficient Temporal-Unary Convolution Core for Low-Precision Edge DLAs',
-    authors: 'P. Vellaisamy, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, H.F. Hung, J. Chen, R.D.S. Blanton, J.P. Shen',
+    authors: 'P. Vellaisamy, H. Nair, T. Kang, Y. Ni, H. Fan, B. Qi, J. Chen, R.D.S. Blanton, J.P. Shen',
     venue: 'IEEE Design, Automation & Test in Europe (DATE) 2025',
     year: 2025,
     category: 'peer-reviewed',
     summary:
-      'Tempus Core presents a temporal-unary convolution engine for low-precision edge DLA workloads. The paper focuses on reducing area and power while preserving useful throughput for compact accelerator designs.',
+      'Tempus Core integrates temporal-unary-binary processing elements into an NVDLA-compatible convolution core. In 45 nm CMOS, the paper reports post-synthesis gains across precisions and array sizes and post-place-and-route area and power for an INT4 16×4 array.',
     keywords: ['accelerators', 'edge AI', 'DATE 2025', 'temporal-unary'],
+    externalUrl: 'https://arxiv.org/abs/2412.19002',
+    externalLabel: 'arXiv:2412.19002',
   },
   {
     slug: 'ozmac-vlsi-soc-2024',
-    title: 'OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference',
+    title: 'Commercial Evaluation of Zero-Skipping MAC Design for Bit Sparsity Exploitation in DL Inference',
     authors: 'H. Nair, P. Vellaisamy, T.H. Lin, P. Wang, R.D.S. Blanton, J.P. Shen',
     venue: 'IEEE VLSI-SoC 2024',
     year: 2024,
     category: 'peer-reviewed',
     summary:
-      'OzMAC targets sparsity-aware inference by reducing unnecessary multiply-accumulate work. The design explores how bit sparsity can translate directly into lower energy cost in deep learning accelerators.',
+      'OzMAC dynamically skips zero bits using a modified Bit-Pragmatic design. Post-synthesis evaluation in TSMC N5 reports lower area, power, and energy than a binary MAC across multiple precisions and clock frequencies.',
     keywords: ['sparsity', 'DL inference', 'VLSI-SoC 2024'],
+    externalUrl: 'https://arxiv.org/abs/2402.19376',
+    externalLabel: 'arXiv:2402.19376',
   },
   {
     slug: 'unary-matrix-multiply-isvlsi-2024',
@@ -94,31 +104,36 @@ export const publications: PublicationEntry[] = [
     year: 2024,
     category: 'peer-reviewed',
     summary:
-      'This work explores unary arithmetic for matrix multiplication in low-precision AI hardware. It studies how temporal unary representations change the area-power tradeoffs relative to more conventional arithmetic units.',
+      'This study compares uGEMM, tuGEMM, and tubGEMM with conventional binary GEMM for integer inference. It evaluates post-synthesis tradeoffs across bit widths and matrix sizes and analyzes weight sparsity in eight CNNs and LLaMA 2.',
     keywords: ['unary computing', 'matrix multiply', 'ISVLSI 2024'],
+    externalUrl: 'https://arxiv.org/abs/2602.00838',
+    externalLabel: 'arXiv:2602.00838',
   },
   {
     slug: 'gait-analysis-icons-2024',
     title: 'Realtime Person Identification via Gait Analysis using IMU Sensors on Edge Devices',
-    authors: 'S. Venkatachelam, H. Nair, P. Vellaisamy, Y. Zhou, Z. Youssfi, J.P. Shen',
+    authors: 'S. Venkatachalam, H. Nair, P. Vellaisamy, Y. Zhou, Z. Youssfi, J.P. Shen',
     venue: 'International Conference on Neuromorphic Systems (ICONS) 2024',
     year: 2024,
     category: 'peer-reviewed',
     summary:
-      'The paper demonstrates real-time person identification from gait signals measured with IMU sensors on edge devices. It highlights how lightweight sensing and edge inference can support privacy-preserving identification tasks.',
+      'This paper presents a four-layer CNN for gait-based identification from IMU data. The 236 KB model reaches 96.7% accuracy across 24 classes and runs in real time on an Arduino Nano 33 BLE Sense; a converted spiking model is also evaluated on BrainChip Akida.',
     keywords: ['edge devices', 'IMU sensors', 'neuromorphic systems', 'ICONS 2024'],
+    externalUrl: 'https://doi.org/10.1109/ICONS62911.2024.00063',
+    externalLabel: 'DOI',
   },
   {
     slug: 'tnngen-iscas-2024',
     title: 'TNNGen: Automated Design of Neuromorphic Sensory Processing Units for Time-Series Clustering',
-    authors: 'P. Vellaisamy, H. Nair, D. Gupta, V. Ratnakaram, J.P. Shen',
-    venue: 'IEEE International Symposium on Circuits and Systems (ISCAS) 2024',
+    authors: 'P. Vellaisamy, H. Nair, V. Ratnakaram, D. Gupta, J.P. Shen',
+    venue: 'IEEE Transactions on Circuits and Systems II: Express Briefs 71(5), 2024 · Presented at ISCAS 2024',
     year: 2024,
     category: 'peer-reviewed',
     summary:
-      'TNNGen automates the design of neuromorphic sensory processing units for time-series clustering. The work links algorithmic TNN ideas to generated hardware and reports a design path that reduces synapse and implementation cost.',
+      'TNNGen combines a PyTorch functional simulator with a Python hardware generator for PyTorch-to-RTL and RTL-to-layout conversion. Seven time-series clustering designs demonstrate post-layout hardware evaluation and silicon-metric forecasting.',
     keywords: ['TNNGen', 'neuromorphic hardware', 'ISCAS 2024'],
-    badge: 'Invited for TCAS-II',
+    externalUrl: 'https://arxiv.org/abs/2412.17977',
+    externalLabel: 'arXiv:2412.17977',
   },
   {
     slug: 'tubgemm-isvlsi-2023',
@@ -128,19 +143,23 @@ export const publications: PublicationEntry[] = [
     year: 2023,
     category: 'peer-reviewed',
     summary:
-      'tubGEMM combines temporal, unary, and binary arithmetic to build a matrix-multiply unit that is more tolerant of sparsity and low precision. The design studies how hybrid arithmetic can improve energy efficiency without giving up too much flexibility.',
+      'tubGEMM combines temporal-unary and binary encoding for exact matrix multiplication while exploiting value sparsity. A 128×128 INT8 implementation in TSMC N5 is evaluated for area, power, and energy, with workload sparsity reducing energy by more than 3×.',
     keywords: ['tubGEMM', 'hybrid arithmetic', 'ISVLSI 2023'],
+    externalUrl: 'https://arxiv.org/abs/2412.17955',
+    externalLabel: 'arXiv:2412.17955',
   },
   {
     slug: 'tugemm-iscas-2023',
-    title: 'tuGEMM: Area-Power-Efficient Temporal Unary GEMM Architecture for Low Resolution Edge AI',
+    title: 'tuGEMM: Area-Power-Efficient Temporal Unary GEMM Architecture for Low-Precision Edge AI',
     authors: 'H. Nair, P. Vellaisamy, A. Chen, J. Finn, A. Li, M. Trivedi, J.P. Shen',
     venue: 'IEEE International Symposium on Circuits and Systems (ISCAS) 2023',
     year: 2023,
     category: 'peer-reviewed',
     summary:
-      'tuGEMM explores temporal unary GEMM as an implementation strategy for low-resolution edge AI. The paper emphasizes area and power reductions while preserving enough arithmetic throughput for practical inference workloads.',
+      'tuGEMM performs exact temporal-coded matrix multiplication using serial and parallel variants with different area/power-latency tradeoffs. The paper reports post-synthesis results in 45 nm CMOS for 2-, 4-, and 8-bit configurations.',
     keywords: ['GEMM', 'edge AI', 'ISCAS 2023'],
+    externalUrl: 'https://arxiv.org/abs/2412.17966',
+    externalLabel: 'arXiv:2412.17966',
   },
   {
     slug: 'tnn7-isvlsi-2022',
@@ -150,8 +169,10 @@ export const publications: PublicationEntry[] = [
     year: 2022,
     category: 'peer-reviewed',
     summary:
-      'TNN7 provides a macro suite for temporal neural network designs. The paper describes a more systematic neuromorphic design flow rather than one-off circuit implementations.',
+      'TNN7 adds nine custom Temporal Neural Network macros to a predictive 7 nm process design kit. Across two application prototypes, the macros reduce average power, delay, area, and energy-delay product while cutting synthesis runtime by more than 3×.',
     keywords: ['TNN7', 'neuromorphic design', 'ISVLSI 2022'],
+    externalUrl: 'https://arxiv.org/abs/2205.07410',
+    externalLabel: 'arXiv:2205.07410',
   },
   {
     slug: 'neutnns-arxiv-2026',
@@ -161,7 +182,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'preprint',
     summary:
-      'NeuTNNs define a neuromorphic processing framework built around active dendrites and hierarchical proximal/distal segments. NeuTNNGen links the model to layout generation, while synaptic pruning reduces hardware cost without sacrificing accuracy across sensory tasks.',
+      'NeuTNNs extend Temporal Neural Networks with active dendrites and distal/proximal segment hierarchies. NeuTNNGen maps application-specific models from PyTorch to layout, with UCR, MNIST, and place-cell studies showing 30–50% synapse reduction from pruning while preserving model precision.',
     keywords: ['NeuTNNs', 'neuromorphic computing', 'arXiv'],
     externalUrl: 'https://arxiv.org/abs/2602.01546',
     externalLabel: 'arXiv:2602.01546',
@@ -175,7 +196,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'preprint',
     summary:
-      'A-Graph proposes a unified graph representation for applications, software stacks, and architectures so the same model can support simulation, analysis, and cross-stack optimization.',
+      'Agraph unifies application, software, architecture, and circuit information for cross-stack design-space exploration. Its Archx framework generates constrained design points and retrieves metrics at user-selected scopes, with case studies spanning multiple technologies, architectures, and applications.',
     keywords: ['A-Graph', 'systems simulation', 'arXiv'],
     externalUrl: 'https://arxiv.org/abs/2602.04847',
     externalLabel: 'arXiv:2602.04847',
@@ -189,7 +210,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'preprint',
     summary:
-      'TaxBreak decomposes host-visible orchestration overhead in LLM inference into framework translation, CUDA library translation, and kernel launch-path costs. The work introduces the Host-Device Balance Index to make host and device bottlenecks easier to compare and optimize.',
+      'TaxBreak decomposes host-visible LLM inference overhead into framework translation, CUDA-library translation, and kernel launch-path time. Evaluated on H100 and H200 systems, it introduces the Host-Device Balance Index to distinguish host-side orchestration bottlenecks from device-side work.',
     keywords: ['TaxBreak', 'LLM inference', 'arXiv'],
     externalUrl: 'https://arxiv.org/abs/2603.12465',
     externalLabel: 'arXiv:2603.12465',
@@ -203,7 +224,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'workshop',
     summary:
-      'This workshop version extends the Mugi idea to nonlinear LLM operations and frames value-level parallelism as a broader execution model.',
+      'This workshop paper extends value-level parallelism beyond GEMM to value-centric approximations of nonlinear LLM operations.',
     keywords: ['Mugi', 'workshop paper', 'WUC 2026'],
   },
   {
@@ -214,7 +235,7 @@ export const publications: PublicationEntry[] = [
     year: 2026,
     category: 'workshop',
     summary:
-      'The workshop paper presents the A-Graph representation as a practical simulation abstraction for emerging stacks. It emphasizes broad applicability and a cleaner route from system description to experimentation.',
+      'This workshop paper introduces Agraph as a unified representation for flexible simulation across emerging system stacks.',
     keywords: ['Agraph', 'workshop paper', 'WUC 2026'],
   },
   {
@@ -225,7 +246,7 @@ export const publications: PublicationEntry[] = [
     year: 2024,
     category: 'workshop',
     summary:
-      'This paper surveys unary-based GEMM design points for more conventional AI accelerators. It explores how unary arithmetic may fit into mainstream inference hardware without requiring a full architectural reset.',
+      'This workshop paper compares uGEMM, tuGEMM, and tubGEMM with binary GEMM using post-synthesis 45 nm evaluations across 2- to 8-bit configurations and workload-sparsity analysis.',
     keywords: ['GEMM', 'unary computing', 'WUC 2024'],
   },
   {
@@ -236,8 +257,10 @@ export const publications: PublicationEntry[] = [
     year: 2024,
     category: 'workshop',
     summary:
-      'xBrain connects brain-like computing ideas with explainable brain-computer interfaces. The workshop paper frames the work as both a systems problem and an interpretability problem.',
+      'xBrain proposes an explainable neuromorphic brain-computer-interface pipeline spanning signal preprocessing, spike sorting, and template matching. The paper outlines preliminary rate-coded and temporal-coded tools and a planned end-to-end implementation flow.',
     keywords: ['brain-computer interfaces', 'YArch 2024'],
+    externalUrl: 'https://www.cs.cmu.edu/~yarch2024/',
+    externalLabel: 'YArch 2024',
   },
   {
     slug: 'tnn-framework-yarch-2022',
@@ -247,8 +270,10 @@ export const publications: PublicationEntry[] = [
     year: 2022,
     category: 'workshop',
     summary:
-      'This workshop paper lays out a design framework for TNN-based neuromorphic sensory processing units. It is an early statement of the research direction that later papers expanded into complete hardware and tooling flows.',
+      'This workshop paper outlines a software-to-hardware framework for application-specific Temporal Neural Network sensory-processing units. It reviews prior designs and proposes PyTorch-based exploration plus automated implementation for post-layout hardware evaluation.',
     keywords: ['TNN framework', 'YArch 2022'],
+    externalUrl: 'https://arxiv.org/abs/2205.14248',
+    externalLabel: 'arXiv:2205.14248',
   },
 ];
 

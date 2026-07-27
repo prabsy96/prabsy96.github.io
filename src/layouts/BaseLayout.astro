@@ -142,14 +142,15 @@ const mergedStructuredData =
     {gaMeasurementId && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
-        <script is:inline>
-          {`
+        <script
+          is:inline
+          set:html={`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaMeasurementId}', { anonymize_ip: true });
+            gtag('config', ${JSON.stringify(gaMeasurementId)}, { anonymize_ip: true });
           `}
-        </script>
+        />
       </>
     )}
   </head>

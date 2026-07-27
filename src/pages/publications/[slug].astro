@@ -73,16 +73,11 @@ const articleSchema = {
     <section class="section">
       <div class="paper-grid">
         <div class="paper-card">
-          <h2 class="section-title">Abstract Summary</h2>
+          <h2 class="section-title">Paper Summary</h2>
           <p>{publication.summary}</p>
         </div>
         <div class="paper-card">
-          <h2 class="section-title">Research Context</h2>
-          <p>
-            This paper contributes to my research program in {publication.keywords.slice(0, 3).join(', ')}.
-            It is part of the broader work on efficient ML systems, hardware-software co-design, and
-            deployment-aware computer architecture.
-          </p>
+          <h2 class="section-title">Topics</h2>
           <div class="paper-tags">
             {publication.keywords.map((keyword: string) => <span class="tag">{keyword}</span>)}
           </div>

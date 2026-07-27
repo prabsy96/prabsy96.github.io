@@ -13,7 +13,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       LLM inference optimization, deep learning accelerators, neuromorphic computing, and unary arithmetic
       for efficient hardware systems.
     </p>
-    <p class="research-affiliations">CMU NCAL · CMU ACTL · UCF UNARY · NEXUS</p>
+    <div class="research-affiliations" aria-label="Research group affiliations">
+      <p><span>Advisers' groups</span> CMU NCAL · CMU ACTL</p>
+      <p><span>Collaborating groups</span> UCF UNARY · NEXUS</p>
+    </div>
   </header>
 
   <!-- ── PhD Research Projects ─────────────────── -->
@@ -22,8 +25,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">PhD Research Projects</h2>
     </div>
     <p class="section-intro">
-      All projects below are part of my doctoral research at <strong>CMU NCAL / CMU ACTL / UCF UNARY / NEXUS</strong>
-      under the supervision of Prof. J.P. Shen and Prof. Shawn Blanton, in collaboration across four research groups.
+      My doctoral research is supervised by Prof. J.P. Shen and Prof. Shawn Blanton through
+      <strong>CMU ACTL and CMU NCAL</strong>, with project collaborations involving
+      <strong>UCF UNARY and NEXUS</strong>.
     </p>
     <div class="project-grid phd-project-grid">
     <div class="project-card">
@@ -33,8 +37,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Co-developed Mugi, a technique that exploits value-level parallelism in transformer nonlinear
-        operations (softmax, LayerNorm, top-K) to accelerate LLM inference. Mugi reduces memory
-        footprint while improving throughput on memory-bound workloads.
+        operations such as softmax, SiLU, and GELU, as well as small-batch GEMMs with asymmetric
+        inputs used by weight-only and KV-cache quantization.
       </p>
       <p class="project-card-results">Key results: Up to 45× throughput &amp; 668× energy efficiency for softmax; 2.07× LLM throughput and 3.11× energy efficiency end-to-end; 1.45× reduction in operational carbon and 1.48× embodied carbon. Outperforms existing nonlinear approximations in accuracy, performance, and efficiency.</p>
       <div class="project-tags">
@@ -52,17 +56,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Architected an INT8 temporal-unary convolution core for NVDLA, targeting low-precision edge
-        deep learning inference. The physical-design evaluation includes floorplanning,
-        clock tree synthesis (CTS), place-and-route, DRC/LVS signoff.
+        deep learning inference. The paper reports post-synthesis comparisons and post-place-and-route
+        analysis in 45nm CMOS.
       </p>
       <p class="project-card-results">
-        Key results: 53% area reduction, 44% power savings, 5× iso-area throughput improvement over NVDLA baseline.
+        Key results: For the evaluated INT4 16×4 arrays, post-place-and-route results show 53% lower
+        area and 44% lower power than the NVDLA CMAC baseline. Separately, the post-synthesis
+        16×16 INT8 comparison reports 5× higher iso-area throughput.
       </p>
       <div class="project-tags">
         <span class="tag">NVDLA</span>
         <span class="tag">INT8</span>
-        <span class="tag">Physical Design</span>
-        <span class="tag">CTS</span>
+        <span class="tag">Post-Place-and-Route</span>
         <span class="tag">DATE 2025</span>
       </div>
     </div>
@@ -74,8 +79,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Developed TNNGen, an automation framework that compiles PyTorch Temporal Neural Network
-        (TNN) models to DRC/LVS-clean post-layout netlists. Validated across 7 application modalities
-        (audio, EEG, gesture, etc.).
+        (TNN) models through PyTorch-to-RTL and RTL-to-layout stages, producing post-layout netlists.
+        The paper evaluates seven time-series clustering designs across different sensory modalities.
       </p>
       <p class="project-card-results">
         Key results: 32% lower place-and-route runtime on average and nearly 47% lower full hardware-flow
@@ -85,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="tag">TNN</span>
         <span class="tag">RTL Automation</span>
         <span class="tag">PyTorch</span>
-        <span class="tag">GDSII</span>
+        <span class="tag">Post-Layout Evaluation</span>
         <span class="tag">ISCAS 2024</span>
         <span class="tag">TCAS-II 2024</span>
       </div>
@@ -121,7 +126,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Industry Research Contributions</h2>
     </div>
     <p class="section-intro">
-      These projects were developed through research internships and industry collaborations, with an emphasis on deployment-facing performance characterization and manufacturable low-power accelerator designs.
+      These projects were developed through research internships and industry collaborations, with an emphasis on deployment-facing performance characterization and low-power accelerator design.
     </p>
     <div class="project-grid">
     <div class="project-card">
@@ -131,14 +136,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <p class="project-card-description">
         Built <strong>SKIP</strong> — a PyTorch-based profiling tool for operator-kernel dynamics in
-        LLM inference, characterizing KV cache efficiency and GPU memory bandwidth utilization on
-        NVIDIA H100 and GH200 Grace Hopper systems. Spearheaded a 5-person CMU–Samsung research
-        collaboration from concept to publication.
+        LLM inference. The paper uses fine-grained operator-to-kernel traces and Total Kernel Launch
+        and Queuing Time (TKLQT) to compare PCIe A100/H100 systems with GH200 Grace Hopper.
       </p>
       <p class="project-card-results">
-        Key results: GH200 incurs 2.8× more prefill latency and 4× larger CPU-bounded region vs PCIe H100
-        due to Grace CPU inefficiencies. Findings were shared with Samsung accelerator design efforts.
-        Project funded at $100K+.
+        Key results: For Llama-3.2-1B at large batch sizes, GH200 achieves 1.9×–2.7× lower prefill
+        latency than the loosely coupled systems. The study also finds that GH200 remains CPU-bound
+        up to 4× larger batch sizes, exposing a low-batch host-side bottleneck.
       </p>
       <div class="project-tags">
         <span class="tag">LLM Profiling</span>
@@ -159,7 +163,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Devised an ultra-low-power hybrid temporal-unary-binary GEMM unit for edge AI.
         Designed and evaluated on TSMC N5 process technology during an internship at MediaTek USA.
       </p>
-      <p class="project-card-results">Key result: 40%+ power reduction versus conventional binary GEMM at same throughput.</p>
+      <p class="project-card-results">
+        Key results: Compared with uGEMM, the paper reports 89% lower area, 87% lower power, and
+        50% lower energy. For the evaluated 128×128 INT8 design in TSMC N5, workload sparsity in
+        MobileNetV2 and ResNet-50 reduces energy by more than 3×.
+      </p>
       <div class="project-tags">
         <span class="tag">GEMM</span>
         <span class="tag">Unary Computing</span>
@@ -171,12 +179,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="project-card">
       <div class="project-card-header">
-        <h3 class="project-card-title">OzMAC — Sparsity-Exploiting MAC Unit for DL Inference</h3>
+        <h3 class="project-card-title">OzMAC — Zero-Skipping MAC for Bit-Sparse DL Inference</h3>
         <span class="project-card-venue">VLSI-SoC 2024 · MediaTek</span>
       </div>
       <p class="project-card-description">
-        Developed OzMAC, a bit-serial, sparsity-exploiting multiply-accumulate unit for deep learning
-        inference and evaluated the design on TSMC N5.
+        Co-developed OzMAC, a modified implementation of Bit-Pragmatic that dynamically skips zero
+        bits. The paper evaluates OzMAC against a binary MAC across multiple precisions and clock
+        frequencies using post-synthesis results in TSMC N5.
+      </p>
+      <p class="project-card-results">
+        Key results: For the evaluated INT8 configuration, the paper reports 21% lower area, 70%
+        lower power, and 28% lower energy. At throughput-normalized frequency, power and energy
+        are each 30% lower than the binary MAC baseline.
       </p>
       <div class="project-tags">
         <span class="tag">MAC</span>
@@ -225,7 +239,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="badge badge-journal">Conference</span>
         <span class="talk-date">October 7, 2024</span>
       </div>
-      <div class="talk-title">"OzMAC: An Energy-Efficient Sparsity-Exploiting Multiply-Accumulate-Unit Design for DL Inference"</div>
+      <div class="talk-title">"Commercial Evaluation of Zero-Skipping MAC Design for Bit Sparsity Exploitation in DL Inference"</div>
       <div class="talk-venue">VLSI-SoC 2024, Tangier, Morocco</div>
     </div>
 
@@ -333,10 +347,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .research-affiliations {
-  margin: var(--space-3) 0 0;
-  color: var(--color-text-light);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: var(--space-2) var(--space-6);
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-light);
   font-size: 14px;
-  letter-spacing: 0.02em;
+}
+
+.research-affiliations p {
+  margin: 0;
+  color: var(--color-text-light);
+}
+
+.research-affiliations span {
+  display: block;
+  color: var(--color-text-muted);
 }
 
 .section-intro {
@@ -398,6 +425,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 @media (max-width: 760px) {
+  .research-affiliations {
+    grid-template-columns: 1fr;
+  }
+
   .project-card-header {
     flex-direction: column;
     gap: var(--space-2);
