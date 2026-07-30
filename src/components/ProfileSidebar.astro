@@ -86,12 +86,15 @@ const base = import.meta.env.BASE_URL;
     font-size: 14px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .profile-sidebar {
       position: static;
       display: grid;
       grid-template-columns: 88px minmax(0, 1fr);
       gap: var(--space-5);
+      width: 100%;
+      max-width: 760px;
+      margin-inline: auto;
       padding-bottom: var(--space-6);
       border-bottom: 1px solid var(--color-border);
       text-align: left;

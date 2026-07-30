@@ -40,6 +40,12 @@
   max-width: 64ch;
 }
 
+@media (max-width: 600px) {
+  .page-header .subtitle {
+    font-size: 16px;
+  }
+}
+
 /* ── Section ─────────────────────────────────── */
 
 .section {

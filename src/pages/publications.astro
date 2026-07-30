@@ -8,6 +8,9 @@ const preprints = publications
   .sort((a, b) => preprintOrder.indexOf(a.slug) - preprintOrder.indexOf(b.slug));
 const peerReviewed = publications.filter((entry) => entry.category === 'peer-reviewed');
 const workshops = publications.filter((entry) => entry.category === 'workshop');
+const publicationNumberBySlug = new Map(
+  publications.map((publication, index) => [publication.slug, index + 1]),
+);
 const groups = [
   {
     id: 'peer-reviewed',
@@ -37,7 +40,7 @@ const groups = [
   <header class="publication-hero page-header">
     <div class="publication-hero-copy">
       <h1>Publications</h1>
-      <p class="hero-blurb">
+      <p class="subtitle hero-blurb">
         A record of {publicationCounts.peerReviewed} peer-reviewed papers,
         {publicationCounts.workshops} workshop papers, and {publicationCounts.preprints} preprints.
         Links point to available publication records.
@@ -52,46 +55,50 @@ const groups = [
     <button class="pub-filter" type="button" data-filter="preprints" aria-pressed="false">Preprints</button>
   </div>
 
-  {groups.map((group) => (
-    <details class="pub-group section" data-pub-group={group.id} open>
-      <summary class="pub-group-summary">
-        <div class="section-header">
-          <h2 class="section-title">{group.title}</h2>
-          <p class="section-lead">{group.lead}</p>
-        </div>
-      </summary>
-      <div class="pub-group-body">
-        {group.entries.map((publication) => (
-          <article class="publication">
-            <h3 class="publication-title">
-              {publication.badge && (
-                <span class:list={['badge', publication.category === 'preprint' ? 'badge-review' : 'badge-award']}>
-                  {publication.badge}
-                </span>
-              )}
-              <span>{publication.title}</span>
-            </h3>
-            <p class="publication-authors">
-              {publication.authors.split(/(P\. Vellaisamy)/).map((part) =>
-                part === 'P. Vellaisamy' ? <strong>{part}</strong> : part
-              )}
-            </p>
-            <p class="publication-venue">
-              <span>{publication.venue}</span>
-              {publication.externalUrl && (
-                <>
-                  <span aria-hidden="true">·</span>
+  <div class="publication-groups">
+    {groups.map((group) => (
+      <details class="pub-group section" data-pub-group={group.id} open>
+        <summary class="pub-group-summary">
+          <div class="section-header">
+            <h2 class="section-title">{group.title}</h2>
+            <p class="section-lead">{group.lead}</p>
+          </div>
+        </summary>
+        <div class="pub-group-body">
+          {group.entries.map((publication) => (
+            <article
+              class="publication"
+              data-publication-number={publicationNumberBySlug.get(publication.slug)}
+            >
+              <h3 class="publication-title">
+                <span>{publication.title}</span>
+              </h3>
+              <p class="publication-authors">
+                {publication.authors.split(/(P\. Vellaisamy)/).map((part) =>
+                  part === 'P. Vellaisamy' ? <strong>{part}</strong> : part
+                )}
+              </p>
+              <p class="publication-venue">
+                <span class="publication-venue-name">{publication.venue}</span>
+                {publication.externalUrl && (
                   <a href={publication.externalUrl} target="_blank" rel="noopener noreferrer">
                     {publication.externalLabel ?? 'Publication record'}
                   </a>
-                </>
+                )}
+              </p>
+              {publication.badge && (
+                <p class="publication-badge-row">
+                  <span class:list={['badge', publication.category === 'preprint' ? 'badge-review' : 'badge-award']}>
+                    {publication.badge}
+                  </span>
+                </p>
               )}
-            </p>
-          </article>
-        ))}
-      </div>
-    </details>
-  ))}
+            </article>
+          ))}
+        </div>
+      </details>
+    ))}
+  </div>
 </BaseLayout>
 
 <style>
@@ -99,19 +106,8 @@ const groups = [
     display: block;
   }
 
-  .publication-hero h1 {
-    margin-top: 0;
-    margin-bottom: var(--space-2);
-  }
-
   .hero-blurb {
     max-width: 64ch;
-  }
-
-  .hero-blurb {
-    margin-bottom: 0;
-    color: var(--color-text-light);
-    line-height: 1.65;
   }
 
   .pub-toolbar {
@@ -190,7 +186,6 @@ const groups = [
 
   .pub-group-body {
     padding: 0 0 var(--space-4);
-    counter-reset: publication;
   }
 
   .publication {
@@ -200,11 +195,10 @@ const groups = [
     border: 0;
     border-bottom: 1px solid var(--color-border-light);
     background: transparent;
-    counter-increment: publication;
   }
 
   .publication::before {
-    content: '[' counter(publication) ']';
+    content: '[' attr(data-publication-number) ']';
     position: absolute;
     top: calc(var(--space-4) + 0.15rem);
     left: 0;
@@ -214,9 +208,6 @@ const groups = [
   }
 
   .publication-title {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-2);
     margin: 0 0 var(--space-2);
     font-family: var(--font-sans);
     font-size: 1.05rem;
@@ -224,7 +215,7 @@ const groups = [
     letter-spacing: 0;
   }
 
-  .publication-title > span:last-child {
+  .publication-title > span {
     min-width: 0;
     overflow-wrap: anywhere;
   }
@@ -237,10 +228,25 @@ const groups = [
   }
 
   .publication-venue {
+    display: grid;
     gap: var(--space-2);
     margin-bottom: 0;
     color: var(--color-text-light);
     font-size: 14px;
+  }
+
+  .publication-venue-name {
+    min-width: 0;
+  }
+
+  .publication-badge-row {
+    margin: var(--space-2) 0 0;
+    line-height: 1.4;
+  }
+
+  .publication-badge-row .badge {
+    font-size: 12.5px;
+    padding: 0.12rem 0.45rem;
   }
 
   @media (max-width: 640px) {
