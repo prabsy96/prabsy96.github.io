@@ -16,6 +16,20 @@ export interface PublicationEntry {
 
 export const publications: PublicationEntry[] = [
   {
+    slug: 'request-token-energy-iiswc-2026',
+    title: 'Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms',
+    authors: 'P. Vellaisamy, V. Lam, S. Blanton, J.P. Shen',
+    venue: 'IEEE International Symposium on Workload Characterization (IISWC) 2026',
+    year: 2026,
+    category: 'peer-reviewed',
+    summary:
+      'This paper decomposes GPU energy for LLM inference into request-level and token-level costs across H100 and H200 platforms, showing how batching, context length, output length, and model architecture affect energy efficiency.',
+    keywords: ['LLM inference', 'GPU energy', 'IISWC 2026', 'workload characterization'],
+    externalUrl: 'https://arxiv.org/abs/2608.28044',
+    externalLabel: 'arXiv:2608.28044',
+    badge: 'Accepted',
+  },
+  {
     slug: 'taxbreak-ispass-2026',
     title: 'TaxBreak: Unmasking the Hidden Costs of LLM Inference Through Overhead Decomposition',
     authors: 'P. Vellaisamy, S. Tripathi, V. Natarajan, S.S. Thenarasu, R.D.S. Blanton, J.P. Shen',
